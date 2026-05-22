@@ -442,11 +442,11 @@ Each post body should include these blocks:
 | 2 | Header | Squarespace native + Custom CSS + mega-menu JS | ✅ Live |
 | 3 | Hero | Squarespace banner + video background + native blocks | ✅ Live |
 | 4 | Stats row | Hardcoded Code Block (`.jbi-stats`) | ✅ Live (4 stats: 27+ YRS, 9,400+, 99% PPOs/HMOs, 3 locations) |
-| 5 | Team section | Hardcoded Code Block (`.jbi-team-wrap`, full-bleed) | ✅ Live (3 surgeons) |
-| 6 | Care We Provide | Hardcoded Code Block (`.jbi-care-wrap`) — to migrate to Summary Block | 🟡 Hardcoded version live |
+| 5 | Team section | Hardcoded Code Block (`.jbi-team-wrap`, full-bleed) | ✅ Live (real staff: Dr. Pramod Srivastava, Dr. Karan Srivastava, Kelly Guzman PA) |
+| 6 | Care We Provide | Hardcoded Code Block (`.jbi-care-wrap`, full-bleed, 3 cards) | ✅ Live (Hip & Knee · Sports & Regenerative · Hand & Fracture) |
 | 7 | Patient Journal | Not yet built | ☐ Pending |
 | 8 | Referring Physicians CTA | Not yet built | ☐ Pending |
-| 9 | Footer | Squarespace native | ✅ Live (basic) |
+| 9 | Footer | Squarespace native (default) | ⚠️ Needs custom 4-col footer to replace template default |
 
 ---
 
@@ -497,10 +497,36 @@ Class: `.jbi-team-wrap`. Pulls full viewport width using `100vw` break-out.
 **Heading**: `Fellowship-trained.` *Patient-chosen.* (italic stone accent)
 **CTA button (top-right)**: `Meet our team →` → `/team`
 **Eyebrow**: `— THE TEAM` (16px, brass)
-**Grid**: 3 surgeons (3 cards on desktop, stacks on mobile)
+**Grid**: 3 cards (3 columns on desktop, stacks on mobile)
 **Each card links to**: `/team`
 
+### Real team members (currently live)
+1. **Dr. Pramod Srivastava M.D** — COMPREHENSIVE ORTHOPEDIC SURGEON — Fellowship · Hospital for Special Surgery
+2. **Dr. Karan Srivastava M.D** — JOINT REPLACEMENT SPECIALIST — Fellowship · Mayo Clinic
+3. **Kelly Guzman** — PHYSICIAN ASSISTANT — Fellowship · Rutgers, The State University of New Jersey
+
 Image swap: replace `<img src="https://images.unsplash.com/...">` URLs with Squarespace asset URLs once real headshots are uploaded.
+
+---
+
+## Care We Provide section (Code Block, full-bleed)
+
+Class: `.jbi-care-wrap`. White background section between Team and Footer.
+
+**Heading**: `The care` *we provide.* (italic brass)
+**CTA button (top-right)**: `Explore all specialties →` → `/specialties`
+**Eyebrow**: `— Specialties` (16px, mid-blue)
+**Grid**: 3 specialty category cards
+
+### Card structure
+Each card: photo (16:10 aspect) + brass kicker (01 · Category) + navy slab title + body paragraph + "Explore →" link
+
+### Cards (currently live)
+1. **01 · Hip & Knee** — "Joint replacement & reconstruction." → `/specialties/total-knee-replacement`
+2. **02 · Sports & Regenerative** — "Get back to active life." → `/specialties/sports-medicine`
+3. **03 · Hand & Fracture** — "Precision care for hand & trauma." → `/specialties/carpal-tunnel-surgery`
+
+**Note**: Card click links only fire in live preview / published site — NOT inside Squarespace's edit mode (Squarespace intercepts clicks for editing).
 
 ---
 

@@ -1,0 +1,182 @@
+<!--
+  JBI — Care We Provide section
+  Drop into a Squarespace Code Block on the homepage,
+  between the Team section and the Footer.
+
+  - Full-bleed white background
+  - 3 specialty cards (Hip & Knee, Sports & Regenerative, Hand & Fracture)
+  - Hover: card lifts, image zooms, brass border glow
+  - Each card links to a representative /specialties/[slug] post
+  - Top-right CTA links to /specialties landing page
+-->
+<style>
+  .jbi-care-wrap{
+    width:100vw;
+    position:relative;
+    left:50%;
+    right:50%;
+    margin-left:-50vw;
+    margin-right:-50vw;
+    margin-top:-100px;
+    margin-bottom:-100px;
+    background:#ffffff;
+    z-index:4;
+  }
+  .jbi-care{
+    background:#ffffff;
+    padding:140px 48px;
+    font-family:'Archivo',-apple-system,sans-serif;
+    position:relative;
+    overflow:hidden;
+  }
+  .jbi-care::before{
+    content:"";
+    position:absolute;
+    bottom:-200px; left:-150px;
+    width:500px; height:500px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(200,154,58,0.08) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .jbi-care-inner{position:relative; z-index:3; max-width:1440px; margin:0 auto;}
+
+  .jbi-care-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:32px; flex-wrap:wrap; margin-bottom:56px;
+  }
+  .jbi-care-eyebrow{
+    font-size:16px; letter-spacing:3.5px; text-transform:uppercase;
+    color:#2e5a87; font-weight:700; margin-bottom:22px;
+  }
+  .jbi-care-title{
+    font-family:'Roboto Slab',Georgia,serif;
+    font-size:56px; font-weight:900; letter-spacing:-2px;
+    line-height:1.02; color:#0f2d4f; margin:0;
+    max-width:720px;
+  }
+  .jbi-care-title .accent{color:#a37a27; font-style:italic; font-weight:500;}
+  .jbi-care-cta{
+    background:transparent; color:#0f2d4f;
+    border:1.5px solid #0f2d4f;
+    padding:13px 22px; font-size:13px; font-weight:700;
+    letter-spacing:1.2px; text-transform:uppercase;
+    border-radius:2px; cursor:pointer;
+    text-decoration:none; display:inline-block;
+    transition:all 0.2s ease; white-space:nowrap;
+  }
+  .jbi-care-cta:hover{background:#0f2d4f; color:#f5efe3; transform:translateY(-2px);}
+
+  .jbi-care-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+  }
+  .jbi-service{
+    background:#f5efe3;
+    border:1px solid rgba(15,45,79,0.1);
+    border-radius:20px;
+    padding:32px;
+    text-decoration:none; color:inherit;
+    display:flex; flex-direction:column;
+    transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .jbi-service:hover{
+    transform:translateY(-6px);
+    border-color:rgba(200,154,58,0.4);
+    box-shadow:0 24px 48px rgba(15,45,79,0.1);
+  }
+  .jbi-service-img{
+    border-radius:14px;
+    overflow:hidden;
+    aspect-ratio:16/10;
+    background:linear-gradient(135deg,#d9cfbd,#eae2d2);
+    margin-bottom:24px;
+  }
+  .jbi-service-img img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    filter:saturate(0.95);
+    transition:transform 0.4s ease;
+  }
+  .jbi-service:hover .jbi-service-img img{transform:scale(1.04);}
+  .jbi-service-kicker{
+    font-family:'Roboto Slab',Georgia,serif;
+    font-size:13px; font-weight:700;
+    color:#a37a27; letter-spacing:1.5px;
+    margin-bottom:12px;
+  }
+  .jbi-service-title{
+    font-family:'Roboto Slab',Georgia,serif;
+    font-size:28px; font-weight:700; letter-spacing:-0.5px;
+    line-height:1.2; color:#0f2d4f; margin:0 0 14px;
+  }
+  .jbi-service-body{
+    font-size:15px; line-height:1.55; color:#1a1f2a;
+    margin:0; flex:1;
+  }
+  .jbi-service-more{
+    margin-top:22px;
+    font-size:13px; font-weight:700; letter-spacing:0.5px;
+    color:#0f2d4f;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:gap 0.2s ease, color 0.2s ease;
+  }
+  .jbi-service:hover .jbi-service-more{
+    gap:14px;
+    color:#a37a27;
+  }
+
+  @media (max-width:1000px){
+    .jbi-care{padding:100px 24px;}
+    .jbi-care-title{font-size:40px; letter-spacing:-1.2px;}
+    .jbi-care-grid{grid-template-columns:1fr;}
+  }
+</style>
+
+<div class="jbi-care-wrap">
+  <section class="jbi-care">
+    <div class="jbi-care-inner">
+
+      <div class="jbi-care-head">
+        <div>
+          <div class="jbi-care-eyebrow">— Specialties</div>
+          <h2 class="jbi-care-title">The care <span class="accent">we provide.</span></h2>
+        </div>
+        <a class="jbi-care-cta" href="/specialties">Explore all specialties →</a>
+      </div>
+
+      <div class="jbi-care-grid">
+
+        <a href="/specialties/total-knee-replacement" class="jbi-service">
+          <div class="jbi-service-img">
+            <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=900&q=85&auto=format&fit=crop" alt="Hip & Knee" />
+          </div>
+          <div class="jbi-service-kicker">01 · Hip &amp; Knee</div>
+          <h3 class="jbi-service-title">Joint replacement &amp; reconstruction.</h3>
+          <p class="jbi-service-body">Total and partial knee replacement, anterior hip replacement, and ligament repair using robotic-assisted and minimally invasive techniques.</p>
+          <span class="jbi-service-more">Explore Hip &amp; Knee →</span>
+        </a>
+
+        <a href="/specialties/sports-medicine" class="jbi-service">
+          <div class="jbi-service-img">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=85&auto=format&fit=crop" alt="Sports & Regenerative" />
+          </div>
+          <div class="jbi-service-kicker">02 · Sports &amp; Regenerative</div>
+          <h3 class="jbi-service-title">Get back to active life.</h3>
+          <p class="jbi-service-body">Sports medicine, arthroscopy, rotator cuff repair, and regenerative care including PRP injections. Trusted by collegiate and professional athletes.</p>
+          <span class="jbi-service-more">Explore Sports Care →</span>
+        </a>
+
+        <a href="/specialties/carpal-tunnel-surgery" class="jbi-service">
+          <div class="jbi-service-img">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=85&auto=format&fit=crop" alt="Hand & Fracture" />
+          </div>
+          <div class="jbi-service-kicker">03 · Hand &amp; Fracture</div>
+          <h3 class="jbi-service-title">Precision care for hand &amp; trauma.</h3>
+          <p class="jbi-service-body">Carpal tunnel release, trigger finger correction, fracture care, and workplace injury treatment. Fast diagnosis, surgical precision when needed.</p>
+          <span class="jbi-service-more">Explore Hand &amp; Fracture →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+</div>
