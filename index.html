@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Joint & Bone Institute of California — Orthopedic Surgeons</title>
+<meta name="description" content="Fellowship-trained orthopedic surgeons specializing in knee, hip, shoulder, and spine. Newport Beach · Irvine · Long Beach." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --deep:#0f2d4f;
+    --deep-dark:#081a30;
+    --mid:#2e5a87;
+    --soft:#6b8bae;
+    --pale:#d9cfbd;
+    --whisper:#efe8db;
+    --warm:#f5efe3;
+    --bone:#eae2d2;
+    --gold:#c89a3a;
+    --gold-deep:#a37a27;
+    --white:#ffffff;
+    --text:#1a1f2a;
+    --muted:#6a6558;
+    --line:rgba(15,45,79,.16);
+    --line-soft:rgba(15,45,79,.08);
+    --font:'Archivo',-apple-system,BlinkMacSystemFont,sans-serif;
+    --slab:'Roboto Slab',Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:var(--font);color:var(--text);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer}
+  h1,h2,h3,h4{margin:0}
+
+  /* noise texture */
+  .noise{background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='3'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.2 0 0 0 0 0.4 0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");}
+
+  /* ---------- Header ---------- */
+  header.site{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .utility{background:var(--deep);color:var(--white);font-size:12px;padding:9px 48px;display:flex;justify-content:space-between}
+  .utility .group{display:flex;gap:22px;align-items:center}
+  .utility .dim{opacity:.75}
+  .utility a.phone{color:var(--pale);font-weight:600}
+  .nav-wrap{padding:18px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .logo{display:flex;align-items:center;gap:14px;cursor:pointer}
+  .logo-square{width:48px;height:48px;background:var(--deep);color:var(--warm);font-family:var(--slab);font-weight:900;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .logo-word{font-family:var(--slab);font-weight:900;font-size:20px;color:var(--deep);letter-spacing:-.4px;line-height:1;text-transform:uppercase}
+  .logo-sub{display:flex;align-items:center;gap:8px;margin-top:5px}
+  .logo-sub span.rule{width:14px;height:1.5px;background:var(--gold-deep);display:inline-block}
+  .logo-sub .inst{font-size:10px;color:var(--gold-deep);letter-spacing:3.5px;font-weight:700;text-transform:uppercase}
+  nav.primary{display:flex;gap:32px;align-items:center}
+  nav.primary a{font-size:14px;font-weight:500;color:var(--text);transition:color .15s}
+  nav.primary a:hover{color:var(--deep)}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;font-size:13px;border:none;padding:14px 24px;border-radius:2px;transition:transform .15s, box-shadow .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.primary{background:var(--gold);color:var(--deep-dark)}
+  .btn.primary:hover{box-shadow:0 8px 22px rgba(200,154,58,.35)}
+  .btn.ghost{background:transparent;color:var(--deep);border:1.5px solid var(--deep)}
+  .btn.ghost:hover{background:var(--deep);color:var(--warm)}
+  .btn.pill{border-radius:999px;padding:12px 22px;letter-spacing:.6px;text-transform:none;font-size:13px}
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--warm);position:relative;overflow:hidden}
+  .hero-photo{position:relative;height:560px;overflow:hidden}
+  .hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.02)}
+  .hero-vignette{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,26,48,.22) 0%,rgba(8,26,48,.05) 40%,var(--warm) 100%)}
+  .hero-grain{position:absolute;inset:0;opacity:.35;mix-blend-mode:multiply;pointer-events:none}
+  .hero-eyebrow{position:absolute;top:42px;left:48px;display:flex;align-items:center;gap:14px}
+  .hero-eyebrow .line{width:38px;height:1px;background:var(--white);opacity:.7}
+  .hero-eyebrow span{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--white);font-weight:600}
+  .hero-chip{position:absolute;bottom:100px;left:48px;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;background:rgba(255,255,255,.92);border:1px solid var(--line)}
+  .hero-chip .dot{width:7px;height:7px;background:#2d8b4a}
+  .hero-chip span{font-size:12px;font-weight:600;color:var(--deep);letter-spacing:.4px}
+
+  .hero-caption{position:relative;padding:64px 48px 80px;background:var(--warm)}
+  .hero-caption .inner{position:relative;display:grid;grid-template-columns:1.3fr 1fr;gap:72px;align-items:end}
+  .hero-caption h1{font-family:var(--slab);font-size:96px;line-height:.96;font-weight:900;color:var(--deep);letter-spacing:-3.5px}
+  .hero-caption h1 .italic{font-style:italic;font-weight:500;color:var(--gold-deep)}
+  .hero-caption p.lede{font-size:19px;line-height:1.6;color:var(--text);max-width:480px;font-weight:400;margin:0}
+  .hero-caption .cta-row{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+
+  .stats{position:relative;display:grid;grid-template-columns:repeat(4,1fr);margin-top:72px;border-top:2px solid var(--deep);border-bottom:1px solid var(--line)}
+  .stat{padding:24px 24px;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:none}
+  .stat .row{display:flex;align-items:baseline;gap:4px}
+  .stat .n{font-family:var(--slab);font-size:44px;color:var(--deep);font-weight:900;letter-spacing:-1.5px;line-height:1}
+  .stat .u{font-size:20px;color:var(--gold-deep);font-weight:700;letter-spacing:-.5px}
+  .stat .l{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:10px;font-weight:600}
+
+  /* ---------- Section helpers ---------- */
+  section{padding:88px 48px}
+  .eyebrow{font-size:11px;letter-spacing:2px;color:var(--mid);font-weight:700;text-transform:uppercase;margin-bottom:12px}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:48px;flex-wrap:wrap}
+  h2.display{font-family:var(--slab);font-size:52px;line-height:1.02;font-weight:900;color:var(--deep);letter-spacing:-1.6px}
+  h2.display .accent{color:var(--gold-deep)}
+
+  /* ---------- Anatomy (body map) ---------- */
+  .anatomy{background:var(--whisper);position:relative;overflow:hidden}
+  .anatomy::before{content:"";position:absolute;top:-200px;right:-200px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,var(--pale) 0%,transparent 70%);pointer-events:none}
+  .anatomy .grid{position:relative;display:grid;grid-template-columns:.7fr 1fr 1fr;gap:40px;align-items:stretch}
+  .anatomy h2{font-family:var(--slab);font-size:44px;line-height:1.02;font-weight:900;color:var(--deep);letter-spacing:-1.4px}
+  .anatomy .lede{font-size:16px;line-height:1.6;color:var(--text);margin-top:20px}
+  .card{background:var(--white);padding:28px;border-radius:20px;border:1px solid var(--line);box-shadow:0 20px 50px rgba(217,207,189,.5)}
+  .regions{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .region{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--whisper);cursor:pointer;transition:all .15s;font-weight:600;color:var(--deep);font-size:14px}
+  .region:hover{border-color:var(--deep);background:var(--white)}
+  .region.active{background:var(--deep);color:var(--warm);border-color:var(--deep)}
+  .region .dot{width:8px;height:8px;background:var(--gold);border-radius:50%}
+  .region.active .dot{background:var(--pale)}
+  .selected-label{font-size:11px;letter-spacing:1.8px;color:var(--muted);text-transform:uppercase;margin-bottom:10px;font-weight:600}
+  .selected-title{font-size:34px;font-weight:700;color:var(--deep);letter-spacing:-1px;margin:0 0 6px}
+  .selected-meta{font-size:13px;color:var(--muted);margin-bottom:20px}
+  .condition-row{padding:13px 0;border-bottom:1px solid var(--line-soft);display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:15px;color:var(--deep);font-weight:500}
+  .condition-row:hover{color:var(--gold-deep)}
+  .condition-row .arr{color:var(--mid)}
+
+  /* ---------- Services ---------- */
+  .services{background:var(--white)}
+  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .svc{background:var(--whisper);border:1px solid var(--line);border-radius:20px;padding:28px;display:grid;grid-template-columns:.7fr 1fr;gap:24px}
+  .svc .img{border-radius:14px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(135deg,var(--pale),var(--bone))}
+  .svc .img img{width:100%;height:100%;object-fit:cover}
+  .svc .kicker{font-size:12px;color:var(--mid);font-weight:700;letter-spacing:1px;margin-bottom:10px}
+  .svc h3{font-family:var(--slab);font-size:26px;font-weight:700;color:var(--deep);letter-spacing:-.5px;margin:0 0 12px}
+  .svc p{font-size:15px;line-height:1.55;color:var(--text);margin:0}
+  .svc .more{margin-top:16px;font-size:13px;color:var(--deep);font-weight:600;display:inline-flex;gap:8px;align-items:center;cursor:pointer}
+  .svc .more:hover{color:var(--gold-deep)}
+
+  /* ---------- Surgeons (dark section) ---------- */
+  .surgeons{background:radial-gradient(ellipse at 15% 20%,var(--deep) 0%,var(--deep-dark) 60%),linear-gradient(180deg,var(--deep),var(--deep-dark));color:var(--white);position:relative;overflow:hidden}
+  .surgeons::before{content:"";position:absolute;top:-150px;left:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(46,90,135,.25) 0%,transparent 70%);pointer-events:none}
+  .surgeons .noise{position:absolute;inset:0;opacity:.4;pointer-events:none}
+  .surgeons h2{color:var(--white)}
+  .surgeons h2 .accent{color:var(--pale)}
+  .surgeons .eyebrow{color:var(--pale)}
+  .sgrid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .surgeon{background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:20px;overflow:hidden;cursor:pointer;transition:transform .2s}
+  .surgeon:hover{transform:translateY(-4px)}
+  .surgeon .portrait{aspect-ratio:3/4;background:linear-gradient(135deg,var(--mid),var(--deep));position:relative;overflow:hidden}
+  .surgeon .portrait img{width:100%;height:100%;object-fit:cover;filter:saturate(.9)}
+  .surgeon .body{padding:20px}
+  .surgeon .nm{font-family:var(--slab);font-size:18px;font-weight:700;letter-spacing:-.3px}
+  .surgeon .ttl{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--pale);margin-top:6px;font-weight:600}
+  .surgeon .fel{font-size:12px;color:rgba(255,255,255,.65);margin-top:8px}
+  .white-pill{background:var(--white);color:var(--deep);border:none;padding:13px 22px;font-size:13px;font-weight:600;border-radius:999px;cursor:pointer}
+
+  /* ---------- Journal / resources ---------- */
+  .journal{background:var(--warm)}
+  .journal-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px}
+  .j-card{background:var(--white);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:transform .2s}
+  .j-card:hover{transform:translateY(-3px)}
+  .j-card .img{aspect-ratio:16/10;background:linear-gradient(135deg,var(--bone),var(--pale));overflow:hidden}
+  .j-card .img img{width:100%;height:100%;object-fit:cover}
+  .j-card.compact .img{aspect-ratio:4/3}
+  .j-card .body{padding:24px;flex:1;display:flex;flex-direction:column}
+  .j-card .tag{font-size:11px;letter-spacing:1.5px;color:var(--gold-deep);font-weight:700;text-transform:uppercase;margin-bottom:10px}
+  .j-card h3{font-family:var(--slab);font-size:22px;font-weight:700;color:var(--deep);letter-spacing:-.4px;line-height:1.2;margin:0 0 12px}
+  .j-card p{font-size:14px;color:var(--muted);margin:0 0 14px;line-height:1.55}
+  .j-card .meta{margin-top:auto;font-size:12px;color:var(--muted)}
+
+  /* ---------- CTA band ---------- */
+  .cta-band{background:var(--deep);color:var(--white);padding:72px 48px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;position:relative;overflow:hidden}
+  .cta-band::after{content:"";position:absolute;right:-100px;top:-100px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(200,154,58,.2) 0%,transparent 70%)}
+  .cta-band h2{font-family:var(--slab);font-size:46px;line-height:1.05;font-weight:900;letter-spacing:-1.4px;color:var(--white)}
+  .cta-band h2 .accent{color:var(--gold)}
+  .cta-band p{color:rgba(255,255,255,.75);font-size:16px;line-height:1.6;margin:20px 0 0;max-width:520px}
+  .cta-band .actions{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap;position:relative}
+
+  /* ---------- Footer ---------- */
+  footer.site{background:var(--deep-dark);color:var(--white);padding:72px 48px 32px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .foot-logo .logo-square{background:var(--gold);color:var(--deep-dark)}
+  .foot-logo .logo-word{color:var(--white)}
+  .foot-about{font-size:14px;line-height:1.6;color:rgba(255,255,255,.65);margin-top:22px;max-width:320px}
+  .foot h4{font-family:var(--slab);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--pale);font-weight:700;margin-bottom:18px}
+  .foot ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+  .foot ul a{font-size:14px;color:rgba(255,255,255,.75)}
+  .foot ul a:hover{color:var(--gold)}
+  .foot-bottom{display:flex;justify-content:space-between;padding-top:24px;font-size:12px;color:rgba(255,255,255,.5);flex-wrap:wrap;gap:16px}
+
+  /* Icons (inline svg via before) – simple arrow */
+  .arr-svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2}
+
+  /* Responsive */
+  @media (max-width: 1000px){
+    .hero-caption h1{font-size:64px;letter-spacing:-2px}
+    .hero-caption .inner{grid-template-columns:1fr;gap:32px}
+    .anatomy .grid{grid-template-columns:1fr}
+    .svc-grid{grid-template-columns:1fr}
+    .sgrid{grid-template-columns:repeat(2,1fr)}
+    .journal-grid{grid-template-columns:1fr}
+    .cta-band{grid-template-columns:1fr;padding:56px 32px}
+    .cta-band .actions{justify-content:flex-start}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(2){border-right:none}
+    section{padding:64px 24px}
+    .nav-wrap{padding:14px 24px}
+    .utility{padding:9px 24px;font-size:11px}
+    .utility .group:first-child{flex-direction:column;gap:4px;align-items:flex-start}
+    nav.primary{display:none}
+    .hero-photo{height:420px}
+    .hero-caption{padding:40px 24px 56px}
+  }
+  @media (max-width: 600px){
+    .hero-caption h1{font-size:44px}
+    h2.display{font-size:36px}
+    .sgrid{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr}
+    .stat{border-right:none;border-bottom:1px solid var(--line)}
+    .stat:last-child{border-bottom:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="utility">
+    <div class="group">
+      <span>Newport Beach · Irvine · Long Beach</span>
+      <span class="dim">Mon–Fri 7:30a–5:30p</span>
+    </div>
+    <div class="group">
+      <a href="#portal">Patient Portal</a>
+      <a class="phone" href="tel:7145550199">714.555.0199</a>
+    </div>
+  </div>
+  <div class="nav-wrap">
+    <a href="#" class="logo" aria-label="Joint & Bone Institute of California home">
+      <img src="logo/jbi-logo-final.svg" alt="Joint & Bone Institute" style="height:60px;width:auto;display:block"/>
+    </a>
+    <nav class="primary">
+      <a href="#conditions">Conditions</a>
+      <a href="#surgeons">Surgeons</a>
+      <a href="#resources">Patient Resources</a>
+      <a href="#referring">For Physicians</a>
+      <button class="btn primary pill" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Book Appointment</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ======= HERO ======= -->
+<section class="hero">
+  <div class="hero-photo">
+    <img src="https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?w=1800&q=85&auto=format&fit=crop" alt="Orthopedic surgeon with patient" />
+    <div class="hero-vignette"></div>
+    <div class="hero-grain noise"></div>
+    <div class="hero-eyebrow">
+      <span class="line"></span>
+      <span>California Orthopedics · Est. 1997</span>
+    </div>
+    <div class="hero-chip">
+      <span class="dot"></span>
+      <span>ACCEPTING NEW PATIENTS · SAME-WEEK CONSULTS</span>
+    </div>
+  </div>
+
+  <div class="hero-caption">
+    <div class="hero-grain noise" style="opacity:.35"></div>
+    <div class="inner">
+      <div>
+        <h1>Strength,<br/>restored with<br/><span class="italic">precision.</span></h1>
+      </div>
+      <div>
+        <p class="lede">California's trusted orthopedic surgeons for knee, hip, shoulder, and spine. Fellowship-trained. Outcomes-driven. Unhurried in the room.</p>
+        <div class="cta-row">
+          <button class="btn primary" id="book" onclick="document.getElementById('conditions').scrollIntoView({behavior:'smooth'})">
+            Request an appointment
+            <svg class="arr-svg" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn ghost" onclick="document.getElementById('conditions').scrollIntoView({behavior:'smooth'})">Explore conditions</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="row"><div class="n">27</div><div class="u">YRS</div></div><div class="l">of Care</div></div>
+      <div class="stat"><div class="row"><div class="n">9,400</div><div class="u">+</div></div><div class="l">Procedures</div></div>
+      <div class="stat"><div class="row"><div class="n">4.9</div><div class="u">★</div></div><div class="l">Avg Rating</div></div>
+      <div class="stat"><div class="row"><div class="n">18</div><div class="u">%</div></div><div class="l">Faster Recovery</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= BODY MAP / ANATOMY ======= -->
+<section class="anatomy" id="conditions">
+  <div class="grid">
+    <div>
+      <div class="eyebrow">— By Anatomy</div>
+      <h2>Start where <br/>it <span class="accent">hurts.</span></h2>
+      <p class="lede">Select a region of the body to explore the conditions we treat, the specialists who treat them, and treatment pathways — from conservative care to surgical intervention.</p>
+    </div>
+    <div class="card">
+      <div class="selected-label">Anatomy</div>
+      <div class="regions" id="regions">
+        <div class="region" data-region="shoulder"><span class="dot"></span>Shoulder</div>
+        <div class="region" data-region="elbow"><span class="dot"></span>Elbow</div>
+        <div class="region" data-region="hip"><span class="dot"></span>Hip</div>
+        <div class="region" data-region="hand"><span class="dot"></span>Hand &amp; Wrist</div>
+        <div class="region active" data-region="knee"><span class="dot"></span>Knee</div>
+        <div class="region" data-region="spine"><span class="dot"></span>Spine</div>
+        <div class="region" data-region="foot"><span class="dot"></span>Foot &amp; Ankle</div>
+        <div class="region" data-region="sports"><span class="dot"></span>Sports Injury</div>
+      </div>
+    </div>
+    <div class="card" id="regionDetail">
+      <div class="selected-label">Selected region</div>
+      <h3 class="selected-title" id="rTitle">Knee</h3>
+      <div class="selected-meta" id="rMeta">5 conditions · 3 specialists</div>
+      <div style="border-top:1px solid var(--line-soft);padding-top:8px" id="rList"></div>
+      <button class="btn primary pill" style="margin-top:20px;align-self:flex-start">Full anatomy directory →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ======= SERVICES ======= -->
+<section class="services">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">— Specialties</div>
+      <h2 class="display">The care we provide.</h2>
+    </div>
+  </div>
+  <div class="svc-grid">
+    <article class="svc">
+      <div class="img"><img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=800&q=80&auto=format&fit=crop" alt="" /></div>
+      <div>
+        <div class="kicker">01</div>
+        <h3>Knee Surgery</h3>
+        <p>From ACL reconstruction to total knee arthroplasty, using robotic-assisted and minimally invasive techniques.</p>
+        <div class="more">Learn more <svg class="arr-svg" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      </div>
+    </article>
+    <article class="svc">
+      <div class="img"><img src="https://images.unsplash.com/photo-1584467735815-f778f274e296?w=800&q=80&auto=format&fit=crop" alt="" /></div>
+      <div>
+        <div class="kicker">02</div>
+        <h3>Joint Replacement</h3>
+        <p>Hip and knee replacement tailored to your anatomy. Custom implants, rapid-recovery protocols.</p>
+        <div class="more">Learn more <svg class="arr-svg" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      </div>
+    </article>
+    <article class="svc">
+      <div class="img"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop" alt="" /></div>
+      <div>
+        <div class="kicker">03</div>
+        <h3>Sports Medicine</h3>
+        <p>Arthroscopy, cartilage restoration, tendon repair. Trusted by collegiate and professional athletes.</p>
+        <div class="more">Learn more <svg class="arr-svg" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      </div>
+    </article>
+    <article class="svc">
+      <div class="img"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop" alt="" /></div>
+      <div>
+        <div class="kicker">04</div>
+        <h3>Non-Surgical Care</h3>
+        <p>Regenerative injections, physical therapy coordination, bracing. Surgery is the last option — not the first.</p>
+        <div class="more">Learn more <svg class="arr-svg" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ======= SURGEONS ======= -->
+<section class="surgeons" id="surgeons">
+  <div class="noise"></div>
+  <div class="section-head" style="position:relative">
+    <div>
+      <div class="eyebrow">— The Team</div>
+      <h2 class="display">Fellowship-trained. <span class="accent">Patient-chosen.</span></h2>
+    </div>
+    <button class="white-pill">Meet the surgeons →</button>
+  </div>
+  <div class="sgrid">
+    <div class="surgeon">
+      <div class="portrait"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80&auto=format&fit=crop" alt="" /></div>
+      <div class="body">
+        <div class="nm">Dr. Elena Hughes</div>
+        <div class="ttl">Knee &amp; Sports Medicine</div>
+        <div class="fel">Fellowship · Hospital for Special Surgery</div>
+      </div>
+    </div>
+    <div class="surgeon">
+      <div class="portrait"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80&auto=format&fit=crop" alt="" /></div>
+      <div class="body">
+        <div class="nm">Dr. Marcus Chen</div>
+        <div class="ttl">Joint Replacement</div>
+        <div class="fel">Fellowship · Mayo Clinic</div>
+      </div>
+    </div>
+    <div class="surgeon">
+      <div class="portrait"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80&auto=format&fit=crop" alt="" /></div>
+      <div class="body">
+        <div class="nm">Dr. Priya Anand</div>
+        <div class="ttl">Sports &amp; Cartilage</div>
+        <div class="fel">Fellowship · Stanford</div>
+      </div>
+    </div>
+    <div class="surgeon">
+      <div class="portrait"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80&auto=format&fit=crop" alt="" /></div>
+      <div class="body">
+        <div class="nm">Dr. James O'Rourke</div>
+        <div class="ttl">Spine</div>
+        <div class="fel">Fellowship · UCSF</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= JOURNAL ======= -->
+<section class="journal" id="resources">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">— Patient Journal</div>
+      <h2 class="display">Education, not marketing.</h2>
+    </div>
+    <button class="btn ghost">Browse all articles →</button>
+  </div>
+  <div class="journal-grid">
+    <article class="j-card">
+      <div class="img"><img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=1200&q=80&auto=format&fit=crop" alt="" /></div>
+      <div class="body">
+        <div class="tag">Recovery</div>
+        <h3>The first 72 hours after ACL reconstruction: what recovery actually looks like.</h3>
+        <p>A candid, day-by-day account — swelling, sleep, mobility, and the small wins that matter more than the milestones.</p>
+        <div class="meta">Dr. Hughes · 8 min read</div>
+      </div>
+    </article>
+    <article class="j-card compact">
+      <div class="img"><img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80&auto=format&fit=crop" alt="" /></div>
+      <div class="body">
+        <div class="tag">Pre-Op</div>
+        <h3>Preparing your home for hip replacement recovery.</h3>
+        <div class="meta">5 min read</div>
+      </div>
+    </article>
+    <article class="j-card compact">
+      <div class="img"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80&auto=format&fit=crop" alt="" /></div>
+      <div class="body">
+        <div class="tag">Non-Surgical</div>
+        <h3>When conservative care is the right call — and when it isn't.</h3>
+        <div class="meta">6 min read</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ======= REFERRING CTA BAND ======= -->
+<section class="cta-band" id="referring">
+  <div>
+    <h2>Referring a patient? <span class="accent">Direct line.</span></h2>
+    <p>Physicians can reach our referral coordinator directly, submit imaging securely, and schedule same-week consultations for urgent cases. No fax purgatory.</p>
+  </div>
+  <div class="actions">
+    <button class="btn primary">Refer a patient</button>
+    <button class="btn ghost" style="color:var(--white);border-color:rgba(255,255,255,.4)">Physician portal</button>
+  </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<footer class="site">
+  <div class="foot-grid">
+    <div class="foot-logo foot">
+      <a href="#" class="logo">
+        <img src="logo/jbi-logo-final-inverted.svg" alt="Joint & Bone Institute" style="height:68px;width:auto;display:block"/>
+      </a>
+      <p class="foot-about">Fellowship-trained orthopedic surgeons serving Orange County and beyond. Knee, hip, shoulder, spine, and sports medicine since 1997.</p>
+    </div>
+    <div class="foot">
+      <h4>Care</h4>
+      <ul>
+        <li><a href="#">Conditions</a></li>
+        <li><a href="#">Specialties</a></li>
+        <li><a href="#">Surgeons</a></li>
+        <li><a href="#">Second Opinions</a></li>
+      </ul>
+    </div>
+    <div class="foot">
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="#">Patient Portal</a></li>
+        <li><a href="#">Forms &amp; Pre-Op</a></li>
+        <li><a href="#">Insurance</a></li>
+        <li><a href="#">Billing</a></li>
+      </ul>
+    </div>
+    <div class="foot">
+      <h4>Visit</h4>
+      <ul>
+        <li><a href="#">Newport Beach</a></li>
+        <li><a href="#">Irvine</a></li>
+        <li><a href="#">Long Beach</a></li>
+        <li><a href="tel:7145550199">714.555.0199</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 Joint &amp; Bone Institute of California. All rights reserved.</div>
+    <div style="display:flex;gap:18px"><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">HIPAA Notice</a></div>
+  </div>
+</footer>
+
+<script>
+  // Region data
+  const REGIONS = {
+    shoulder: { label: 'Shoulder', conditions: ['Rotator Cuff Tear','Shoulder Impingement','Labral Tear','Frozen Shoulder'] },
+    elbow:    { label: 'Elbow',    conditions: ['Tennis Elbow','Golfer\u2019s Elbow','UCL Injury','Olecranon Bursitis'] },
+    hip:      { label: 'Hip',      conditions: ['Hip Osteoarthritis','Labral Tear','Hip Impingement','Bursitis'] },
+    hand:     { label: 'Hand & Wrist', conditions: ['Carpal Tunnel','Trigger Finger','Thumb Arthritis','Wrist Fracture'] },
+    knee:     { label: 'Knee',     conditions: ['ACL Tear','Meniscus Tear','Knee Osteoarthritis','Patellar Instability','Cartilage Defect'] },
+    spine:    { label: 'Spine',    conditions: ['Herniated Disc','Spinal Stenosis','Sciatica','Degenerative Disc Disease'] },
+    foot:     { label: 'Foot & Ankle', conditions: ['Achilles Tendonitis','Plantar Fasciitis','Ankle Sprain','Bunion'] },
+    sports:   { label: 'Sports Injury', conditions: ['Overuse Tendonitis','Stress Fracture','Concussion Return','Hamstring Strain'] }
+  };
+  const regionsEl = document.getElementById('regions');
+  const rTitle = document.getElementById('rTitle');
+  const rMeta  = document.getElementById('rMeta');
+  const rList  = document.getElementById('rList');
+
+  function render(id){
+    const r = REGIONS[id];
+    rTitle.textContent = r.label;
+    rMeta.textContent  = r.conditions.length + ' conditions · 3 specialists';
+    rList.innerHTML = r.conditions.map(c =>
+      `<div class="condition-row"><div>${c}</div><svg class="arr-svg arr" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>`
+    ).join('');
+  }
+  regionsEl.addEventListener('click', e => {
+    const el = e.target.closest('.region');
+    if(!el) return;
+    regionsEl.querySelectorAll('.region').forEach(n => n.classList.remove('active'));
+    el.classList.add('active');
+    render(el.dataset.region);
+  });
+  render('knee');
+</script>
+
+</body>
+</html>

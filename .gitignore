@@ -1,0 +1,26 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code local state (keep settings, ignore caches)
+.claude/local/
+.claude/cache/
+.claude/sessions/
+
+# Temp / generated render files (regeneratable)
+logo/_*.html
+logo/_*.tmp
+
+# Sensitive — never commit
+.env
+.env.local
+*.key
+*.pem
+secrets.json
