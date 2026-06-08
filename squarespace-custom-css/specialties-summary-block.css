@@ -39,6 +39,9 @@
 }
 .sqs-block-summary-v2 .summary-thumbnail img {
   border-radius: 14px;
+  /* Show the whole image instead of cropping/zooming.
+     Remove this line (or change to 'cover') to fill-and-crop instead. */
+  object-fit: contain !important;
 }
 
 /* Card already has padding, so trim the content's own padding */
