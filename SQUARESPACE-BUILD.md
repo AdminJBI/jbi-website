@@ -419,24 +419,27 @@ About · Specialties ▾ · For Physicians · Patient Resources ▾ · 661.544.3
 - ☐ Hand & Wrist Care
 - ☐ Workplace Injuries
 
-### Post-Operative Care (hub + sub-pages)
+### Post-Operative Care (single blog post)
 
-A `/specialties/post-operative-care` **hub** page links to four service **sub-pages**.
-Built as self-contained Code Blocks (shared `.jbi-svc` style) in `code-blocks/post-op/`.
-Each carries its own `<h1>` — hide the native page title.
+One post in the `/specialties` blog at `/specialties/post-operative-care`
+(`code-blocks/post-operative-care.html`, class `.jbi-svc`). The four services are
+**H2 sections within the one post**, with a "jump to" anchor nav.
 
-| Page | File | Status |
-|---|---|---|
-| Post-Operative Care (hub) | `code-blocks/post-op/post-operative-care.html` | ✅ Built → `/specialties/post-operative-care` |
-| Injections | `code-blocks/post-op/injections.html` | ✅ Built → `/specialties/injections` |
-| Wound & Incision Care | `code-blocks/post-op/wound-care.html` | ✅ Built → `/specialties/wound-care` |
-| Pain Management | `code-blocks/post-op/pain-management.html` | ✅ Built → `/specialties/pain-management` |
-| Follow-Up & Suture Removal | `code-blocks/post-op/follow-up-care.html` | ✅ Built → `/specialties/follow-up-care` |
+| Section | Anchor |
+|---|---|
+| Injections | `#injections` |
+| Wound & Incision Care | `#wound-care` |
+| Pain Management | `#pain-management` |
+| Follow-Up & Suture Removal | `#follow-up` |
 
-Sub-page layout: navy hero (+ breadcrumb back to hub) → 2-col body (Overview ·
-When this matters · What to expect + callout) → sticky sidebar (CTA card +
-"Other Post-Op Services" cross-links) → navy bottom CTA. The hub uses a 4-card
-grid instead of the body/sidebar.
+Layout: navy hero → ivory intro + jump-nav pills → four H2 service sections
+(each: Overview · When this matters · What to expect + callout) → navy bottom CTA.
+Block carries its own `<h1>` — hide the post title for this post (or remove the
+`<h1>`). Suggested category: "Post-Operative Care" or Featured.
+
+(Chosen over a hub + 4 separate sub-pages: these services are stages of one
+recovery journey rather than individually-searched procedures, and keeping it a
+single post fits the blog-as-CMS feed/categories with one URL to maintain.)
 
 ### Post template (apply to each)
 
