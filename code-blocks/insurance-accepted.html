@@ -1,0 +1,185 @@
+<!--
+  JBI — Patient Resources page
+  PAGE: /insurance-accepted  (place inside the "Patient Resources" nav folder)
+  Paste into ONE Code Block. Hide the native page title (block has its own H1).
+  TODO: confirm/replace the accepted-plans list with the real plans before publishing.
+-->
+<style>
+  .jbi-spec{
+    width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;
+    font-family:'Archivo',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:#1a1f2a;background:#fff;
+  }
+  .jbi-spec *{box-sizing:border-box;}
+  .jbi-spec a{text-decoration:none;}
+  .jbi-spec h1,.jbi-spec h2,.jbi-spec h3,.jbi-spec p{margin-top:0;}
+  .jbi-spec .inner{max-width:1180px;margin:0 auto;padding:0 48px;}
+
+  .jbi-spec-btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    background:#c89a3a;color:#081a30;font-size:13px;font-weight:800;letter-spacing:1.1px;
+    text-transform:uppercase;padding:16px 26px;border-radius:3px;transition:all .25s ease;
+  }
+  .jbi-spec-btn:hover{background:#a37a27;transform:translateY(-2px);box-shadow:0 12px 28px rgba(200,154,58,.28);}
+  .jbi-spec-btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.34);}
+  .jbi-spec-btn.ghost:hover{background:#fff;color:#0f2d4f;box-shadow:none;}
+
+  /* HERO */
+  .jbi-spec-hero{
+    background:
+      radial-gradient(circle at top right, rgba(200,154,58,.18), transparent 34%),
+      radial-gradient(circle at bottom left, rgba(46,90,135,.48), transparent 34%),
+      #0f2d4f;
+    padding:86px 0 78px;color:#fff;overflow:hidden;
+  }
+  .jbi-spec-crumb{display:inline-block;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;font-weight:800;color:#f2d08a;margin-bottom:16px;}
+  .jbi-spec-crumb a{color:#f2d08a;}
+  .jbi-spec-crumb a:hover{color:#fff;}
+  .jbi-spec-eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#c89a3a;font-weight:800;margin-bottom:14px;}
+  .jbi-spec-hero h1{font-size:52px;line-height:1.04;letter-spacing:-1.6px;font-weight:850;color:#fff;margin-bottom:16px;max-width:840px;}
+  .jbi-spec-hero h1 .accent{color:#c89a3a;font-style:italic;font-weight:500;}
+  .jbi-spec-lede{font-size:20px;line-height:1.58;color:#e6edf5;max-width:720px;margin-bottom:28px;}
+  .jbi-spec-actions{display:flex;flex-wrap:wrap;gap:14px;}
+
+  /* BODY */
+  .jbi-spec-main{padding:74px 0 90px;}
+  .jbi-spec-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:56px;align-items:start;}
+  .jbi-spec-section{margin-bottom:38px;}
+  .jbi-spec-section:last-child{margin-bottom:0;}
+  .jbi-spec-section h2{font-size:31px;line-height:1.14;letter-spacing:-.7px;color:#0f2d4f;font-weight:850;margin-bottom:15px;}
+  .jbi-spec-section h2 .accent{color:#a37a27;font-style:italic;font-weight:500;}
+  .jbi-spec-section h3{font-size:14px;letter-spacing:1.3px;text-transform:uppercase;color:#0f2d4f;font-weight:900;margin:24px 0 11px;}
+  .jbi-spec-section p{font-size:17px;line-height:1.78;color:#3a3f4a;margin-bottom:16px;}
+  .jbi-spec-section ul{margin:0 0 16px;padding:0;list-style:none;}
+  .jbi-spec-section ul li{position:relative;padding:0 0 11px 28px;font-size:17px;line-height:1.6;color:#3a3f4a;}
+  .jbi-spec-section ul li::before{content:"";position:absolute;left:2px;top:9px;width:9px;height:9px;border-radius:50%;background:#c89a3a;}
+  .jbi-spec-callout{background:#f5efe3;border-left:4px solid #c89a3a;border-radius:14px;padding:22px 26px;margin:24px 0 0;}
+  .jbi-spec-callout p{margin:0;color:#0f2d4f;font-weight:650;font-size:16px;line-height:1.62;}
+
+  /* SIDEBAR */
+  .jbi-spec-sidebar{position:sticky;top:24px;}
+  .jbi-spec-side-card{background:#0f2d4f;color:#fff;border-radius:22px;padding:28px;box-shadow:0 24px 54px rgba(15,45,79,.18);margin-bottom:22px;}
+  .jbi-spec-side-card h3{color:#fff;font-size:22px;line-height:1.15;font-weight:850;margin-bottom:10px;}
+  .jbi-spec-side-card p{color:#cdd6e2;font-size:15px;line-height:1.6;margin-bottom:18px;}
+  .jbi-spec-side-card .phone{display:block;color:#f2d08a;font-size:20px;font-weight:850;letter-spacing:.3px;margin-bottom:18px;}
+  .jbi-spec-side-card .phone:hover{color:#fff;}
+  .jbi-spec-side-card .jbi-spec-btn{width:100%;}
+  .jbi-spec-list-card{background:#fff;border:1px solid rgba(15,45,79,.09);border-radius:22px;padding:26px;box-shadow:0 14px 36px rgba(15,45,79,.07);}
+  .jbi-spec-list-card h3{color:#0f2d4f;font-size:19px;font-weight:850;letter-spacing:-.3px;margin-bottom:14px;}
+  .jbi-spec-list{list-style:none;padding:0;margin:0;}
+  .jbi-spec-list li{border-top:1px solid rgba(15,45,79,.08);}
+  .jbi-spec-list li:first-child{border-top:0;}
+  .jbi-spec-list a{display:block;padding:13px 0;color:#0f2d4f;font-weight:800;font-size:15px;line-height:1.4;}
+  .jbi-spec-list a:hover{color:#a37a27;}
+
+  /* BOTTOM CTA */
+  .jbi-spec-bottom-cta{background:radial-gradient(circle at top right, rgba(200,154,58,.16), transparent 30%),#081a30;padding:72px 0;text-align:center;}
+  .jbi-spec-bottom-cta h2{color:#fff;font-size:38px;line-height:1.12;letter-spacing:-1px;font-weight:850;margin-bottom:14px;}
+  .jbi-spec-bottom-cta h2 .accent{color:#c89a3a;font-style:italic;font-weight:500;}
+  .jbi-spec-bottom-cta p{color:#cdd6e2;font-size:18px;line-height:1.6;max-width:640px;margin:0 auto 28px;}
+
+  @media(max-width:980px){
+    .jbi-spec .inner{padding:0 24px;}
+    .jbi-spec-hero{padding:66px 0 58px;}
+    .jbi-spec-hero h1{font-size:38px;letter-spacing:-1px;}
+    .jbi-spec-lede{font-size:18px;}
+    .jbi-spec-layout{grid-template-columns:1fr;gap:40px;}
+    .jbi-spec-sidebar{position:static;}
+    .jbi-spec-section h2{font-size:26px;}
+    .jbi-spec-bottom-cta h2{font-size:29px;}
+  }
+  @media(max-width:620px){
+    .jbi-spec-actions{flex-direction:column;}
+    .jbi-spec-btn{width:100%;}
+  }
+/* insurance plans grid (this page only) */
+  .jbi-spec-plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:6px 0 0;}
+  .jbi-spec-plan{display:flex;align-items:center;gap:11px;background:#fff;border:1px solid rgba(15,45,79,.1);border-radius:12px;padding:15px 18px;font-size:15px;font-weight:800;color:#0f2d4f;box-shadow:0 8px 22px rgba(15,45,79,.05);}
+  .jbi-spec-plan::before{content:"";width:8px;height:8px;border-radius:50%;background:#c89a3a;flex:none;}
+  @media(max-width:780px){.jbi-spec-plans{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:480px){.jbi-spec-plans{grid-template-columns:1fr;}}
+</style>
+<article class="jbi-spec">
+  <section class="jbi-spec-hero">
+    <div class="inner">
+      <div class="jbi-spec-crumb">Patient Resources</div>
+      <div class="jbi-spec-eyebrow">— Patient Resources</div>
+      <h1>Insurance <span class="accent">Accepted</span></h1>
+      <p class="jbi-spec-lede">
+        The Joint and Bone Institute of California accepts most major insurance plans &mdash; including 99% of PPOs and HMOs. Find your plan below, or call us and we&rsquo;ll verify your coverage for you.
+      </p>
+      <div class="jbi-spec-actions">
+        <a class="jbi-spec-btn" href="/request-appointment">Request an appointment →</a>
+        <a class="jbi-spec-btn ghost" href="tel:6615443352">Call (661) 544-3352</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="jbi-spec-main">
+    <div class="inner">
+      <div class="jbi-spec-layout">
+        <div class="jbi-spec-content">
+
+          <section class="jbi-spec-section">
+            <h2>Accepted insurance <span class="accent">plans.</span></h2>
+            <p>We&rsquo;re proud to accept 99% of PPOs and HMOs, so most patients across Bakersfield, Delano, Porterville, and the Central Valley are covered. The plans we work with include:</p>
+            <!-- TODO: CONFIRM / EDIT this list with your actual accepted plans before publishing -->
+            <div class="jbi-spec-plans">
+              <div class="jbi-spec-plan">Aetna</div>
+              <div class="jbi-spec-plan">Anthem Blue Cross</div>
+              <div class="jbi-spec-plan">Blue Shield of California</div>
+              <div class="jbi-spec-plan">Cigna</div>
+              <div class="jbi-spec-plan">Health Net</div>
+              <div class="jbi-spec-plan">UnitedHealthcare</div>
+              <div class="jbi-spec-plan">Medicare</div>
+              <div class="jbi-spec-plan">Tricare</div>
+              <div class="jbi-spec-plan">Workers&rsquo; Compensation</div>
+            </div>
+            <p style="margin-top:16px;">This is not a complete list, and coverage can vary by plan and policy. If you don&rsquo;t see your provider here, please call us &mdash; chances are we still accept it.</p>
+          </section>
+
+          <section class="jbi-spec-section">
+            <h2>Not sure if we take <span class="accent">your plan?</span></h2>
+            <p>The easiest way to confirm coverage is to call our office at <a href="tel:6615443352">(661) 544-3352</a>. Our team will check your benefits before your visit so there are no surprises. Have your insurance card handy when you call &mdash; we&rsquo;ll need your plan name and member ID.</p>
+            <div class="jbi-spec-callout">
+              <p>We verify your insurance coverage ahead of every appointment, so you&rsquo;ll know what to expect before you arrive.</p>
+            </div>
+          </section>
+
+        </div>
+
+        <aside class="jbi-spec-sidebar">
+          <div class="jbi-spec-side-card">
+            <h3>Verify your coverage</h3>
+            <p>Call and our team will confirm your insurance benefits before your appointment.</p>
+            <a class="phone" href="tel:6615443352">(661) 544-3352</a>
+            <a class="jbi-spec-btn" href="/request-appointment">Request an appointment →</a>
+          </div>
+          <div class="jbi-spec-list-card">
+            <h3>Patient Resources</h3>
+            <ul class="jbi-spec-list">
+              <li><a href="/patient-education">Patient Education</a></li>
+              <li><a href="/patient-portal">Patient Portal</a></li>
+              <li><a href="/request-appointment">Request an Appointment</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="jbi-spec-bottom-cta">
+    <div class="inner">
+      <h2>Questions about <span class="accent">insurance or billing?</span></h2>
+      <p>The Joint and Bone Institute of California is here to help. Call today and we&rsquo;ll verify your coverage and answer any questions.</p>
+      <div class="jbi-spec-actions" style="justify-content:center;">
+        <a class="jbi-spec-btn" href="/request-appointment">Request an appointment →</a>
+        <a class="jbi-spec-btn ghost" href="tel:6615443352">Call (661) 544-3352</a>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Insurance Accepted","about":"Accepted insurance plans at the Joint and Bone Institute of California","provider":{"@type":"MedicalOrganization","name":"Joint and Bone Institute of California","telephone":"+1-661-544-3352","areaServed":["Bakersfield, California","Delano, California","Porterville, California","Kern County, California"]}}
+</script>

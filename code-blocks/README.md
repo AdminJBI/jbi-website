@@ -10,6 +10,7 @@ Each `.html` file is a self-contained Squarespace **Code Block**. Drop the conte
 | `dr-karan-srivastava.html` | `/team/karan-srivastava` | Full page body (one Code Block) |
 | `kelly-guzman.html` | `/team/kelly-guzman` | Full page body (one Code Block) |
 | `post-operative-care.html` | `/specialties/post-operative-care` | Blog post body (one Code Block) |
+| `insurance-accepted.html` | `/insurance-accepted` (Patient Resources folder) | Full page body (one Code Block) |
 
 ## How to use
 
