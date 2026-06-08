@@ -1,29 +1,29 @@
 /* ============================================================
    JBI — Live Specialties Summary Block (homepage)
-   Card style matched to the "Care We Provide" cards: ivory bordered card with
-   the image INSET and rounded (padding around it), navy title, brass label.
-   Cosmetic only (padding + border-radius) — does NOT force image dimensions,
-   so thumbnails won't break.
+   Sized + styled to MATCH the "Care We Provide" cards exactly:
+   ivory bordered card, 32px padding, inset rounded 16:10 image, navy title.
 
    WHERE: Pages → Custom Code → Custom CSS (replace previous version).
 
-   BLOCK SETTINGS (Summary Block editor) — controls SIZE:
+   TO MATCH THE CARE CARDS' SIZE, set these in the Summary Block editor:
      - Layout: Grid
-     - Columns: 3  (use 2 for larger cards)
-     - Aspect Ratio: 3:2  (keeps thumbnails uniform)
+     - Columns: 3
+     - Image Aspect Ratio: 16:10   (matches the Care card images)
+     - Gutter / spacing between cards: ~24px
      - Design tab: Title + Description (post Excerpt) ON; Date optional
-     - Place the block in a FULL-WIDTH section
+     - Put the block in a FULL-WIDTH section with the SAME content width as the
+       Care We Provide section (so the row width matches)
    The blue outline + "SUMMARY" tag only show in EDIT mode, not live.
 
    NOTE: class names vary by Squarespace version; adjust selectors if needed.
    ============================================================ */
 
-/* Card: ivory, bordered, rounded, with padding so the image insets */
+/* Card: ivory, bordered, 20px radius, 32px padding (matches .jbi-service) */
 .sqs-block-summary-v2 .summary-item {
   background: #f5efe3;
   border: 1px solid rgba(15, 45, 79, 0.10);
   border-radius: 20px;
-  padding: 24px;
+  padding: 32px;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .sqs-block-summary-v2 .summary-item:hover {
@@ -32,47 +32,47 @@
   border-color: rgba(200, 154, 58, 0.40);
 }
 
-/* Inset, rounded image (like the Care We Provide cards) */
+/* Inset, rounded image — fills the 16:10 box like the Care cards.
+   (Set the 16:10 box in the block's Aspect Ratio setting.)
+   Switch object-fit to 'contain' if you prefer no cropping (may letterbox). */
 .sqs-block-summary-v2 .summary-thumbnail-outer-container {
   border-radius: 14px;
   overflow: hidden;
 }
 .sqs-block-summary-v2 .summary-thumbnail img {
   border-radius: 14px;
-  /* Show the whole image instead of cropping/zooming.
-     Remove this line (or change to 'cover') to fill-and-crop instead. */
-  object-fit: contain !important;
+  object-fit: cover !important;
 }
 
-/* Card already has padding, so trim the content's own padding */
+/* Card has 32px padding; give 24px gap above the text (matches Care) */
 .sqs-block-summary-v2 .summary-content {
-  padding: 22px 4px 4px !important;
+  padding: 24px 0 0 !important;
 }
 
 /* Category label (brass) */
 .sqs-block-summary-v2 .summary-metadata--primary,
 .sqs-block-summary-v2 .summary-metadata--primary a {
   color: #a37a27 !important;
-  font-size: 12px !important;
-  letter-spacing: 2px !important;
+  font-size: 13px !important;
+  letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
   font-weight: 700 !important;
   text-decoration: none !important;
 }
 
-/* Title (navy Roboto Slab) */
+/* Title (navy, 28px — matches .jbi-service-title) */
 .sqs-block-summary-v2 .summary-title {
   font-family: 'Roboto Slab', Georgia, serif !important;
-  font-size: 24px !important;
+  font-size: 28px !important;
   font-weight: 700 !important;
   letter-spacing: -0.5px !important;
   line-height: 1.2 !important;
-  margin: 10px 0 12px !important;
+  margin: 12px 0 14px !important;
 }
 .sqs-block-summary-v2 .summary-title a { color: #0f2d4f !important; }
 .sqs-block-summary-v2 .summary-title a:hover { color: #a37a27 !important; }
 
-/* Description (post Excerpt) */
+/* Description (post Excerpt) — 15px like the Care body */
 .sqs-block-summary-v2 .summary-excerpt,
 .sqs-block-summary-v2 .summary-excerpt p {
   color: #1a1f2a !important;
