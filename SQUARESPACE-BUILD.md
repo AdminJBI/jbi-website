@@ -419,6 +419,25 @@ About · Specialties ▾ · For Physicians · Patient Resources ▾ · 661.544.3
 - ☐ Hand & Wrist Care
 - ☐ Workplace Injuries
 
+### Post-Operative Care (hub + sub-pages)
+
+A `/specialties/post-operative-care` **hub** page links to four service **sub-pages**.
+Built as self-contained Code Blocks (shared `.jbi-svc` style) in `code-blocks/post-op/`.
+Each carries its own `<h1>` — hide the native page title.
+
+| Page | File | Status |
+|---|---|---|
+| Post-Operative Care (hub) | `code-blocks/post-op/post-operative-care.html` | ✅ Built → `/specialties/post-operative-care` |
+| Injections | `code-blocks/post-op/injections.html` | ✅ Built → `/specialties/injections` |
+| Wound & Incision Care | `code-blocks/post-op/wound-care.html` | ✅ Built → `/specialties/wound-care` |
+| Pain Management | `code-blocks/post-op/pain-management.html` | ✅ Built → `/specialties/pain-management` |
+| Follow-Up & Suture Removal | `code-blocks/post-op/follow-up-care.html` | ✅ Built → `/specialties/follow-up-care` |
+
+Sub-page layout: navy hero (+ breadcrumb back to hub) → 2-col body (Overview ·
+When this matters · What to expect + callout) → sticky sidebar (CTA card +
+"Other Post-Op Services" cross-links) → navy bottom CTA. The hub uses a 4-card
+grid instead of the body/sidebar.
+
 ### Post template (apply to each)
 
 Each post body should include these blocks:

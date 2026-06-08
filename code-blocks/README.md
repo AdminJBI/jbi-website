@@ -9,6 +9,11 @@ Each `.html` file is a self-contained Squarespace **Code Block**. Drop the conte
 | `care-we-provide.html` | Homepage | After Team section, before Footer |
 | `dr-karan-srivastava.html` | `/team/karan-srivastava` | Full page body (one Code Block) |
 | `kelly-guzman.html` | `/team/kelly-guzman` | Full page body (one Code Block) |
+| `post-op/post-operative-care.html` | `/specialties/post-operative-care` | Hub page body (one Code Block) |
+| `post-op/injections.html` | `/specialties/injections` | Sub-page body (one Code Block) |
+| `post-op/wound-care.html` | `/specialties/wound-care` | Sub-page body (one Code Block) |
+| `post-op/pain-management.html` | `/specialties/pain-management` | Sub-page body (one Code Block) |
+| `post-op/follow-up-care.html` | `/specialties/follow-up-care` | Sub-page body (one Code Block) |
 
 ## How to use
 
@@ -35,6 +40,23 @@ H1. Still set the SEO Title in Page Settings → SEO for the browser tab and Goo
 
 Pending profiles (to build from the same `.jbi-doc` template):
 - `dr-pramod-srivastava.html` — Comprehensive Orthopedic Surgeon
+
+## Post-Operative Care (hub + sub-pages)
+
+Lives in `post-op/`. Shared style class `.jbi-svc` (navy/brass/ivory, Archivo).
+The canonical CSS is `post-op/_TEMPLATE-STYLE.html` — **not a page**; it's the
+single source to edit, then paste the updated `<style>` into each page file.
+
+Each page below is its own full-page Code Block (own `<h1>` → hide the native title):
+
+- **Hub** — `post-op/post-operative-care.html` → `/specialties/post-operative-care`
+  (links to the 4 service cards below)
+- `post-op/injections.html` → `/specialties/injections`
+- `post-op/wound-care.html` → `/specialties/wound-care`
+- `post-op/pain-management.html` → `/specialties/pain-management`
+- `post-op/follow-up-care.html` → `/specialties/follow-up-care`
+
+Each sub-page cross-links the other three plus the hub via the sidebar.
 
 ## Sections not yet built (pending code blocks)
 
