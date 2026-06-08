@@ -2,8 +2,6 @@
   JBI — Patient Resources page
   PAGE: /insurance-accepted  (place inside the "Patient Resources" nav folder)
   Paste into ONE Code Block. Hide the native page title (block has its own H1).
-  Logos: each card shows a placeholder tile (.ins-ph). To use a real logo,
-  replace that tile with <img src="LOGO_URL" alt="[Insurer] logo">.
 -->
 <style>
   .jbi-spec{
@@ -93,16 +91,15 @@
     .jbi-spec-actions{flex-direction:column;}
     .jbi-spec-btn{width:100%;}
   }
-/* insurance logo grid (this page only) */
-  .ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:6px 0 0;}
-  .ins-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;background:#fff;border:1px solid rgba(15,45,79,.1);border-radius:16px;padding:24px 16px;box-shadow:0 10px 26px rgba(15,45,79,.05);transition:all .2s ease;}
-  .ins-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(15,45,79,.12);border-color:rgba(200,154,58,.45);}
-  .ins-logo{height:66px;width:100%;display:flex;align-items:center;justify-content:center;}
-  .ins-logo img{max-width:100%;max-height:66px;width:auto;object-fit:contain;}
-  .ins-ph{min-width:104px;height:60px;padding:0 14px;border-radius:10px;background:#f5efe3;border:1px solid rgba(15,45,79,.08);color:#0f2d4f;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:19px;letter-spacing:1px;}
-  .ins-name{font-size:14px;font-weight:800;color:#0f2d4f;line-height:1.32;letter-spacing:.2px;}
-  @media(max-width:820px){.ins-grid{grid-template-columns:repeat(2,1fr);}}
-  @media(max-width:460px){.ins-grid{grid-template-columns:1fr;}}
+/* accepted-plans grid (this page only) */
+  .ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:8px 0 0;}
+  .ins-card{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid rgba(15,45,79,.1);border-radius:12px;padding:16px 18px;box-shadow:0 8px 22px rgba(15,45,79,.05);transition:all .2s ease;}
+  .ins-card:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(15,45,79,.11);border-color:rgba(200,154,58,.5);}
+  .ins-check{flex:none;width:28px;height:28px;border-radius:50%;background:#f5efe3;display:flex;align-items:center;justify-content:center;}
+  .ins-check svg{width:15px;height:15px;display:block;}
+  .ins-name{font-size:15px;font-weight:800;color:#0f2d4f;line-height:1.32;letter-spacing:.2px;}
+  @media(max-width:860px){.ins-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:480px){.ins-grid{grid-template-columns:1fr;}}
 </style>
 <article class="jbi-spec">
   <section class="jbi-spec-hero">
@@ -129,85 +126,21 @@
             <h2>Plans we <span class="accent">accept.</span></h2>
             <p>We&rsquo;re proud to accept 99% of PPOs and HMOs, so most patients across Bakersfield, Delano, Porterville, and the Central Valley are covered. The plans we work with include:</p>
 
-            <!--
-              TO ADD A REAL LOGO: in each card, replace
-                <div class="ins-ph">XX</div>
-              with
-                <img src="YOUR_SQUARESPACE_LOGO_URL" alt="[Insurer] logo">
-              (the slot auto-fits the logo; leave the .ins-name below unchanged)
-            -->
             <div class="ins-grid">
-
-              <div class="ins-card">
-                <div class="ins-logo"><div class="ins-ph">ABC</div></div>
-                <div class="ins-name">Anthem Blue Cross of California</div>
-              </div>
-
-              <div class="ins-card">
-                <div class="ins-logo"><div class="ins-ph">BSC</div></div>
-                <div class="ins-name">Blue Shield of California</div>
-              </div>
-
-              <div class="ins-card">
-                <div class="ins-logo"><div class="ins-ph">PPO</div></div>
-                <div class="ins-name">Blue Shield PPO</div>
-              </div>
-
-              <div class="ins-card">
-                <div class="ins-logo"><div class="ins-ph">CP</div></div>
-                <div class="ins-name">Commercial Plan</div>
-              </div>
-
-              <div class="ins-card">
-                <div class="ins-logo"><div class="ins-ph">DRMG</div></div>
-                <div class="ins-name">Delano Regional Medical Group (Managed Care Systems)</div>
-              </div>
-
-              <div class="ins-card">
-                <div class="ins-logo"><div class="ins-ph">DH</div></div>
-                <div class="ins-name">Dignity Health</div>
-              </div>
-
-              <div class="ins-card">
-                <div class="ins-logo"><div class="ins-ph">GEM</div></div>
-                <div class="ins-name">GEMCare Health Plan, Kern County EPO</div>
-              </div>
-
-              <div class="ins-card">
-                <div class="ins-logo"><div class="ins-ph">GMG</div></div>
-                <div class="ins-name">GEMCare Medical Group</div>
-              </div>
-
-              <div class="ins-card">
-                <div class="ins-logo"><div class="ins-ph">IMG</div></div>
-                <div class="ins-name">Independence Medical Group</div>
-              </div>
-
-              <div class="ins-card">
-                <div class="ins-logo"><div class="ins-ph">K</div></div>
-                <div class="ins-name">Kaiser</div>
-              </div>
-
-              <div class="ins-card">
-                <div class="ins-logo"><div class="ins-ph">KFHS</div></div>
-                <div class="ins-name">Kern Family Health Systems</div>
-              </div>
-
-              <div class="ins-card">
-                <div class="ins-logo"><div class="ins-ph">KL</div></div>
-                <div class="ins-name">Kern Legacy</div>
-              </div>
-
-              <div class="ins-card">
-                <div class="ins-logo"><div class="ins-ph">LS</div></div>
-                <div class="ins-name">LaSalle</div>
-              </div>
-
-              <div class="ins-card">
-                <div class="ins-logo"><div class="ins-ph">QCD</div></div>
-                <div class="ins-name">Qual-Care Dignity</div>
-              </div>
-
+              <div class="ins-card"><span class="ins-check"><svg viewBox="0 0 24 24" fill="none" stroke="#c89a3a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span><span class="ins-name">Anthem Blue Cross of California</span></div>
+              <div class="ins-card"><span class="ins-check"><svg viewBox="0 0 24 24" fill="none" stroke="#c89a3a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span><span class="ins-name">Blue Shield of California</span></div>
+              <div class="ins-card"><span class="ins-check"><svg viewBox="0 0 24 24" fill="none" stroke="#c89a3a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span><span class="ins-name">Blue Shield PPO</span></div>
+              <div class="ins-card"><span class="ins-check"><svg viewBox="0 0 24 24" fill="none" stroke="#c89a3a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span><span class="ins-name">Commercial Plan</span></div>
+              <div class="ins-card"><span class="ins-check"><svg viewBox="0 0 24 24" fill="none" stroke="#c89a3a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span><span class="ins-name">Delano Regional Medical Group (Managed Care Systems)</span></div>
+              <div class="ins-card"><span class="ins-check"><svg viewBox="0 0 24 24" fill="none" stroke="#c89a3a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span><span class="ins-name">Dignity Health</span></div>
+              <div class="ins-card"><span class="ins-check"><svg viewBox="0 0 24 24" fill="none" stroke="#c89a3a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span><span class="ins-name">GEMCare Health Plan, Kern County EPO</span></div>
+              <div class="ins-card"><span class="ins-check"><svg viewBox="0 0 24 24" fill="none" stroke="#c89a3a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span><span class="ins-name">GEMCare Medical Group</span></div>
+              <div class="ins-card"><span class="ins-check"><svg viewBox="0 0 24 24" fill="none" stroke="#c89a3a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span><span class="ins-name">Independence Medical Group</span></div>
+              <div class="ins-card"><span class="ins-check"><svg viewBox="0 0 24 24" fill="none" stroke="#c89a3a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span><span class="ins-name">Kaiser</span></div>
+              <div class="ins-card"><span class="ins-check"><svg viewBox="0 0 24 24" fill="none" stroke="#c89a3a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span><span class="ins-name">Kern Family Health Systems</span></div>
+              <div class="ins-card"><span class="ins-check"><svg viewBox="0 0 24 24" fill="none" stroke="#c89a3a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span><span class="ins-name">Kern Legacy</span></div>
+              <div class="ins-card"><span class="ins-check"><svg viewBox="0 0 24 24" fill="none" stroke="#c89a3a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span><span class="ins-name">LaSalle</span></div>
+              <div class="ins-card"><span class="ins-check"><svg viewBox="0 0 24 24" fill="none" stroke="#c89a3a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span><span class="ins-name">Qual-Care Dignity</span></div>
             </div>
 
             <p style="margin-top:18px;">This list may not reflect every plan, and coverage can vary by policy. If you don&rsquo;t see your provider here, please call us &mdash; chances are we still accept it.</p>
