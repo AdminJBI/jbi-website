@@ -1,0 +1,92 @@
+/* ============================================================
+   JBI — Patient Education "Featured" Summary Block (homepage)
+   Turns a normal Grid Summary Block into a 1-big-left + 2-small-right layout,
+   like the hardcoded "Understanding your care" section.
+
+   ⚠️ MUST be scoped to ONLY this block, or it will break the Specialties
+   summary grid (they share the same class). Replace #block-REPLACE_ME below
+   with this block's real id (see how-to in chat), in EVERY selector.
+
+   BLOCK SETTINGS (Summary Block editor):
+     - Layout: Grid
+     - Items: show 3  (1 featured + 2 on the right)
+     - Aspect Ratio: 16:10
+     - Design tab: Title + Description (Excerpt) ON; Date optional
+     - Sort: Most Recent  → newest post becomes the big featured one
+   WHERE: Pages → Custom Code → Custom CSS (append).
+   ============================================================ */
+
+/* Two-column featured grid: big left, stacked right */
+#block-REPLACE_ME .summary-item-list,
+#block-REPLACE_ME .summary-item-list-container {
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr;
+  grid-auto-rows: 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* Base card skin (white card, soft border) */
+#block-REPLACE_ME .summary-item {
+  background: #ffffff;
+  border: 1px solid rgba(15, 45, 79, 0.10);
+  border-radius: 18px;
+  overflow: hidden;
+  margin: 0 !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+#block-REPLACE_ME .summary-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px rgba(15, 45, 79, 0.12);
+  border-color: rgba(200, 154, 58, 0.40);
+}
+
+/* FEATURED = first item: big, left column, spans both right rows */
+#block-REPLACE_ME .summary-item:first-child {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+}
+#block-REPLACE_ME .summary-item:first-child .summary-content { padding: 26px 28px 30px !important; }
+#block-REPLACE_ME .summary-item:first-child .summary-title { font-size: 28px !important; }
+
+/* RIGHT items: horizontal — small image left, text right */
+#block-REPLACE_ME .summary-item:not(:first-child) {
+  grid-column: 2;
+  display: grid !important;
+  grid-template-columns: 160px 1fr;
+  align-items: stretch;
+}
+#block-REPLACE_ME .summary-item:not(:first-child) .summary-thumbnail-outer-container { height: 100%; }
+#block-REPLACE_ME .summary-item:not(:first-child) .summary-thumbnail img {
+  width: 100%; height: 100%; object-fit: cover !important;
+}
+#block-REPLACE_ME .summary-item:not(:first-child) .summary-content { padding: 18px 20px !important; }
+#block-REPLACE_ME .summary-item:not(:first-child) .summary-title { font-size: 19px !important; }
+
+/* ---- Shared typography ---- */
+#block-REPLACE_ME .summary-metadata--primary,
+#block-REPLACE_ME .summary-metadata--primary a {
+  color: #a37a27 !important; font-size: 12px !important; letter-spacing: 1.6px !important;
+  text-transform: uppercase !important; font-weight: 700 !important; text-decoration: none !important;
+}
+#block-REPLACE_ME .summary-title {
+  font-family: 'Roboto Slab', Georgia, serif !important;
+  font-weight: 700 !important; letter-spacing: -0.4px !important; line-height: 1.2 !important;
+  margin: 8px 0 8px !important;
+}
+#block-REPLACE_ME .summary-title a { color: #0f2d4f !important; }
+#block-REPLACE_ME .summary-title a:hover { color: #a37a27 !important; }
+#block-REPLACE_ME .summary-excerpt,
+#block-REPLACE_ME .summary-excerpt p { color: #3a3f4a !important; font-size: 14.5px !important; line-height: 1.55 !important; }
+#block-REPLACE_ME .summary-metadata--secondary { color: #6a6558 !important; font-size: 12px !important; }
+#block-REPLACE_ME .summary-read-more-link { color: #0f2d4f !important; font-weight: 700 !important; font-size: 12px !important; text-decoration: none !important; }
+
+/* Stack on mobile */
+@media (max-width: 900px) {
+  #block-REPLACE_ME .summary-item-list,
+  #block-REPLACE_ME .summary-item-list-container { grid-template-columns: 1fr; }
+  #block-REPLACE_ME .summary-item:first-child { grid-row: auto; }
+  #block-REPLACE_ME .summary-item:not(:first-child) { grid-column: 1; }
+}
