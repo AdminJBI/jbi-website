@@ -52,6 +52,26 @@ The block has its own `<h1>` in the hero — hide the blog post title for this p
 (or delete the `<h1>` and let the native title show). Set the SEO Title in the
 post's SEO settings. Suggested category: "Post-Operative Care" or Featured.
 
+## Specialty blog posts (SEO)
+
+Lives in `specialties/`. Shared style class `.jbi-spec` (navy/brass/ivory, Archivo);
+canonical CSS is `specialties/_TEMPLATE-STYLE.html` (not a page). Each post is a
+self-contained Code Block for a post in the `/specialties` blog, SEO-optimized
+(primary keyword in the H1, opening line, multiple H2s and body; local terms —
+Bakersfield / Kern County / Central Valley; `(661) 544-3352`; `MedicalWebPage`
+JSON-LD). Each carries its own `<h1>` → hide the native post title and set the SEO Title.
+
+| Post | File | Slug |
+|---|---|---|
+| Knee Replacement | `specialties/knee-replacement.html` | `/specialties/knee-replacement` |
+| Anterior Hip Replacement | `specialties/anterior-hip-replacement.html` | `/specialties/anterior-hip-replacement` |
+| Stem Cell Therapy | `specialties/stem-cell-therapy.html` | `/specialties/stem-cell-therapy` |
+| PRP Injections | `specialties/prp-injections.html` | `/specialties/prp-injections` |
+| Sports Injuries | `specialties/sports-injuries.html` | `/specialties/sports-injuries` |
+| Rotator Cuff & Shoulder Injuries | `specialties/rotator-cuff-shoulder-injuries.html` | `/specialties/rotator-cuff-shoulder-injuries` |
+| Hand & Carpal Tunnel Surgery | `specialties/carpal-tunnel-surgery.html` | `/specialties/carpal-tunnel-surgery` |
+| Fracture Care | `specialties/fracture-care.html` | `/specialties/fracture-care` |
+
 ## Sections not yet built (pending code blocks)
 
 - `patient-journal.html` — homepage Patient Journal teaser (3 article cards)

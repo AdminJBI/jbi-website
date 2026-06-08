@@ -1,0 +1,178 @@
+<!--
+  JBI specialty blog post — PAGE: /specialties/fracture-care
+  Primary keyword: fracture care. Paste into ONE Code Block.
+  Hide the native post title and set the SEO Title.
+-->
+<style>
+  .jbi-spec{
+    width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;
+    font-family:'Archivo',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:#1a1f2a;background:#fff;
+  }
+  .jbi-spec *{box-sizing:border-box;}
+  .jbi-spec a{text-decoration:none;}
+  .jbi-spec h1,.jbi-spec h2,.jbi-spec h3,.jbi-spec p{margin-top:0;}
+  .jbi-spec .inner{max-width:1180px;margin:0 auto;padding:0 48px;}
+
+  .jbi-spec-btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    background:#c89a3a;color:#081a30;font-size:13px;font-weight:800;letter-spacing:1.1px;
+    text-transform:uppercase;padding:16px 26px;border-radius:3px;transition:all .25s ease;
+  }
+  .jbi-spec-btn:hover{background:#a37a27;transform:translateY(-2px);box-shadow:0 12px 28px rgba(200,154,58,.28);}
+  .jbi-spec-btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.34);}
+  .jbi-spec-btn.ghost:hover{background:#fff;color:#0f2d4f;box-shadow:none;}
+
+  /* HERO */
+  .jbi-spec-hero{
+    background:
+      radial-gradient(circle at top right, rgba(200,154,58,.18), transparent 34%),
+      radial-gradient(circle at bottom left, rgba(46,90,135,.48), transparent 34%),
+      #0f2d4f;
+    padding:86px 0 78px;color:#fff;overflow:hidden;
+  }
+  .jbi-spec-crumb{display:inline-block;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;font-weight:800;color:#f2d08a;margin-bottom:16px;}
+  .jbi-spec-crumb a{color:#f2d08a;}
+  .jbi-spec-crumb a:hover{color:#fff;}
+  .jbi-spec-eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#c89a3a;font-weight:800;margin-bottom:14px;}
+  .jbi-spec-hero h1{font-size:52px;line-height:1.04;letter-spacing:-1.6px;font-weight:850;color:#fff;margin-bottom:16px;max-width:840px;}
+  .jbi-spec-hero h1 .accent{color:#c89a3a;font-style:italic;font-weight:500;}
+  .jbi-spec-lede{font-size:20px;line-height:1.58;color:#e6edf5;max-width:720px;margin-bottom:28px;}
+  .jbi-spec-actions{display:flex;flex-wrap:wrap;gap:14px;}
+
+  /* BODY */
+  .jbi-spec-main{padding:74px 0 90px;}
+  .jbi-spec-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:56px;align-items:start;}
+  .jbi-spec-section{margin-bottom:38px;}
+  .jbi-spec-section:last-child{margin-bottom:0;}
+  .jbi-spec-section h2{font-size:31px;line-height:1.14;letter-spacing:-.7px;color:#0f2d4f;font-weight:850;margin-bottom:15px;}
+  .jbi-spec-section h2 .accent{color:#a37a27;font-style:italic;font-weight:500;}
+  .jbi-spec-section h3{font-size:14px;letter-spacing:1.3px;text-transform:uppercase;color:#0f2d4f;font-weight:900;margin:24px 0 11px;}
+  .jbi-spec-section p{font-size:17px;line-height:1.78;color:#3a3f4a;margin-bottom:16px;}
+  .jbi-spec-section ul{margin:0 0 16px;padding:0;list-style:none;}
+  .jbi-spec-section ul li{position:relative;padding:0 0 11px 28px;font-size:17px;line-height:1.6;color:#3a3f4a;}
+  .jbi-spec-section ul li::before{content:"";position:absolute;left:2px;top:9px;width:9px;height:9px;border-radius:50%;background:#c89a3a;}
+  .jbi-spec-callout{background:#f5efe3;border-left:4px solid #c89a3a;border-radius:14px;padding:22px 26px;margin:24px 0 0;}
+  .jbi-spec-callout p{margin:0;color:#0f2d4f;font-weight:650;font-size:16px;line-height:1.62;}
+
+  /* SIDEBAR */
+  .jbi-spec-sidebar{position:sticky;top:24px;}
+  .jbi-spec-side-card{background:#0f2d4f;color:#fff;border-radius:22px;padding:28px;box-shadow:0 24px 54px rgba(15,45,79,.18);margin-bottom:22px;}
+  .jbi-spec-side-card h3{color:#fff;font-size:22px;line-height:1.15;font-weight:850;margin-bottom:10px;}
+  .jbi-spec-side-card p{color:#cdd6e2;font-size:15px;line-height:1.6;margin-bottom:18px;}
+  .jbi-spec-side-card .phone{display:block;color:#f2d08a;font-size:20px;font-weight:850;letter-spacing:.3px;margin-bottom:18px;}
+  .jbi-spec-side-card .phone:hover{color:#fff;}
+  .jbi-spec-side-card .jbi-spec-btn{width:100%;}
+  .jbi-spec-list-card{background:#fff;border:1px solid rgba(15,45,79,.09);border-radius:22px;padding:26px;box-shadow:0 14px 36px rgba(15,45,79,.07);}
+  .jbi-spec-list-card h3{color:#0f2d4f;font-size:19px;font-weight:850;letter-spacing:-.3px;margin-bottom:14px;}
+  .jbi-spec-list{list-style:none;padding:0;margin:0;}
+  .jbi-spec-list li{border-top:1px solid rgba(15,45,79,.08);}
+  .jbi-spec-list li:first-child{border-top:0;}
+  .jbi-spec-list a{display:block;padding:13px 0;color:#0f2d4f;font-weight:800;font-size:15px;line-height:1.4;}
+  .jbi-spec-list a:hover{color:#a37a27;}
+
+  /* BOTTOM CTA */
+  .jbi-spec-bottom-cta{background:radial-gradient(circle at top right, rgba(200,154,58,.16), transparent 30%),#081a30;padding:72px 0;text-align:center;}
+  .jbi-spec-bottom-cta h2{color:#fff;font-size:38px;line-height:1.12;letter-spacing:-1px;font-weight:850;margin-bottom:14px;}
+  .jbi-spec-bottom-cta h2 .accent{color:#c89a3a;font-style:italic;font-weight:500;}
+  .jbi-spec-bottom-cta p{color:#cdd6e2;font-size:18px;line-height:1.6;max-width:640px;margin:0 auto 28px;}
+
+  @media(max-width:980px){
+    .jbi-spec .inner{padding:0 24px;}
+    .jbi-spec-hero{padding:66px 0 58px;}
+    .jbi-spec-hero h1{font-size:38px;letter-spacing:-1px;}
+    .jbi-spec-lede{font-size:18px;}
+    .jbi-spec-layout{grid-template-columns:1fr;gap:40px;}
+    .jbi-spec-sidebar{position:static;}
+    .jbi-spec-section h2{font-size:26px;}
+    .jbi-spec-bottom-cta h2{font-size:29px;}
+  }
+  @media(max-width:620px){
+    .jbi-spec-actions{flex-direction:column;}
+    .jbi-spec-btn{width:100%;}
+  }
+</style>
+<article class="jbi-spec">
+  <section class="jbi-spec-hero">
+    <div class="inner">
+      <div class="jbi-spec-crumb"><a href="/specialties">← Specialties</a></div>
+      <div class="jbi-spec-eyebrow">— Hand &amp; Fracture</div>
+      <h1>Fracture Care <span class="accent">in Bakersfield, CA</span></h1>
+      <p class="jbi-spec-lede">
+        With the proper fracture care, broken bones heal gradually and comfortably. The Joint and Bone Institute of California provides expert fracture care for every type of break.
+      </p>
+      <div class="jbi-spec-actions">
+        <a class="jbi-spec-btn" href="/request-appointment">Request a consultation →</a>
+        <a class="jbi-spec-btn ghost" href="tel:6615443352">Call (661) 544-3352</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="jbi-spec-main">
+    <div class="inner">
+      <div class="jbi-spec-layout">
+        <div class="jbi-spec-content">
+
+          <section class="jbi-spec-section">
+            <h2>Fracture care at the Joint and Bone Institute of California</h2>
+            <p>With the proper care, fractures will gradually heal without causing significant pain along the way. If you know or suspect you have a fracture at any body site, reach out to our medical professionals today by dialing <a href="tel:6615443352">(661) 544-3352</a> to schedule an appointment where we discuss your fracture care.</p>
+            <p>The majority of fractures are treated in a manner that immobilizes the bone so it can heal naturally. Such immobilization is accomplished with a cast, a splint, a soft brace, or possibly even a boot. In certain cases, the broken bone has to be set in place or returned to alignment as part of your fracture care.</p>
+          </section>
+
+          <section class="jbi-spec-section">
+            <h2>Personalized <span class="accent">fracture treatment.</span></h2>
+            <p>Our fracture care specialists understand the subtle nuances of fracture setting that help a compromised bone heal properly. Our team will also determine whether surgery is necessary to keep the bone in position. The best treatment for your unique fracture hinges on the type of fracture as well as the specific bone or bones fractured. Fracture correction can occur through several different approaches:</p>
+            <ul>
+              <li>Traction alignment</li>
+              <li>Casting and bracing</li>
+              <li>Setting the bone back into alignment</li>
+              <li>External fixation with metal pins and wires</li>
+            </ul>
+          </section>
+
+          <section class="jbi-spec-section">
+            <h2>When to seek <span class="accent">fracture care.</span></h2>
+            <p>If you know or suspect a bone is broken, prompt fracture care gives the bone the best chance to heal properly. Don&rsquo;t wait &mdash; the sooner a fracture is evaluated and immobilized, the smoother the recovery tends to be.</p>
+            <div class="jbi-spec-callout">
+              <p>The right fracture care depends on the type of break and the bone involved. Our specialists tailor every treatment plan to help your bone heal properly.</p>
+            </div>
+          </section>
+
+        </div>
+
+        <aside class="jbi-spec-sidebar">
+          <div class="jbi-spec-side-card">
+            <h3>Think you have a fracture?</h3>
+            <p>Get prompt fracture care at the Joint and Bone Institute of California.</p>
+            <a class="phone" href="tel:6615443352">(661) 544-3352</a>
+            <a class="jbi-spec-btn" href="/request-appointment">Request a consultation →</a>
+          </div>
+          <div class="jbi-spec-list-card">
+            <h3>Related Specialties</h3>
+            <ul class="jbi-spec-list">
+              <li><a href="/specialties/carpal-tunnel-surgery">Hand &amp; Carpal Tunnel Surgery</a></li>
+              <li><a href="/specialties/sports-injuries">Sports Injuries</a></li>
+              <li><a href="/specialties/rotator-cuff-shoulder-injuries">Rotator Cuff &amp; Shoulder Injuries</a></li>
+              <li><a href="/specialties/post-operative-care">Post-Operative Care</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="jbi-spec-bottom-cta">
+    <div class="inner">
+      <h2>Heal your fracture <span class="accent">the right way.</span></h2>
+      <p>The Joint and Bone Institute of California provides expert fracture care in Bakersfield and across the Central Valley. Call today.</p>
+      <div class="jbi-spec-actions" style="justify-content:center;">
+        <a class="jbi-spec-btn" href="/request-appointment">Request a consultation →</a>
+        <a class="jbi-spec-btn ghost" href="tel:6615443352">Call (661) 544-3352</a>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Fracture Care","about":{"@type":"MedicalProcedure","name":"Fracture Care","procedureType":"https://schema.org/TherapeuticProcedure"},"provider":{"@type":"MedicalOrganization","name":"Joint and Bone Institute of California","telephone":"+1-661-544-3352","areaServed":["Bakersfield, California","Delano, California","Porterville, California","Kern County, California"]}}
+</script>
