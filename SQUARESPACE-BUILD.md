@@ -530,6 +530,45 @@ Each card: photo (16:10 aspect) + brass kicker (01 · Category) + navy slab titl
 
 ---
 
+## Physician profile pages (`/team/<slug>`)
+
+Individual surgeon bios built as a single full-page Code Block. Class: `.jbi-doc`
+(full-bleed `100vw` break-out). Source files live in `code-blocks/`.
+
+**Page setup**: the Code Block contains its own `<h1>` in the hero, so HIDE the
+Squarespace native page title (Page Settings → uncheck "Show page title" /
+"Header Display") to avoid a duplicate H1. Still set the SEO Title under
+Page Settings → SEO.
+
+**Layout**: navy hero (portrait + name + role + lede + CTA + specialty tags) →
+ivory quick-facts strip (4 cards) → 2-col body (story / training timeline /
+approach + sticky sidebar with "Schedule" card and "Areas of Care" list) →
+navy bottom CTA band. Includes `Physician` JSON-LD schema.
+
+| Page | File | Status |
+|---|---|---|
+| Karan Srivastava, MD | `code-blocks/dr-karan-srivastava.html` | ✅ Live at `/team/karan-srivastava` |
+| Pramod Srivastava, M.D | _to build_ | ☐ Pending |
+| Kelly Guzman, PA | _to build_ | ☐ Pending |
+
+**Dr. Karan Srivastava — bio facts (source of truth):**
+- Founder & CEO, Joint & Bone Institute of California
+- Raised in NE Bakersfield · Garces Memorial High School (2006)
+- Undergrad: University of Miami — B.S. Biology & Chemistry, *summa cum laude*
+- Med school: University of Miami Miller School of Medicine — AOA Honor Society
+- Residency: Henry Ford Health System, Michigan (general ortho + trauma)
+- Fellowship: Mercy Medical Center, Baltimore (anterior hip + robotic joint replacement)
+- Phone: 661.544.3352 · CTAs → `/request-appointment`
+
+**⚠️ Open follow-ups on this page** (see chat notes):
+- JSON-LD `image` still points to an Unsplash placeholder — should match the real
+  hero headshot CDN URL.
+- Hero `<img>` src query string is malformed (`...png` runs into `w=900` with no `&`).
+- Homepage Team card lists Karan's fellowship as "Mayo Clinic" — reconcile with the
+  bio page (Mercy Medical Center / Henry Ford). One is a placeholder.
+
+---
+
 ## To-do — remaining build work
 
 ### Immediate

@@ -7,6 +7,7 @@ Each `.html` file is a self-contained Squarespace **Code Block**. Drop the conte
 | File | Lives on | Section position |
 |---|---|---|
 | `care-we-provide.html` | Homepage | After Team section, before Footer |
+| `dr-karan-srivastava.html` | `/team/karan-srivastava` | Full page body (one Code Block) |
 
 ## How to use
 
@@ -20,6 +21,19 @@ Each `.html` file is a self-contained Squarespace **Code Block**. Drop the conte
 ## Editing later
 
 When you need to update content (e.g., swap a card's link, add a specialty), edit the `.html` file here, then copy + paste back into Squarespace. Keeping the source in git means you always have the canonical version to roll back to.
+
+## Physician profile pages
+
+Full-page Code Blocks (class `.jbi-doc`) for individual surgeon bios under `/team/<slug>`.
+The block carries its own `<h1>` inside the hero, so **hide the Squarespace native page
+title** (Page Settings → uncheck "Show page title" / "Header Display") to avoid a duplicate
+H1. Still set the SEO Title in Page Settings → SEO for the browser tab and Google.
+
+- `dr-karan-srivastava.html` — ✅ Live at `/team/karan-srivastava`
+
+Pending profiles (to build from the same `.jbi-doc` template):
+- `dr-pramod-srivastava.html` — Comprehensive Orthopedic Surgeon
+- `kelly-guzman-pa.html` — Physician Assistant
 
 ## Sections not yet built (pending code blocks)
 
