@@ -1,39 +1,36 @@
 <!--
   JBI — Post-Operative Care (single blog post)
   PAGE: /specialties/post-operative-care   (post in the /specialties blog)
-  Category suggestion: "Post-Operative Care" (or Featured)
 
   Paste this whole block into ONE Code Block in the post body.
-  This block has its own <h1> in the hero — to avoid a duplicate H1, either
-  hide the blog post title for this post, or remove the <h1> here and let the
-  native post title show. Set the SEO Title under the post's SEO settings.
+  This block has its own <h1> in the hero — hide the blog post title for this
+  post (or remove the <h1>), and set the SEO Title in the post's SEO settings.
 
-  The four services (Injections, Wound & Incision Care, Pain Management,
-  Follow-Up & Suture Removal) are H2 sections within this one post, with a
-  "jump to" nav that anchor-links to each.
+  VISUAL: each of the 4 services has an illustrated SVG panel (.jbi-svc-media)
+  so the page is visual with no image upload required. The rows alternate
+  image-left / image-right and stack on mobile.
+
+  TO USE A REAL PHOTO instead of the illustration for any service:
+    replace the <svg>...</svg> inside that service's
+    <div class="jbi-svc-panel"> ... </div>
+    with:  <img src="YOUR_SQUARESPACE_IMAGE_URL" alt="...">
+    (the panel already crops/covers the image — no other change needed).
 -->
 <style>
   .jbi-svc{
-    width:100vw;
-    position:relative;
-    left:50%;
-    right:50%;
-    margin-left:-50vw;
-    margin-right:-50vw;
+    width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;
     font-family:'Archivo',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    color:#1a1f2a;
-    background:#fff;
+    color:#1a1f2a;background:#fff;
   }
   .jbi-svc *{box-sizing:border-box;}
   .jbi-svc a{text-decoration:none;}
   .jbi-svc h1,.jbi-svc h2,.jbi-svc h3,.jbi-svc p{margin-top:0;}
-  .jbi-svc .inner{max-width:1080px;margin:0 auto;padding:0 48px;}
+  .jbi-svc .inner{max-width:1120px;margin:0 auto;padding:0 48px;}
 
   .jbi-svc-btn{
     display:inline-flex;align-items:center;justify-content:center;gap:9px;
-    background:#c89a3a;color:#081a30;font-size:13px;font-weight:800;
-    letter-spacing:1.1px;text-transform:uppercase;padding:16px 26px;
-    border-radius:3px;transition:all .25s ease;
+    background:#c89a3a;color:#081a30;font-size:13px;font-weight:800;letter-spacing:1.1px;
+    text-transform:uppercase;padding:16px 26px;border-radius:3px;transition:all .25s ease;
   }
   .jbi-svc-btn:hover{background:#a37a27;transform:translateY(-2px);box-shadow:0 12px 28px rgba(200,154,58,.28);}
   .jbi-svc-btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.34);}
@@ -47,60 +44,65 @@
       #0f2d4f;
     padding:88px 0 80px;color:#fff;text-align:center;overflow:hidden;
   }
-  .jbi-svc-eyebrow{
-    font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#c89a3a;
-    font-weight:800;margin-bottom:14px;
-  }
-  .jbi-svc-hero h1{
-    font-size:54px;line-height:1.04;letter-spacing:-1.8px;font-weight:850;
-    color:#fff;margin:0 auto 16px;max-width:840px;
-  }
+  .jbi-svc-eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#c89a3a;font-weight:800;margin-bottom:14px;}
+  .jbi-svc-hero h1{font-size:54px;line-height:1.04;letter-spacing:-1.8px;font-weight:850;color:#fff;margin:0 auto 16px;max-width:840px;}
   .jbi-svc-hero h1 .accent{color:#c89a3a;font-style:italic;font-weight:500;}
   .jbi-svc-lede{font-size:20px;line-height:1.6;color:#e6edf5;max-width:720px;margin:0 auto 28px;}
   .jbi-svc-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;}
 
   /* INTRO + JUMP NAV */
-  .jbi-svc-intro{background:#f5efe3;padding:54px 0;}
-  .jbi-svc-intro p{font-size:19px;line-height:1.7;color:#3a3f4a;max-width:760px;margin:0 auto 26px;text-align:center;}
+  .jbi-svc-intro{background:#f5efe3;padding:50px 0;}
+  .jbi-svc-intro p{font-size:19px;line-height:1.7;color:#3a3f4a;max-width:760px;margin:0 auto 24px;text-align:center;}
   .jbi-svc-jump{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
   .jbi-svc-jump a{
-    display:inline-flex;align-items:center;gap:7px;background:#fff;
-    border:1px solid rgba(15,45,79,.12);border-radius:100px;padding:11px 18px;
-    font-size:13px;font-weight:800;letter-spacing:.4px;color:#0f2d4f;transition:all .2s ease;
+    display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid rgba(15,45,79,.12);
+    border-radius:100px;padding:11px 18px;font-size:13px;font-weight:800;letter-spacing:.4px;color:#0f2d4f;transition:all .2s ease;
   }
   .jbi-svc-jump a:hover{background:#0f2d4f;color:#fff;border-color:#0f2d4f;}
   .jbi-svc-jump a .n{color:#a37a27;font-weight:900;}
   .jbi-svc-jump a:hover .n{color:#f2d08a;}
 
-  /* SERVICE SECTIONS */
-  .jbi-svc-body{padding:24px 0 40px;}
+  /* SERVICE ROWS (image + text) */
+  .jbi-svc-body{padding:30px 0 30px;}
   .jbi-svc-svc{
-    padding:48px 0;border-top:1px solid rgba(15,45,79,.1);
-    scroll-margin-top:24px;
+    display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;
+    padding:50px 0;border-top:1px solid rgba(15,45,79,.1);scroll-margin-top:24px;
   }
   .jbi-svc-svc:first-child{border-top:0;}
-  .jbi-svc-svc .num{
-    font-size:12px;letter-spacing:1.7px;text-transform:uppercase;color:#a37a27;
-    font-weight:900;margin-bottom:10px;
+  .jbi-svc-svc.alt .jbi-svc-media{order:2;}
+
+  /* media panel */
+  .jbi-svc-media{position:relative;}
+  .jbi-svc-media::before{content:"";position:absolute;inset:18px -16px -16px 18px;border:1px solid rgba(200,154,58,.5);border-radius:24px;z-index:0;}
+  .jbi-svc-svc.alt .jbi-svc-media::before{inset:18px 18px -16px -16px;}
+  .jbi-svc-panel{
+    position:relative;z-index:1;aspect-ratio:1/1;border-radius:24px;overflow:hidden;
+    background:radial-gradient(circle at 30% 25%, #1c4a78, #0f2d4f 72%);
+    border:1px solid rgba(255,255,255,.12);box-shadow:0 26px 60px rgba(15,45,79,.22);
+    display:flex;align-items:center;justify-content:center;
   }
-  .jbi-svc-svc h2{font-size:34px;line-height:1.1;letter-spacing:-1px;color:#0f2d4f;font-weight:850;margin-bottom:16px;}
-  .jbi-svc-svc h2 .accent{color:#a37a27;font-style:italic;font-weight:500;}
-  .jbi-svc-svc h3{
-    font-size:14px;letter-spacing:1.3px;text-transform:uppercase;color:#0f2d4f;
-    font-weight:900;margin:26px 0 12px;
+  .jbi-svc-panel svg{width:42%;height:auto;}
+  .jbi-svc-panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .jbi-svc-badge{
+    position:absolute;z-index:2;top:16px;left:16px;background:#c89a3a;color:#081a30;
+    font-size:12px;font-weight:900;letter-spacing:1px;padding:7px 13px;border-radius:100px;
   }
-  .jbi-svc-svc p{font-size:17px;line-height:1.75;color:#3a3f4a;margin-bottom:16px;}
-  .jbi-svc-svc ul{margin:0 0 16px;padding:0;list-style:none;}
-  .jbi-svc-svc ul li{position:relative;padding:0 0 11px 28px;font-size:17px;line-height:1.6;color:#3a3f4a;}
-  .jbi-svc-svc ul li::before{content:"";position:absolute;left:2px;top:9px;width:9px;height:9px;border-radius:50%;background:#c89a3a;}
-  .jbi-svc-callout{background:#f5efe3;border-left:4px solid #c89a3a;border-radius:14px;padding:20px 24px;margin:22px 0 0;}
-  .jbi-svc-callout p{margin:0;color:#0f2d4f;font-weight:650;font-size:16px;line-height:1.6;}
+  .jbi-svc-svc.alt .jbi-svc-badge{left:auto;right:16px;}
+
+  /* text side */
+  .jbi-svc-text .num{font-size:12px;letter-spacing:1.7px;text-transform:uppercase;color:#a37a27;font-weight:900;margin-bottom:10px;}
+  .jbi-svc-text h2{font-size:32px;line-height:1.1;letter-spacing:-1px;color:#0f2d4f;font-weight:850;margin-bottom:14px;}
+  .jbi-svc-text h2 .accent{color:#a37a27;font-style:italic;font-weight:500;}
+  .jbi-svc-text h3{font-size:13px;letter-spacing:1.3px;text-transform:uppercase;color:#0f2d4f;font-weight:900;margin:20px 0 10px;}
+  .jbi-svc-text p{font-size:16.5px;line-height:1.7;color:#3a3f4a;margin-bottom:14px;}
+  .jbi-svc-text ul{margin:0 0 14px;padding:0;list-style:none;}
+  .jbi-svc-text ul li{position:relative;padding:0 0 9px 26px;font-size:16px;line-height:1.5;color:#3a3f4a;}
+  .jbi-svc-text ul li::before{content:"";position:absolute;left:2px;top:8px;width:8px;height:8px;border-radius:50%;background:#c89a3a;}
+  .jbi-svc-callout{background:#f5efe3;border-left:4px solid #c89a3a;border-radius:12px;padding:16px 20px;margin:18px 0 0;}
+  .jbi-svc-callout p{margin:0;color:#0f2d4f;font-weight:650;font-size:15px;line-height:1.55;}
 
   /* BOTTOM CTA */
-  .jbi-svc-bottom-cta{
-    background:radial-gradient(circle at top right, rgba(200,154,58,.16), transparent 30%),#081a30;
-    padding:74px 0;text-align:center;
-  }
+  .jbi-svc-bottom-cta{background:radial-gradient(circle at top right, rgba(200,154,58,.16), transparent 30%),#081a30;padding:74px 0;text-align:center;}
   .jbi-svc-bottom-cta h2{color:#fff;font-size:40px;line-height:1.1;letter-spacing:-1.1px;font-weight:850;margin-bottom:14px;}
   .jbi-svc-bottom-cta h2 .accent{color:#c89a3a;font-style:italic;font-weight:500;}
   .jbi-svc-bottom-cta p{color:#cdd6e2;font-size:18px;line-height:1.6;max-width:620px;margin:0 auto 28px;}
@@ -111,7 +113,12 @@
     .jbi-svc-hero h1{font-size:40px;letter-spacing:-1.1px;}
     .jbi-svc-lede{font-size:18px;}
     .jbi-svc-intro p{font-size:17px;}
-    .jbi-svc-svc h2{font-size:28px;}
+    .jbi-svc-svc{grid-template-columns:1fr;gap:26px;padding:42px 0;}
+    .jbi-svc-svc .jbi-svc-media,.jbi-svc-svc.alt .jbi-svc-media{order:-1;}
+    .jbi-svc-media{max-width:420px;margin:0 auto;width:100%;}
+    .jbi-svc-media::before,.jbi-svc-svc.alt .jbi-svc-media::before{inset:14px -12px -12px 14px;}
+    .jbi-svc-panel{aspect-ratio:16/11;}
+    .jbi-svc-text h2{font-size:27px;}
     .jbi-svc-bottom-cta h2{font-size:30px;}
   }
   @media(max-width:620px){
@@ -128,7 +135,7 @@
       <div class="jbi-svc-eyebrow">— Post-Operative Care</div>
       <h1>Your recovery, <span class="accent">guided every step.</span></h1>
       <p class="jbi-svc-lede">
-        Recovery doesn&rsquo;t end in the operating room. Our team supports you through every stage after surgery &mdash; from your incision and comfort to follow-up visits and getting back to the activities you love.
+        Recovery doesn&rsquo;t end in the operating room. We support you through every stage after surgery &mdash; from your incision and comfort to follow-up visits and getting back to the activities you love.
       </p>
       <div class="jbi-svc-actions">
         <a class="jbi-svc-btn" href="/request-appointment">Request an appointment →</a>
@@ -140,9 +147,7 @@
   <!-- INTRO + JUMP NAV -->
   <section class="jbi-svc-intro">
     <div class="inner">
-      <p>
-        After an orthopedic procedure, the right follow-up care is what turns a successful surgery into a full recovery. Here&rsquo;s how we help you heal &mdash; jump to any service below.
-      </p>
+      <p>The right follow-up care is what turns a successful surgery into a full recovery. Here&rsquo;s how we help you heal &mdash; jump to any service below.</p>
       <nav class="jbi-svc-jump">
         <a href="#injections"><span class="n">01</span> Injections</a>
         <a href="#wound-care"><span class="n">02</span> Wound &amp; Incision Care</a>
@@ -152,79 +157,146 @@
     </div>
   </section>
 
-  <!-- SERVICE SECTIONS -->
+  <!-- SERVICE ROWS -->
   <div class="jbi-svc-body">
     <div class="inner">
 
+      <!-- 01 INJECTIONS (image left) -->
       <section class="jbi-svc-svc" id="injections">
-        <div class="num">01 · Post-Op Service</div>
-        <h2>Injections</h2>
-        <p>After certain procedures, targeted injections can help manage inflammation, ease pain, and support the healing process. At JBI, injections are used thoughtfully as one part of your overall recovery plan &mdash; not a one-size-fits-all fix.</p>
-        <h3>When you might benefit</h3>
-        <ul>
-          <li>Persistent swelling or inflammation around the surgical area</li>
-          <li>Localized pain that&rsquo;s slowing your therapy progress</li>
-          <li>Difficulty regaining range of motion during rehabilitation</li>
-          <li>A goal of reducing reliance on oral pain medication</li>
-        </ul>
-        <h3>What to expect</h3>
-        <p>Injections are a quick, in-office procedure. Your provider will explain what is being injected and why, and most patients return to normal activity soon after. We monitor how you respond and adjust your recovery plan accordingly.</p>
-        <div class="jbi-svc-callout">
-          <p>Injections are one tool in a broader recovery plan &mdash; your provider will recommend them only when they&rsquo;re likely to help.</p>
+        <div class="jbi-svc-media">
+          <span class="jbi-svc-badge">01 · Post-Op</span>
+          <div class="jbi-svc-panel">
+            <!-- Replace this <svg> with <img src="..." alt="Injection for post-op recovery"> to use a photo -->
+            <svg viewBox="0 0 64 64" fill="none" stroke="#f2d08a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <g transform="rotate(40 32 32)">
+                <line x1="24" y1="11" x2="40" y2="11"/>
+                <line x1="32" y1="5" x2="32" y2="11"/>
+                <rect x="26" y="11" width="12" height="27" rx="2"/>
+                <line x1="29" y1="18" x2="33" y2="18"/>
+                <line x1="29" y1="24" x2="33" y2="24"/>
+                <line x1="29" y1="30" x2="33" y2="30"/>
+                <line x1="32" y1="38" x2="32" y2="55"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="jbi-svc-text">
+          <div class="num">Post-Operative Care</div>
+          <h2>Injections</h2>
+          <p>Targeted injections to ease inflammation and pain and support your body&rsquo;s natural healing &mdash; used thoughtfully as one part of your recovery plan.</p>
+          <h3>When you might benefit</h3>
+          <ul>
+            <li>Persistent swelling or inflammation</li>
+            <li>Pain that&rsquo;s slowing your therapy progress</li>
+            <li>Trouble regaining range of motion</li>
+          </ul>
+          <h3>What to expect</h3>
+          <p>A quick, in-office procedure. Your provider explains each step, and most patients return to normal activity soon after.</p>
+          <div class="jbi-svc-callout">
+            <p>One tool in a broader recovery plan &mdash; recommended only when it&rsquo;s likely to help.</p>
+          </div>
         </div>
       </section>
 
-      <section class="jbi-svc-svc" id="wound-care">
-        <div class="num">02 · Post-Op Service</div>
-        <h2>Wound &amp; Incision <span class="accent">Care</span></h2>
-        <p>Proper care of your surgical incision is one of the most important parts of a smooth recovery. We give you clear, simple instructions and check the site at every visit to make sure it&rsquo;s healing as expected.</p>
-        <h3>When this matters</h3>
-        <ul>
-          <li>After any procedure that involves a surgical incision</li>
-          <li>Dressing changes and guidance on keeping the area protected</li>
-          <li>Questions about showering, bathing, or getting the site wet</li>
-          <li>Any redness, drainage, warmth, or swelling around the incision</li>
-        </ul>
-        <h3>What to expect</h3>
-        <p>You&rsquo;ll keep the area clean and dry as instructed, and we&rsquo;ll inspect the incision at each follow-up visit. We&rsquo;ll guide you on activity that protects the site and walk you through the signs of healthy healing versus warning signs to watch for.</p>
-        <div class="jbi-svc-callout">
-          <p>Call us right away if you notice increasing redness, drainage, swelling, a foul odor, or a fever &mdash; these can be early signs of infection.</p>
+      <!-- 02 WOUND & INCISION CARE (image right) -->
+      <section class="jbi-svc-svc alt" id="wound-care">
+        <div class="jbi-svc-media">
+          <span class="jbi-svc-badge">02 · Post-Op</span>
+          <div class="jbi-svc-panel">
+            <!-- Replace this <svg> with <img src="..." alt="Surgical incision and wound care"> to use a photo -->
+            <svg viewBox="0 0 64 64" fill="none" stroke="#f2d08a" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="10" y="24" width="44" height="16" rx="8" transform="rotate(45 32 32)"/>
+              <circle cx="32" cy="32" r="1.5" fill="#f2d08a" stroke="none"/>
+              <circle cx="26" cy="32" r="1.5" fill="#f2d08a" stroke="none"/>
+              <circle cx="38" cy="32" r="1.5" fill="#f2d08a" stroke="none"/>
+              <circle cx="32" cy="26" r="1.5" fill="#f2d08a" stroke="none"/>
+              <circle cx="32" cy="38" r="1.5" fill="#f2d08a" stroke="none"/>
+            </svg>
+          </div>
+        </div>
+        <div class="jbi-svc-text">
+          <div class="num">Post-Operative Care</div>
+          <h2>Wound &amp; Incision <span class="accent">Care</span></h2>
+          <p>Clear, simple guidance to keep your surgical site clean, protected, and healing the way it should.</p>
+          <h3>When this matters</h3>
+          <ul>
+            <li>After any procedure with an incision</li>
+            <li>Dressing changes and protecting the site</li>
+            <li>Questions about showering or bathing</li>
+            <li>Any redness, drainage, or warmth</li>
+          </ul>
+          <h3>What to expect</h3>
+          <p>We inspect your incision at each visit and guide you on activity that protects the site as it heals.</p>
+          <div class="jbi-svc-callout">
+            <p>Call us right away with increasing redness, drainage, swelling, odor, or fever &mdash; possible signs of infection.</p>
+          </div>
         </div>
       </section>
 
+      <!-- 03 PAIN MANAGEMENT (image left) -->
       <section class="jbi-svc-svc" id="pain-management">
-        <div class="num">03 · Post-Op Service</div>
-        <h2>Pain <span class="accent">Management</span></h2>
-        <p>Comfort is essential to healing. We build a pain-management plan tailored to your procedure and your needs, using the safest and most effective combination of approaches to keep you moving.</p>
-        <h3>When this matters</h3>
-        <ul>
-          <li>In the days and weeks following your surgery</li>
-          <li>Pain that limits your sleep or your therapy progress</li>
-          <li>Transitioning safely off of stronger medications</li>
-          <li>A preference for a non-opioid-focused approach</li>
-        </ul>
-        <h3>What to expect</h3>
-        <p>Your plan may combine several methods &mdash; medication, ice, positioning, therapy, and injections when appropriate. You&rsquo;ll get clear instructions on timing and dosing, plus regular check-ins so we can adjust as you recover.</p>
-        <div class="jbi-svc-callout">
-          <p>Our aim is effective relief with the lowest necessary medication &mdash; and reducing reliance on opioids whenever possible.</p>
+        <div class="jbi-svc-media">
+          <span class="jbi-svc-badge">03 · Post-Op</span>
+          <div class="jbi-svc-panel">
+            <!-- Replace this <svg> with <img src="..." alt="Post-surgical pain management"> to use a photo -->
+            <svg viewBox="0 0 64 64" fill="none" stroke="#f2d08a" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <g transform="rotate(-22 32 32)">
+                <rect x="9" y="26" width="46" height="12" rx="6"/>
+                <line x1="32" y1="26" x2="32" y2="38"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="jbi-svc-text">
+          <div class="num">Post-Operative Care</div>
+          <h2>Pain <span class="accent">Management</span></h2>
+          <p>A personalized plan that keeps you comfortable and moving, using the safest, most effective approach for your procedure.</p>
+          <h3>When this matters</h3>
+          <ul>
+            <li>In the days and weeks after surgery</li>
+            <li>Pain limiting your sleep or therapy</li>
+            <li>Weaning off stronger medications</li>
+            <li>A non-opioid-focused approach</li>
+          </ul>
+          <h3>What to expect</h3>
+          <p>A combination of medication, ice, positioning, therapy, and injections when appropriate &mdash; with regular check-ins.</p>
+          <div class="jbi-svc-callout">
+            <p>Effective relief with the lowest necessary medication &mdash; and fewer opioids whenever possible.</p>
+          </div>
         </div>
       </section>
 
-      <section class="jbi-svc-svc" id="follow-up">
-        <div class="num">04 · Post-Op Service</div>
-        <h2>Follow-Up &amp; Suture <span class="accent">Removal</span></h2>
-        <p>Scheduled follow-up visits let us track your healing, remove sutures or staples at the right time, and adjust your recovery plan as you progress.</p>
-        <h3>When this matters</h3>
-        <ul>
-          <li>Every patient after a surgical procedure</li>
-          <li>Suture or staple removal once the incision is ready</li>
-          <li>Imaging or progress checks to confirm you&rsquo;re healing well</li>
-          <li>Clearance to return to work, driving, or activity</li>
-        </ul>
-        <h3>What to expect</h3>
-        <p>Your first follow-up is typically within one to two weeks. Suture or staple removal is quick and comfortable. We&rsquo;ll review your incision and range of motion, and map out the next steps in your recovery.</p>
-        <div class="jbi-svc-callout">
-          <p>Keeping your follow-up appointments is one of the simplest ways to protect your result &mdash; even if you&rsquo;re feeling great.</p>
+      <!-- 04 FOLLOW-UP & SUTURE REMOVAL (image right) -->
+      <section class="jbi-svc-svc alt" id="follow-up">
+        <div class="jbi-svc-media">
+          <span class="jbi-svc-badge">04 · Post-Op</span>
+          <div class="jbi-svc-panel">
+            <!-- Replace this <svg> with <img src="..." alt="Follow-up visit and suture removal"> to use a photo -->
+            <svg viewBox="0 0 64 64" fill="none" stroke="#f2d08a" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="12" y="16" width="40" height="38" rx="5"/>
+              <line x1="12" y1="27" x2="52" y2="27"/>
+              <line x1="23" y1="11" x2="23" y2="20"/>
+              <line x1="41" y1="11" x2="41" y2="20"/>
+              <path d="M25 40 l5 5 l10 -11"/>
+            </svg>
+          </div>
+        </div>
+        <div class="jbi-svc-text">
+          <div class="num">Post-Operative Care</div>
+          <h2>Follow-Up &amp; Suture <span class="accent">Removal</span></h2>
+          <p>Scheduled checkpoints to track your healing and remove sutures or staples at exactly the right time.</p>
+          <h3>When this matters</h3>
+          <ul>
+            <li>Every patient after surgery</li>
+            <li>Suture or staple removal</li>
+            <li>Imaging or progress checks</li>
+            <li>Clearance to resume activity</li>
+          </ul>
+          <h3>What to expect</h3>
+          <p>Your first follow-up is usually within one to two weeks. Removal is quick and comfortable, and we map out your next steps.</p>
+          <div class="jbi-svc-callout">
+            <p>Keeping your follow-ups is one of the simplest ways to protect your result &mdash; even if you feel great.</p>
+          </div>
         </div>
       </section>
 
