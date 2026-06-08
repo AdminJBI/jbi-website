@@ -1,38 +1,49 @@
 /* ============================================================
    JBI — Live Specialties Summary Block (homepage)
-   Minimal, safe card skin only. Does NOT touch the image layout (that is left
-   to Squarespace so thumbnails don't break).
+   Card style matched to the "Care We Provide" cards: ivory bordered card with
+   the image INSET and rounded (padding around it), navy title, brass label.
+   Cosmetic only (padding + border-radius) — does NOT force image dimensions,
+   so thumbnails won't break.
 
    WHERE: Pages → Custom Code → Custom CSS (replace previous version).
 
-   TO MAKE CARDS BIGGER (do this in the Summary Block editor, not CSS):
+   BLOCK SETTINGS (Summary Block editor) — controls SIZE:
      - Layout: Grid
-     - Columns: 2   (fewer columns = bigger cards; 2 is large, 3 is medium)
-     - Aspect Ratio: 3:2   (keeps all thumbnails the same shape)
-     - Design tab: turn ON Title + Description (post Excerpt); Date optional
+     - Columns: 3  (use 2 for larger cards)
+     - Aspect Ratio: 3:2  (keeps thumbnails uniform)
+     - Design tab: Title + Description (post Excerpt) ON; Date optional
      - Place the block in a FULL-WIDTH section
-   The blue outline + "SUMMARY" tag only show in EDIT mode, not on the live site.
+   The blue outline + "SUMMARY" tag only show in EDIT mode, not live.
 
    NOTE: class names vary by Squarespace version; adjust selectors if needed.
    ============================================================ */
 
-/* Card skin */
+/* Card: ivory, bordered, rounded, with padding so the image insets */
 .sqs-block-summary-v2 .summary-item {
   background: #f5efe3;
-  border: 1px solid rgba(200, 154, 58, 0.20);
+  border: 1px solid rgba(15, 45, 79, 0.10);
   border-radius: 20px;
-  overflow: hidden;
+  padding: 24px;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .sqs-block-summary-v2 .summary-item:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 48px rgba(15, 45, 79, 0.16);
-  border-color: rgba(200, 154, 58, 0.55);
+  box-shadow: 0 24px 48px rgba(15, 45, 79, 0.10);
+  border-color: rgba(200, 154, 58, 0.40);
 }
 
-/* Text padding */
+/* Inset, rounded image (like the Care We Provide cards) */
+.sqs-block-summary-v2 .summary-thumbnail-outer-container {
+  border-radius: 14px;
+  overflow: hidden;
+}
+.sqs-block-summary-v2 .summary-thumbnail img {
+  border-radius: 14px;
+}
+
+/* Card already has padding, so trim the content's own padding */
 .sqs-block-summary-v2 .summary-content {
-  padding: 24px 26px 28px !important;
+  padding: 22px 4px 4px !important;
 }
 
 /* Category label (brass) */
@@ -53,7 +64,7 @@
   font-weight: 700 !important;
   letter-spacing: -0.5px !important;
   line-height: 1.2 !important;
-  margin: 8px 0 10px !important;
+  margin: 10px 0 12px !important;
 }
 .sqs-block-summary-v2 .summary-title a { color: #0f2d4f !important; }
 .sqs-block-summary-v2 .summary-title a:hover { color: #a37a27 !important; }
@@ -61,9 +72,9 @@
 /* Description (post Excerpt) */
 .sqs-block-summary-v2 .summary-excerpt,
 .sqs-block-summary-v2 .summary-excerpt p {
-  color: #3a3f4a !important;
+  color: #1a1f2a !important;
   font-size: 15px !important;
-  line-height: 1.6 !important;
+  line-height: 1.55 !important;
   font-weight: 400 !important;
 }
 
@@ -72,3 +83,13 @@
   color: #6a6558 !important;
   font-size: 13px !important;
 }
+
+/* Read more link */
+.sqs-block-summary-v2 .summary-read-more-link {
+  color: #0f2d4f !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px;
+  font-size: 13px !important;
+  text-decoration: none !important;
+}
+.sqs-block-summary-v2 .summary-read-more-link:hover { color: #a37a27 !important; }
