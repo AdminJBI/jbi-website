@@ -1,0 +1,814 @@
+<!--
+  JBI — Physician profile
+  PAGE: /team/kelly-guzman
+  Paste this whole block into ONE Code Block on the page body.
+  Recommended Squarespace page title: Kelly Guzman, PA
+
+  IMPORTANT: this Code Block contains its own <h1> inside the hero, so the
+  Squarespace native page title would create a duplicate H1 (bad for SEO).
+  In the page Settings, HIDE the native title:
+    - Page Settings → SEO → still set the SEO Title (browser tab + Google)
+    - In the page editor, click the title/banner area → uncheck "Show page title"
+      (label varies by template — some call it "Header Display")
+
+  TODO: replace the placeholder portrait <img src> with Kelly's real headshot
+  uploaded to Squarespace, then add a matching "image" field to the JSON-LD below.
+-->
+
+<style>
+  .jbi-doc{
+    width:100vw;
+    position:relative;
+    left:50%;
+    right:50%;
+    margin-left:-50vw;
+    margin-right:-50vw;
+    font-family:'Archivo',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:#1a1f2a;
+    background:#fff;
+  }
+
+  .jbi-doc *{box-sizing:border-box;}
+  .jbi-doc a{text-decoration:none;}
+
+  .jbi-doc .inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 48px;
+  }
+
+  .jbi-doc-eyebrow{
+    font-size:13px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#c89a3a;
+    font-weight:800;
+    margin-bottom:14px;
+  }
+
+  .jbi-doc h1,
+  .jbi-doc h2,
+  .jbi-doc h3,
+  .jbi-doc p{
+    margin-top:0;
+  }
+
+  .jbi-doc-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    background:#c89a3a;
+    color:#081a30;
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:1.1px;
+    text-transform:uppercase;
+    padding:16px 26px;
+    border-radius:3px;
+    transition:all .25s ease;
+  }
+
+  .jbi-doc-btn:hover{
+    background:#a37a27;
+    transform:translateY(-2px);
+    box-shadow:0 12px 28px rgba(200,154,58,.28);
+  }
+
+  .jbi-doc-btn.ghost{
+    background:transparent;
+    color:#fff;
+    border:1.5px solid rgba(255,255,255,.34);
+  }
+
+  .jbi-doc-btn.ghost:hover{
+    background:#fff;
+    color:#0f2d4f;
+    box-shadow:none;
+  }
+
+  /* HERO */
+  .jbi-doc-hero{
+    background:
+      radial-gradient(circle at top right, rgba(200,154,58,.18), transparent 34%),
+      radial-gradient(circle at bottom left, rgba(46,90,135,.48), transparent 34%),
+      #0f2d4f;
+    padding:92px 0 86px;
+    color:#fff;
+    overflow:hidden;
+  }
+
+  .jbi-doc-hero-grid{
+    display:grid;
+    grid-template-columns:360px 1fr;
+    gap:58px;
+    align-items:center;
+  }
+
+  .jbi-doc-photo-wrap{
+    position:relative;
+  }
+
+  .jbi-doc-photo-wrap::before{
+    content:"";
+    position:absolute;
+    inset:22px -18px -18px 22px;
+    border:1px solid rgba(200,154,58,.55);
+    border-radius:24px;
+    z-index:0;
+  }
+
+  .jbi-doc-portrait{
+    position:relative;
+    z-index:1;
+    aspect-ratio:4/5;
+    border-radius:24px;
+    overflow:hidden;
+    background:linear-gradient(135deg,#d9cfbd,#eae2d2);
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow:0 28px 70px rgba(0,0,0,.26);
+  }
+
+  .jbi-doc-portrait img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .jbi-doc-kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:#f2d08a;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.12);
+    padding:9px 14px;
+    border-radius:100px;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+  }
+
+  .jbi-doc-hero h1{
+    font-size:58px;
+    line-height:1.02;
+    letter-spacing:-2px;
+    font-weight:850;
+    color:#fff;
+    margin-bottom:12px;
+  }
+
+  .jbi-doc-role{
+    font-size:20px;
+    color:#cdd6e2;
+    font-weight:600;
+    margin-bottom:22px;
+  }
+
+  .jbi-doc-lede{
+    font-size:20px;
+    line-height:1.58;
+    color:#e6edf5;
+    max-width:680px;
+    margin-bottom:28px;
+  }
+
+  .jbi-doc-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:28px;
+  }
+
+  .jbi-doc-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+  }
+
+  .jbi-doc-tags a{
+    display:inline-flex;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.16);
+    color:#fff;
+    padding:9px 14px;
+    border-radius:100px;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.8px;
+    text-transform:uppercase;
+    transition:all .2s ease;
+  }
+
+  .jbi-doc-tags a:hover{
+    background:#c89a3a;
+    color:#081a30;
+    border-color:#c89a3a;
+  }
+
+  /* QUICK FACTS */
+  .jbi-doc-facts{
+    background:#f5efe3;
+    padding:34px 0;
+  }
+
+  .jbi-doc-facts-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+  }
+
+  .jbi-doc-fact{
+    background:#fff;
+    border:1px solid rgba(15,45,79,.08);
+    border-radius:16px;
+    padding:22px 22px;
+    box-shadow:0 10px 28px rgba(15,45,79,.05);
+  }
+
+  .jbi-doc-fact .label{
+    display:block;
+    font-size:11px;
+    letter-spacing:1.7px;
+    text-transform:uppercase;
+    color:#a37a27;
+    font-weight:900;
+    margin-bottom:8px;
+  }
+
+  .jbi-doc-fact .value{
+    font-size:16px;
+    line-height:1.35;
+    color:#0f2d4f;
+    font-weight:800;
+  }
+
+  /* BODY */
+  .jbi-doc-main{
+    padding:82px 0 96px;
+  }
+
+  .jbi-doc-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 330px;
+    gap:58px;
+    align-items:start;
+  }
+
+  .jbi-doc-section{
+    margin-bottom:46px;
+  }
+
+  .jbi-doc-section h2{
+    font-size:34px;
+    line-height:1.1;
+    letter-spacing:-1px;
+    color:#0f2d4f;
+    font-weight:850;
+    margin-bottom:16px;
+  }
+
+  .jbi-doc-section h2 .accent{
+    color:#a37a27;
+    font-style:italic;
+    font-weight:500;
+  }
+
+  .jbi-doc-section p{
+    font-size:17px;
+    line-height:1.75;
+    color:#3a3f4a;
+    margin-bottom:18px;
+  }
+
+  .jbi-doc-section a{
+    color:#a37a27;
+    font-weight:800;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+
+  .jbi-doc-section a:hover{
+    color:#0f2d4f;
+  }
+
+  .jbi-doc-callout{
+    background:#f5efe3;
+    border-left:4px solid #c89a3a;
+    border-radius:14px;
+    padding:24px 26px;
+    margin:28px 0 0;
+  }
+
+  .jbi-doc-callout p{
+    color:#0f2d4f;
+    font-weight:650;
+    margin:0;
+  }
+
+  /* TRAINING */
+  .jbi-doc-train{
+    list-style:none;
+    padding:0;
+    margin:24px 0 0;
+  }
+
+  .jbi-doc-train li{
+    position:relative;
+    display:grid;
+    grid-template-columns:170px 1fr;
+    gap:22px;
+    padding:0 0 26px;
+    margin:0;
+  }
+
+  .jbi-doc-train li:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    left:169px;
+    top:28px;
+    bottom:0;
+    width:2px;
+    background:rgba(200,154,58,.32);
+  }
+
+  .jbi-doc-train .year{
+    color:#a37a27;
+    font-size:12px;
+    letter-spacing:1.7px;
+    text-transform:uppercase;
+    font-weight:900;
+    /* align label with the gold dot + card title (card top padding 20px, dot top 22px) */
+    padding-top:21px;
+  }
+
+  .jbi-doc-train .detail{
+    position:relative;
+    background:#fff;
+    border:1px solid rgba(15,45,79,.08);
+    border-radius:16px;
+    padding:20px 22px;
+    box-shadow:0 10px 28px rgba(15,45,79,.05);
+  }
+
+  .jbi-doc-train .detail::before{
+    content:"";
+    position:absolute;
+    left:-29px;
+    top:22px;
+    width:13px;
+    height:13px;
+    background:#c89a3a;
+    border-radius:50%;
+    box-shadow:0 0 0 5px #f5efe3;
+  }
+
+  .jbi-doc-train strong{
+    display:block;
+    color:#0f2d4f;
+    font-size:16px;
+    font-weight:850;
+    margin-bottom:4px;
+  }
+
+  .jbi-doc-train span{
+    display:block;
+    color:#596170;
+    font-size:15px;
+    line-height:1.55;
+  }
+
+  /* SIDEBAR */
+  .jbi-doc-sidebar{
+    position:sticky;
+    top:24px;
+  }
+
+  .jbi-doc-side-card{
+    background:#0f2d4f;
+    color:#fff;
+    border-radius:22px;
+    padding:28px;
+    box-shadow:0 24px 54px rgba(15,45,79,.18);
+    margin-bottom:22px;
+  }
+
+  .jbi-doc-side-card h3{
+    color:#fff;
+    font-size:23px;
+    line-height:1.15;
+    letter-spacing:-.5px;
+    font-weight:850;
+    margin-bottom:10px;
+  }
+
+  .jbi-doc-side-card p{
+    color:#cdd6e2;
+    font-size:15px;
+    line-height:1.6;
+    margin-bottom:20px;
+  }
+
+  .jbi-doc-side-card .jbi-doc-btn{
+    width:100%;
+  }
+
+  .jbi-doc-list-card{
+    background:#fff;
+    border:1px solid rgba(15,45,79,.09);
+    border-radius:22px;
+    padding:26px;
+    box-shadow:0 14px 36px rgba(15,45,79,.07);
+  }
+
+  .jbi-doc-list-card h3{
+    color:#0f2d4f;
+    font-size:20px;
+    font-weight:850;
+    letter-spacing:-.4px;
+    margin-bottom:16px;
+  }
+
+  .jbi-doc-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+
+  .jbi-doc-list li{
+    border-top:1px solid rgba(15,45,79,.08);
+    padding:13px 0;
+    color:#3a3f4a;
+    font-size:15px;
+    line-height:1.45;
+  }
+
+  .jbi-doc-list li:first-child{
+    border-top:0;
+    padding-top:0;
+  }
+
+  /* FINAL CTA */
+  .jbi-doc-bottom-cta{
+    background:
+      radial-gradient(circle at top right, rgba(200,154,58,.16), transparent 30%),
+      #081a30;
+    padding:76px 0;
+    text-align:center;
+  }
+
+  .jbi-doc-bottom-cta h2{
+    color:#fff;
+    font-size:42px;
+    line-height:1.08;
+    letter-spacing:-1.2px;
+    font-weight:850;
+    margin-bottom:14px;
+  }
+
+  .jbi-doc-bottom-cta h2 .accent{
+    color:#c89a3a;
+    font-style:italic;
+    font-weight:500;
+  }
+
+  .jbi-doc-bottom-cta p{
+    color:#cdd6e2;
+    font-size:18px;
+    line-height:1.6;
+    max-width:620px;
+    margin:0 auto 28px;
+  }
+
+  .jbi-doc-bottom-cta .jbi-doc-actions{
+    justify-content:center;
+    margin-bottom:0;
+  }
+
+  @media(max-width:980px){
+    .jbi-doc .inner{
+      padding:0 24px;
+    }
+
+    .jbi-doc-hero{
+      padding:72px 0 68px;
+    }
+
+    .jbi-doc-hero-grid{
+      grid-template-columns:1fr;
+      gap:36px;
+    }
+
+    .jbi-doc-photo-wrap{
+      max-width:320px;
+    }
+
+    .jbi-doc-hero h1{
+      font-size:42px;
+      letter-spacing:-1.2px;
+    }
+
+    .jbi-doc-lede{
+      font-size:18px;
+    }
+
+    .jbi-doc-facts-grid{
+      grid-template-columns:repeat(2,1fr);
+    }
+
+    .jbi-doc-layout{
+      grid-template-columns:1fr;
+      gap:42px;
+    }
+
+    .jbi-doc-sidebar{
+      position:static;
+    }
+
+    .jbi-doc-section h2{
+      font-size:29px;
+    }
+  }
+
+  @media(max-width:620px){
+    .jbi-doc-facts-grid{
+      grid-template-columns:1fr;
+    }
+
+    .jbi-doc-actions{
+      flex-direction:column;
+    }
+
+    .jbi-doc-btn{
+      width:100%;
+    }
+
+    .jbi-doc-train li{
+      grid-template-columns:1fr;
+      gap:10px;
+      padding-left:22px;
+    }
+
+    .jbi-doc-train .year{
+      padding-top:0;
+    }
+
+    .jbi-doc-train li:not(:last-child)::after{
+      left:4px;
+      top:34px;
+    }
+
+    .jbi-doc-train .detail::before{
+      left:-25px;
+    }
+
+    .jbi-doc-bottom-cta h2{
+      font-size:32px;
+    }
+  }
+</style>
+
+<article class="jbi-doc">
+
+  <!-- HERO -->
+  <section class="jbi-doc-hero">
+    <div class="inner">
+      <div class="jbi-doc-hero-grid">
+
+        <div class="jbi-doc-photo-wrap">
+          <div class="jbi-doc-portrait">
+            <!-- TODO: replace src with Kelly Guzman's real headshot uploaded to Squarespace -->
+            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=900&q=85&auto=format&fit=crop" alt="Kelly Guzman, PA, orthopedic physician assistant at Joint and Bone Institute of California" />
+          </div>
+        </div>
+
+        <div class="jbi-doc-intro">
+          <div class="jbi-doc-kicker">Physician Assistant · Orthopedic Care</div>
+
+          <h1>Kelly Guzman, PA</h1>
+
+          <p class="jbi-doc-role">Physician Assistant, Joint &amp; Bone Institute of California</p>
+
+          <p class="jbi-doc-lede">
+            As an orthopedic physician assistant, Kelly evaluates and treats musculoskeletal conditions, performs procedures and injections, interprets diagnostic studies, and manages both nonoperative and postoperative patient care.
+          </p>
+
+          <div class="jbi-doc-actions">
+            <a class="jbi-doc-btn" href="/request-appointment">Request an appointment →</a>
+            <a class="jbi-doc-btn ghost" href="tel:6615443352">Call 661.544.3352</a>
+          </div>
+
+          <div class="jbi-doc-tags">
+            <a href="/specialties">Musculoskeletal Care</a>
+            <a href="/specialties">Injections &amp; Procedures</a>
+            <a href="/specialties">Nonoperative Care</a>
+            <a href="/specialties">Postoperative Care</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK FACTS -->
+  <section class="jbi-doc-facts">
+    <div class="inner">
+      <div class="jbi-doc-facts-grid">
+
+        <div class="jbi-doc-fact">
+          <span class="label">Role</span>
+          <span class="value">Orthopedic Physician Assistant</span>
+        </div>
+
+        <div class="jbi-doc-fact">
+          <span class="label">Languages</span>
+          <span class="value">English &amp; Spanish</span>
+        </div>
+
+        <div class="jbi-doc-fact">
+          <span class="label">With JBI</span>
+          <span class="value">Since 2025</span>
+        </div>
+
+        <div class="jbi-doc-fact">
+          <span class="label">Serving</span>
+          <span class="value">Bakersfield, Delano, and Porterville</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="jbi-doc-main">
+    <div class="inner">
+      <div class="jbi-doc-layout">
+
+        <div class="jbi-doc-content">
+
+          <section class="jbi-doc-section">
+            <h2>From urgent care to <span class="accent">orthopedics.</span></h2>
+
+            <p>
+              Kelly Guzman began her career in primary care and urgent care. While working in urgent care, she met <a href="/team/karan-srivastava">Dr. Karan Srivastava</a> when he came in to lead a splinting workshop. After taking time off following the birth of her daughter, she was ready to return to work &mdash; and an opportunity in orthopedics came up. She joined the Joint &amp; Bone Institute of California in 2025.
+            </p>
+
+            <p>
+              What she enjoys most about orthopedics is helping patients get back to doing the things they love. Whether it&rsquo;s walking without pain, returning to work, or getting back to a sport, it&rsquo;s rewarding to see that improvement.
+            </p>
+
+            <div class="jbi-doc-callout">
+              <p>
+                &ldquo;Patient care means listening first and making sure patients leave with a plan they understand and feel comfortable with.&rdquo;
+              </p>
+            </div>
+          </section>
+
+          <section class="jbi-doc-section">
+            <h2>Education &amp; <span class="accent">training.</span></h2>
+
+            <p>
+              Kelly earned a Master of Science in Physician Assistant Studies, building on an undergraduate foundation in the biological sciences. Before moving into orthopedics, she gained hands-on clinical experience in urgent care and primary care.
+            </p>
+
+            <ul class="jbi-doc-train">
+              <li>
+                <div class="year">Graduate</div>
+                <div class="detail">
+                  <strong>M.S. in Physician Assistant Studies</strong>
+                  <span>Master&rsquo;s training in clinical evaluation, diagnosis, and patient management</span>
+                </div>
+              </li>
+
+              <li>
+                <div class="year">Undergraduate</div>
+                <div class="detail">
+                  <strong>B.S. in Biological Sciences</strong>
+                  <span>Bachelor of Science foundation in the biological sciences</span>
+                </div>
+              </li>
+
+              <li>
+                <div class="year">Experience</div>
+                <div class="detail">
+                  <strong>Urgent Care &amp; Primary Care</strong>
+                  <span>Front-line clinical experience prior to specializing in orthopedics</span>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="jbi-doc-section">
+            <h2>A patient-first <span class="accent">approach.</span></h2>
+
+            <p>
+              Kelly describes her approach as patient-first, reassuring, and responsive. She believes good care starts with listening &mdash; understanding what matters to each patient before building a plan together.
+            </p>
+
+            <p>
+              Her goal is for every patient to leave feeling heard, understood, and confident that they have a clear plan moving forward.
+            </p>
+          </section>
+
+          <section class="jbi-doc-section">
+            <h2>Outside the clinic.</h2>
+
+            <p>
+              Away from work, Kelly stays active &mdash; she runs, lifts, and teaches Lagree &mdash; and she loves to read. Most of all, she&rsquo;s enjoying motherhood.
+            </p>
+          </section>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="jbi-doc-sidebar">
+
+          <div class="jbi-doc-side-card">
+            <h3>Schedule with Kelly</h3>
+            <p>
+              New patients are welcome. Our team can help you find the right location and appointment time.
+            </p>
+            <a class="jbi-doc-btn" href="/request-appointment">Request appointment →</a>
+          </div>
+
+          <div class="jbi-doc-list-card">
+            <h3>How Kelly Helps</h3>
+            <ul class="jbi-doc-list">
+              <li>Evaluation and treatment of musculoskeletal conditions</li>
+              <li>Procedures and injections</li>
+              <li>Interpretation of diagnostic studies</li>
+              <li>Nonoperative (conservative) care</li>
+              <li>Postoperative care and follow-up</li>
+              <li>Patient communication and support</li>
+            </ul>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="jbi-doc-bottom-cta">
+    <div class="inner">
+      <h2>Ready to take the next step in <span class="accent">your care?</span></h2>
+      <p>
+        Request an appointment with Kelly Guzman at Joint &amp; Bone Institute of California.
+      </p>
+      <div class="jbi-doc-actions">
+        <a class="jbi-doc-btn" href="/request-appointment">Request an appointment →</a>
+        <a class="jbi-doc-btn ghost" href="tel:6615443352">Call 661.544.3352</a>
+      </div>
+    </div>
+  </section>
+
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kelly Guzman, PA",
+  "jobTitle": "Physician Assistant",
+  "url": "/team/kelly-guzman",
+  "knowsLanguage": ["English", "Spanish"],
+  "worksFor": {
+    "@type": "MedicalOrganization",
+    "name": "Joint & Bone Institute of California",
+    "url": "/"
+  },
+  "knowsAbout": [
+    "Musculoskeletal Care",
+    "Orthopedic Injections and Procedures",
+    "Diagnostic Study Interpretation",
+    "Nonoperative Orthopedic Care",
+    "Postoperative Care"
+  ],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Bakersfield, California"
+    },
+    {
+      "@type": "City",
+      "name": "Delano, California"
+    },
+    {
+      "@type": "City",
+      "name": "Porterville, California"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Kern County, California"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Tulare County, California"
+    }
+  ]
+}
+</script>

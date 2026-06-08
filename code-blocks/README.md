@@ -8,6 +8,7 @@ Each `.html` file is a self-contained Squarespace **Code Block**. Drop the conte
 |---|---|---|
 | `care-we-provide.html` | Homepage | After Team section, before Footer |
 | `dr-karan-srivastava.html` | `/team/karan-srivastava` | Full page body (one Code Block) |
+| `kelly-guzman.html` | `/team/kelly-guzman` | Full page body (one Code Block) |
 
 ## How to use
 
@@ -30,10 +31,10 @@ title** (Page Settings → uncheck "Show page title" / "Header Display") to avoi
 H1. Still set the SEO Title in Page Settings → SEO for the browser tab and Google.
 
 - `dr-karan-srivastava.html` — ✅ Live at `/team/karan-srivastava`
+- `kelly-guzman.html` — ✅ Built for `/team/kelly-guzman` (needs real headshot)
 
 Pending profiles (to build from the same `.jbi-doc` template):
 - `dr-pramod-srivastava.html` — Comprehensive Orthopedic Surgeon
-- `kelly-guzman-pa.html` — Physician Assistant
 
 ## Sections not yet built (pending code blocks)
 

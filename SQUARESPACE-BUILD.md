@@ -548,8 +548,8 @@ navy bottom CTA band. Includes `Physician` JSON-LD schema.
 | Page | File | Status |
 |---|---|---|
 | Karan Srivastava, MD | `code-blocks/dr-karan-srivastava.html` | ✅ Live at `/team/karan-srivastava` |
+| Kelly Guzman, PA | `code-blocks/kelly-guzman.html` | ✅ Built (needs real headshot) — `/team/kelly-guzman` |
 | Pramod Srivastava, M.D | _to build_ | ☐ Pending |
-| Kelly Guzman, PA | _to build_ | ☐ Pending |
 
 **Dr. Karan Srivastava — bio facts (source of truth):**
 - Founder & CEO, Joint & Bone Institute of California
