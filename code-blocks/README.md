@@ -70,6 +70,7 @@ JSON-LD). Each carries its own `<h1>` → hide the native post title and set the
 | Stem Cell Therapy | `specialties/stem-cell-therapy.html` | `/specialties/stem-cell-therapy` |
 | PRP Injections | `specialties/prp-injections.html` | `/specialties/prp-injections` |
 | Sports Injuries | `specialties/sports-injuries.html` | `/specialties/sports-injuries` |
+| Sports Medicine | `specialties/sports-medicine.html` | `/specialties/sports-medicine` |
 | Rotator Cuff & Shoulder Injuries | `specialties/rotator-cuff-shoulder-injuries.html` | `/specialties/rotator-cuff-shoulder-injuries` |
 | Hand & Carpal Tunnel Surgery | `specialties/carpal-tunnel-surgery.html` | `/specialties/carpal-tunnel-surgery` |
 | Fracture Care | `specialties/fracture-care.html` | `/specialties/fracture-care` |
