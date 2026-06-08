@@ -61,7 +61,9 @@ canonical CSS is `specialties/_TEMPLATE-STYLE.html` (not a page). Each post is a
 self-contained Code Block for a post in the `/specialties` blog, SEO-optimized
 (primary keyword in the H1, opening line, multiple H2s and body; local terms —
 Bakersfield / Kern County / Central Valley; `(661) 544-3352`; `MedicalWebPage`
-JSON-LD). Each carries its own `<h1>` → hide the native post title and set the SEO Title.
+JSON-LD). Native-blog layout: **keep the native post title/category/date/featured
+image visible** (the block no longer has its own hero/H1). The block provides a
+light crumb + summary, then the body + sidebar + CTA. Set the SEO Title per post.
 
 | Post | File | Slug |
 |---|---|---|
