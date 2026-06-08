@@ -73,6 +73,14 @@ JSON-LD). Each carries its own `<h1>` → hide the native post title and set the
 | Hand & Carpal Tunnel Surgery | `specialties/carpal-tunnel-surgery.html` | `/specialties/carpal-tunnel-surgery` |
 | Fracture Care | `specialties/fracture-care.html` | `/specialties/fracture-care` |
 
+## Patient Education blog
+
+`/patient-education` is a Squarespace **Blog Page** (mirrors `/specialties`); each
+article is a post. `patient-education/_ARTICLE-TEMPLATE.html` is the reusable
+post Code Block (class `.jbi-spec`) — duplicate it per article and fill the
+`[[PLACEHOLDERS]]`. The home page "Patient Education" teaser cards link to these
+posts (`/patient-education/<slug>`), and "Browse all articles" → `/patient-education`.
+
 ## Sections not yet built (pending code blocks)
 
 - `patient-journal.html` — homepage Patient Journal teaser (3 article cards)
