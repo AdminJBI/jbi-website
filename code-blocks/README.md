@@ -7,6 +7,7 @@ Each `.html` file is a self-contained Squarespace **Code Block**. Drop the conte
 | File | Lives on | Section position |
 |---|---|---|
 | `care-we-provide.html` | Homepage | After Team section, before Footer |
+| `team-section.html` | Homepage | Between Stats row and Care We Provide |
 | `dr-karan-srivastava.html` | `/team/karan-srivastava` | Full page body (one Code Block) |
 | `kelly-guzman.html` | `/team/kelly-guzman` | Full page body (one Code Block) |
 | `post-operative-care.html` | `/specialties/post-operative-care` | Blog post body (one Code Block) |

@@ -1,0 +1,223 @@
+<!--
+  JBI — Team section
+  Drop into a Squarespace Code Block on the homepage,
+  between the Stats row (ivory) and the Care We Provide section (white).
+
+  Clean version — no negative-margin or :has() hacks.
+  Section background + padding controlled via Squarespace section editor:
+    - Background: #0f2d4f (deep navy)  — OR set to ivory and the wrap will still bleed correctly
+    - Top padding: 0 (minimum)
+    - Bottom padding: 0 (minimum)
+
+  Layout:
+    - Full-bleed deep navy (#0f2d4f) backdrop with a soft brass aura
+    - Eyebrow "— THE TEAM" + heading "Fellowship-trained. Patient-chosen." (stone italic accent)
+    - Top-right CTA: "Meet our team →" → /team
+    - 3 surgeon cards (3 cols desktop, stacks on mobile)
+    - Each card links to /team
+
+  TO DO before going live:
+    1. Add Dr. Pramod Srivastava's headshot (the first card's <img src> is empty).
+    2. Swap any remaining Unsplash placeholder portrait for the real headshot.
+    3. Confirm each surgeon's "cred" line matches their actual specialties.
+
+  PHOTO FRAMING: portraits are anchored toward the top via
+  `object-position:center 22%` so heads aren't cropped. Fine-tune per photo
+  (e.g. center 15% shows more above the head; center 30% shows more chin).
+-->
+<style>
+  .jbi-team-wrap{
+    width:100vw;
+    position:relative;
+    left:50%;
+    right:50%;
+    margin-left:-50vw;
+    margin-right:-50vw;
+    background:#0f2d4f;
+  }
+  .jbi-team{
+    background:#0f2d4f;
+    padding:96px 48px;
+    font-family:'Archivo',-apple-system,sans-serif;
+    color:#f5efe3;
+    position:relative;
+    overflow:hidden;
+  }
+  .jbi-team::before{
+    content:"";
+    position:absolute;
+    top:-220px; right:-180px;
+    width:560px; height:560px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(200,154,58,0.18) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .jbi-team::after{
+    content:"";
+    position:absolute;
+    bottom:-200px; left:-160px;
+    width:480px; height:480px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(46,90,135,0.35) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .jbi-team-inner{position:relative; z-index:3; max-width:1440px; margin:0 auto;}
+
+  .jbi-team-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:32px; flex-wrap:wrap; margin-bottom:56px;
+  }
+  .jbi-team-eyebrow{
+    font-size:16px; letter-spacing:3.5px; text-transform:uppercase;
+    color:#c89a3a; font-weight:700; margin-bottom:22px;
+  }
+  .jbi-team-title{
+    font-family:'Archivo',-apple-system,sans-serif;
+    font-size:56px; font-weight:800; letter-spacing:-2px;
+    line-height:1.02; color:#f5efe3; margin:0;
+    max-width:760px;
+  }
+  .jbi-team-title .accent{color:#d9cfbd; font-style:italic; font-weight:500;}
+  .jbi-team-cta{
+    background:transparent; color:#f5efe3;
+    border:1.5px solid #f5efe3;
+    padding:13px 22px; font-size:13px; font-weight:700;
+    letter-spacing:1.2px; text-transform:uppercase;
+    border-radius:2px;
+    text-decoration:none; display:inline-block;
+    transition:all 0.2s ease; white-space:nowrap;
+  }
+  .jbi-team-cta:hover{background:#c89a3a; color:#0f2d4f; border-color:#c89a3a; transform:translateY(-2px);}
+
+  .jbi-team-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+  }
+  .jbi-surgeon{
+    background:#f5efe3;
+    border:1px solid rgba(200,154,58,0.18);
+    border-radius:20px;
+    padding:0;
+    overflow:hidden;
+    text-decoration:none; color:inherit;
+    display:flex; flex-direction:column;
+    transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .jbi-surgeon:hover{
+    transform:translateY(-6px);
+    border-color:rgba(200,154,58,0.55);
+    box-shadow:0 24px 48px rgba(0,0,0,0.35);
+  }
+  .jbi-surgeon-img{
+    aspect-ratio:5/4;
+    overflow:hidden;
+    background:linear-gradient(135deg,#d9cfbd,#eae2d2);
+  }
+  .jbi-surgeon-img img{
+    width:100%; height:100%;
+    object-fit:cover;
+    object-position:center 22%;
+    display:block;
+    filter:saturate(0.95);
+    transition:transform 0.4s ease;
+  }
+  .jbi-surgeon:hover .jbi-surgeon-img img{transform:scale(1.04);}
+  .jbi-surgeon-body{
+    padding:22px 24px 26px;
+    display:flex; flex-direction:column; flex:1;
+  }
+  .jbi-surgeon-kicker{
+    font-size:12px; font-weight:700;
+    color:#a37a27; letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .jbi-surgeon-name{
+    font-family:'Archivo',-apple-system,sans-serif;
+    font-size:26px; font-weight:800; letter-spacing:-0.5px;
+    line-height:1.15; color:#0f2d4f; margin:0 0 8px;
+  }
+  .jbi-surgeon-role{
+    font-size:15px; font-weight:600;
+    color:#2e5a87; margin:0 0 14px;
+  }
+  .jbi-surgeon-cred{
+    font-size:14px; line-height:1.55; color:#1a1f2a;
+    margin:0; flex:1;
+  }
+  .jbi-surgeon-more{
+    margin-top:18px;
+    font-size:13px; font-weight:700; letter-spacing:0.5px;
+    color:#0f2d4f;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:gap 0.2s ease, color 0.2s ease;
+  }
+  .jbi-surgeon:hover .jbi-surgeon-more{
+    gap:14px;
+    color:#a37a27;
+  }
+
+  @media (max-width:1000px){
+    .jbi-team{padding:72px 24px;}
+    .jbi-team-title{font-size:40px; letter-spacing:-1.2px;}
+    .jbi-team-grid{grid-template-columns:1fr; gap:20px;}
+  }
+</style>
+
+<div class="jbi-team-wrap">
+  <section class="jbi-team">
+    <div class="jbi-team-inner">
+
+      <div class="jbi-team-head">
+        <div>
+          <div class="jbi-team-eyebrow">— The Team</div>
+          <h2 class="jbi-team-title">Fellowship-trained. <span class="accent">Patient-chosen.</span></h2>
+        </div>
+        <a class="jbi-team-cta" href="/team">Meet our team →</a>
+      </div>
+
+      <div class="jbi-team-grid">
+
+        <a href="/team" class="jbi-surgeon">
+          <div class="jbi-surgeon-img">
+            <!-- TODO: add Dr. Pramod Srivastava's headshot URL in src -->
+            <img src="" alt="Portrait of Dr. Pramod Srivastava, Chairman and Lead Orthopedic Surgeon" />
+          </div>
+          <div class="jbi-surgeon-body">
+            <div class="jbi-surgeon-kicker">Chairman &amp; Lead Surgeon</div>
+            <h3 class="jbi-surgeon-name">Pramod Srivastava, MD</h3>
+            <div class="jbi-surgeon-role">Orthopedic Surgery</div>
+            <p class="jbi-surgeon-cred">Decades of orthopedic surgical experience leading the practice across Kern and Tulare County.</p>
+            <span class="jbi-surgeon-more">View profile →</span>
+          </div>
+        </a>
+
+        <a href="/team" class="jbi-surgeon">
+          <div class="jbi-surgeon-img">
+            <img src="https://images.squarespace-cdn.com/content/69e7cf297c0a40269117d3e1/29f50cb5-0b36-483f-8407-46b25addcee8/karan+final+edit+picture.png?content-type=image%2Fpng" alt="Portrait of Dr. Karan Srivastava, CEO and Joint Replacement Specialist" />
+          </div>
+          <div class="jbi-surgeon-body">
+            <div class="jbi-surgeon-kicker">CEO &amp; Joint Replacement</div>
+            <h3 class="jbi-surgeon-name">Karan Srivastava, MD</h3>
+            <div class="jbi-surgeon-role">Orthopedic Surgery</div>
+            <p class="jbi-surgeon-cred">Anterior hip replacement, robotic-assisted knee surgery, and general orthopedic care.</p>
+            <span class="jbi-surgeon-more">View profile →</span>
+          </div>
+        </a>
+
+        <a href="/team" class="jbi-surgeon">
+          <div class="jbi-surgeon-img">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=900&q=85&auto=format&fit=crop" alt="Portrait of Kelly Guzman, Physician Assistant" />
+          </div>
+          <div class="jbi-surgeon-body">
+            <div class="jbi-surgeon-kicker">Care Team</div>
+            <h3 class="jbi-surgeon-name">Kelly Guzman</h3>
+            <div class="jbi-surgeon-role">Physician Assistant</div>
+            <p class="jbi-surgeon-cred">Patient evaluations, treatment planning, and pre- and post-operative care alongside the surgical team.</p>
+            <span class="jbi-surgeon-more">View profile →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+</div>
