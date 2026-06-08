@@ -1,0 +1,242 @@
+<!--
+  JBI — Patient Education section (homepage)
+  Drop into a Squarespace Code Block on the homepage,
+  between the Care We Provide section and the Referring Physicians CTA band.
+
+  ROUTING: the 3 cards link to these post slugs — set each post's URL slug to
+  match (Post → Settings → URL), or change the hrefs below to your real URLs:
+    - six-weeks-after-knee-replacement
+    - anterior-hip-faster-recovery
+    - rotator-cuff-home-exercises
+
+  IMAGES: replace each card's <img src> with a real photo uploaded to
+  Squarespace. The FEATURED image src is intentionally left blank (shows a
+  neutral placeholder) because the previous stock photo was unrelated.
+-->
+<style>
+  section:has(.jbi-edu-wrap),
+  .page-section:has(.jbi-edu-wrap),
+  [data-section-id]:has(.jbi-edu-wrap),
+  .sqs-block-code:has(.jbi-edu-wrap),
+  .fe-block:has(.jbi-edu-wrap){
+    background:#f5efe3 !important;
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+  }
+  .jbi-edu-wrap{
+    width:100vw;
+    position:relative;
+    left:50%;
+    right:50%;
+    margin-left:-50vw;
+    margin-right:-50vw;
+    margin-top:-100px;
+    margin-bottom:-100px;
+    background:#f5efe3;
+    z-index:4;
+  }
+  .jbi-edu{
+    background:#f5efe3;
+    padding:80px 48px;
+    font-family:'Archivo',-apple-system,sans-serif;
+    position:relative;
+    overflow:hidden;
+  }
+  .jbi-edu::before{
+    content:"";
+    position:absolute;
+    top:-180px; right:-160px;
+    width:520px; height:520px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(200,154,58,0.10) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .jbi-edu-inner{position:relative; z-index:3; max-width:1440px; margin:0 auto;}
+
+  .jbi-edu-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:32px; flex-wrap:wrap; margin-bottom:56px;
+  }
+  .jbi-edu-eyebrow{
+    font-size:16px; letter-spacing:3.5px; text-transform:uppercase;
+    color:#2e5a87; font-weight:700; margin-bottom:22px;
+  }
+  .jbi-edu-title{
+    font-family:'Archivo',-apple-system,sans-serif;
+    font-size:56px; font-weight:900; letter-spacing:-2px;
+    line-height:1.02; color:#0f2d4f; margin:0;
+    max-width:720px;
+  }
+  .jbi-edu-title .accent{color:#a37a27; font-style:italic; font-weight:500;}
+  .jbi-edu-cta{
+    background:transparent; color:#0f2d4f;
+    border:1.5px solid #0f2d4f;
+    padding:13px 22px; font-size:13px; font-weight:700;
+    letter-spacing:1.2px; text-transform:uppercase;
+    border-radius:2px; cursor:pointer;
+    text-decoration:none; display:inline-block;
+    transition:all 0.2s ease; white-space:nowrap;
+  }
+  .jbi-edu-cta:hover{background:#0f2d4f; color:#f5efe3; transform:translateY(-2px);}
+
+  .jbi-edu-grid{
+    display:grid; grid-template-columns:1.45fr 1fr; gap:24px;
+    align-items:stretch;
+  }
+  .jbi-edu-col{
+    display:flex; flex-direction:column; gap:24px;
+  }
+
+  .jbi-article{
+    background:#ffffff;
+    border:1px solid rgba(15,45,79,0.08);
+    border-radius:20px;
+    text-decoration:none; color:inherit;
+    display:flex; flex-direction:column;
+    overflow:hidden;
+    transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .jbi-article:hover{
+    transform:translateY(-6px);
+    border-color:rgba(200,154,58,0.4);
+    box-shadow:0 24px 48px rgba(15,45,79,0.1);
+  }
+  .jbi-article-img{
+    overflow:hidden;
+    background:linear-gradient(135deg,#d9cfbd,#eae2d2);
+  }
+  .jbi-article-img img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    filter:saturate(0.95);
+    transition:transform 0.4s ease;
+  }
+  .jbi-article:hover .jbi-article-img img{transform:scale(1.04);}
+  .jbi-article-tag{
+    font-family:'Archivo',-apple-system,sans-serif;
+    font-size:12px; font-weight:700;
+    color:#a37a27; letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  .jbi-article-title{
+    font-family:'Archivo',-apple-system,sans-serif;
+    font-weight:700; letter-spacing:-0.5px;
+    line-height:1.2; color:#0f2d4f;
+    margin:0 0 12px;
+  }
+  .jbi-article-excerpt{
+    line-height:1.55; color:#1a1f2a;
+    margin:0; flex:1;
+  }
+  .jbi-article-more{
+    margin-top:18px;
+    font-size:13px; font-weight:700; letter-spacing:0.5px;
+    color:#0f2d4f;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:gap 0.2s ease, color 0.2s ease;
+  }
+  .jbi-article:hover .jbi-article-more{
+    gap:14px;
+    color:#a37a27;
+  }
+
+  /* Featured (large) */
+  .jbi-article--featured .jbi-article-img{
+    aspect-ratio:16/10;
+  }
+  .jbi-article--featured .jbi-article-body{
+    padding:32px;
+    display:flex; flex-direction:column; flex:1;
+  }
+  .jbi-article--featured .jbi-article-title{font-size:32px;}
+  .jbi-article--featured .jbi-article-excerpt{font-size:16px;}
+
+  /* Compact (image-left, small) */
+  .jbi-article--compact{
+    display:grid; grid-template-columns:170px 1fr; gap:0;
+    align-items:stretch;
+  }
+  .jbi-article--compact .jbi-article-img{
+    aspect-ratio:auto; height:100%;
+  }
+  .jbi-article--compact .jbi-article-body{
+    padding:22px 24px;
+    display:flex; flex-direction:column;
+  }
+  .jbi-article--compact .jbi-article-title{font-size:20px; margin-bottom:8px;}
+  .jbi-article--compact .jbi-article-excerpt{font-size:14px;}
+  .jbi-article--compact .jbi-article-more{margin-top:14px; font-size:12px;}
+
+  @media (max-width:1000px){
+    .jbi-edu{padding:60px 24px;}
+    .jbi-edu-title{font-size:40px; letter-spacing:-1.2px;}
+    .jbi-edu-grid{grid-template-columns:1fr;}
+    .jbi-article--compact{grid-template-columns:140px 1fr;}
+  }
+  @media (max-width:600px){
+    .jbi-article--compact{grid-template-columns:1fr;}
+    .jbi-article--compact .jbi-article-img{aspect-ratio:16/10;}
+  }
+</style>
+
+<div class="jbi-edu-wrap">
+  <section class="jbi-edu">
+    <div class="jbi-edu-inner">
+
+      <div class="jbi-edu-head">
+        <div>
+          <div class="jbi-edu-eyebrow">— Patient Education</div>
+          <h2 class="jbi-edu-title">Understanding <span class="accent">your care.</span></h2>
+        </div>
+        <a class="jbi-edu-cta" href="/patient-education">Browse all articles →</a>
+      </div>
+
+      <div class="jbi-edu-grid">
+
+        <a href="/patient-education/blog-post-title-one-3zaa9-zlxng-67tfc-f3aj4" class="jbi-article jbi-article--featured">
+          <div class="jbi-article-img">
+            <!-- TODO: add your knee-recovery photo URL in src (left blank to remove the unrelated stock image) -->
+            <img src="" alt="Physical therapy after knee replacement surgery" />
+          </div>
+          <div class="jbi-article-body">
+            <div class="jbi-article-tag">Recovery</div>
+            <h3 class="jbi-article-title">What to expect in the first six weeks after knee replacement.</h3>
+            <p class="jbi-article-excerpt">A week-by-week guide to swelling, mobility milestones, and when to push — straight from our surgical team.</p>
+            <span class="jbi-article-more">Read article →</span>
+          </div>
+        </a>
+
+        <div class="jbi-edu-col">
+
+          <a href="/patient-education/blog-post-title-two-t5my5-k4xmd-67jzh-m89ap" class="jbi-article jbi-article--compact">
+            <div class="jbi-article-img">
+              <img src="https://images.unsplash.com/photo-1518644961665-ed172691aaa1?w=600&q=85&auto=format&fit=crop" alt="Patient walking outdoors after anterior hip replacement" />
+            </div>
+            <div class="jbi-article-body">
+              <div class="jbi-article-tag">Procedure Insights</div>
+              <h3 class="jbi-article-title">Anterior hip replacement: why patients walk sooner.</h3>
+              <p class="jbi-article-excerpt">Two-inch incision, no detached muscles — and same-day discharge for many.</p>
+              <span class="jbi-article-more">Read article →</span>
+            </div>
+          </a>
+
+          <a href="/patient-education/blog-post-title-three-y3peb-4lwnz-5pkhf-z482e" class="jbi-article jbi-article--compact">
+            <div class="jbi-article-img">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=85&auto=format&fit=crop" alt="Shoulder strengthening exercise with a resistance band" />
+            </div>
+            <div class="jbi-article-body">
+              <div class="jbi-article-tag">At-Home Care</div>
+              <h3 class="jbi-article-title">Five exercises to protect your rotator cuff at home.</h3>
+              <p class="jbi-article-excerpt">Simple daily movements that build shoulder stability and prevent re-injury.</p>
+              <span class="jbi-article-more">Read article →</span>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>

@@ -9,6 +9,7 @@ Each `.html` file is a self-contained Squarespace **Code Block**. Drop the conte
 | `care-we-provide.html` | Homepage | After Team section, before Footer |
 | `team-section.html` | Homepage | Between Stats row and Care We Provide |
 | `specialties-header.html` | Homepage | Header to place directly above the Specialties Summary Block |
+| `patient-education-home.html` | Homepage | Patient Education featured section (1 big + 2 small) |
 | `dr-karan-srivastava.html` | `/team/karan-srivastava` | Full page body (one Code Block) |
 | `kelly-guzman.html` | `/team/kelly-guzman` | Full page body (one Code Block) |
 | `post-operative-care.html` | `/specialties/post-operative-care` | Blog post body (one Code Block) |
