@@ -340,7 +340,8 @@
     letter-spacing:1.7px;
     text-transform:uppercase;
     font-weight:900;
-    padding-top:2px;
+    /* align label with the gold dot + card title (card top padding 20px, dot top 22px) */
+    padding-top:21px;
   }
 
   .jbi-doc-train .detail{
@@ -558,6 +559,10 @@
       grid-template-columns:1fr;
       gap:10px;
       padding-left:22px;
+    }
+
+    .jbi-doc-train .year{
+      padding-top:0;
     }
 
     .jbi-doc-train li:not(:last-child)::after{
