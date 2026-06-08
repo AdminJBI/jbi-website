@@ -1,26 +1,27 @@
 /* ============================================================
    JBI — Live Specialties Summary Block (homepage)
-   Styles a Squarespace Summary Block (use the GRID layout) sourced from the
-   Specialties blog so it matches the brand cards while staying dynamic.
+   Big, blog-article style cards (matching the "Meet our team" cards) that stay
+   dynamic — sourced from the Specialties blog.
 
-   WHERE: Pages → Custom Code → Custom CSS (append to existing).
-   BLOCK SETTINGS (in the Summary Block editor):
+   WHERE: Pages → Custom Code → Custom CSS (append / replace previous version).
+
+   BLOCK SETTINGS (Summary Block editor) — these control SIZE, do them first:
      - Layout: Grid
-     - Design tab: turn ON "Description" (this shows each post's Excerpt) and
-       "Title"; "Date" optional. Set ~3 columns.
-   The blue outline + "SUMMARY" tag you see only appear in EDIT mode, not live.
+     - Columns: 3   (fewer columns = bigger cards; use 2 for even larger)
+     - Aspect Ratio: 3:2
+     - Design tab: turn ON Title + Description (the post Excerpt); Date optional
+     - Put the block in a FULL-WIDTH section so the row uses the page width
+   The blue outline + "SUMMARY" tag only show in EDIT mode, not on the live site.
 
    NOTE: Squarespace class names vary by version. If a rule doesn't apply,
-   inspect the live block and adjust. To target ONE block only, prefix each
-   selector with that block's id, e.g.  #block-yourid .summary-item { ... }
+   inspect the live block and adjust. To target ONE block, prefix selectors
+   with its id, e.g.  #block-yourid .summary-item { ... }
    ============================================================ */
 
-/* ---- Equal-height cards + uniform images ----
-   Also set a fixed "Aspect Ratio" in the block's Design tab (e.g. 3:2) for the
-   most reliable uniform thumbnails; the rules below enforce it via CSS too. */
+/* ---- Equal-height cards + uniform images ---- */
 .sqs-block-summary-v2 .summary-item-list,
 .sqs-block-summary-v2 .summary-item-list-container {
-  align-items: stretch !important;   /* stop vertical centering of shorter cards */
+  align-items: stretch !important;
 }
 .sqs-block-summary-v2 .summary-item {
   height: 100% !important;
@@ -28,9 +29,8 @@
   flex-direction: column !important;
 }
 .sqs-block-summary-v2 .summary-content {
-  flex: 1 1 auto !important;          /* text area fills, so card bottoms align */
+  flex: 1 1 auto !important;
 }
-/* uniform image height across all cards */
 .sqs-block-summary-v2 .summary-thumbnail-outer-container {
   aspect-ratio: 3 / 2;
   overflow: hidden;
@@ -42,65 +42,65 @@
   object-fit: cover !important;
 }
 
-/* ---- Card: custom border + ivory background ---- */
+/* ---- Big card: ivory, rounded, custom border (matches team cards) ---- */
 .sqs-block-summary-v2 .summary-item {
   background: #f5efe3;
-  border: 1px solid rgba(15, 45, 79, 0.12);
-  border-radius: 16px;
+  border: 1px solid rgba(200, 154, 58, 0.18);
+  border-radius: 20px;
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .sqs-block-summary-v2 .summary-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 22px 48px rgba(15, 45, 79, 0.13);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(15, 45, 79, 0.16);
   border-color: rgba(200, 154, 58, 0.55);
 }
 
-/* Image flush to the top edge of the card */
+/* Image flush to the top of the card */
 .sqs-block-summary-v2 .summary-thumbnail-outer-container { margin: 0 !important; }
 .sqs-block-summary-v2 .summary-thumbnail img { border-radius: 0 !important; }
 
-/* Padding for the text area */
+/* Roomier text area (matches team card padding) */
 .sqs-block-summary-v2 .summary-content {
-  padding: 18px 20px 22px !important;
+  padding: 26px 28px 30px !important;
 }
 
 /* Category label (brass, uppercase) */
 .sqs-block-summary-v2 .summary-metadata--primary,
 .sqs-block-summary-v2 .summary-metadata--primary a {
   color: #a37a27 !important;
-  font-size: 11px !important;
-  letter-spacing: 1.6px !important;
+  font-size: 12px !important;
+  letter-spacing: 2px !important;
   text-transform: uppercase !important;
   font-weight: 700 !important;
   text-decoration: none !important;
 }
 
-/* Title (navy Roboto Slab) */
+/* Title — bigger, navy Roboto Slab (like the team card names) */
 .sqs-block-summary-v2 .summary-title {
   font-family: 'Roboto Slab', Georgia, serif !important;
-  font-size: 21px !important;
+  font-size: 26px !important;
   font-weight: 700 !important;
-  letter-spacing: -0.4px !important;
-  line-height: 1.2 !important;
-  margin: 6px 0 8px !important;
+  letter-spacing: -0.5px !important;
+  line-height: 1.18 !important;
+  margin: 10px 0 10px !important;
 }
 .sqs-block-summary-v2 .summary-title a { color: #0f2d4f !important; }
 .sqs-block-summary-v2 .summary-title a:hover { color: #a37a27 !important; }
 
-/* Short description (the post Excerpt) */
+/* Description (the post Excerpt) */
 .sqs-block-summary-v2 .summary-excerpt,
 .sqs-block-summary-v2 .summary-excerpt p {
   color: #3a3f4a !important;
-  font-size: 14.5px !important;
-  line-height: 1.55 !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
   font-weight: 400 !important;
 }
 
 /* Date (muted) */
 .sqs-block-summary-v2 .summary-metadata--secondary {
   color: #6a6558 !important;
-  font-size: 12px !important;
+  font-size: 13px !important;
 }
 
 /* Read more link */
@@ -109,7 +109,7 @@
   font-weight: 800 !important;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  font-size: 12px !important;
+  font-size: 13px !important;
   text-decoration: none !important;
 }
 .sqs-block-summary-v2 .summary-read-more-link:hover { color: #a37a27 !important; }
