@@ -81,6 +81,14 @@ post Code Block (class `.jbi-spec`) — duplicate it per article and fill the
 `[[PLACEHOLDERS]]`. The home page "Patient Education" teaser cards link to these
 posts (`/patient-education/<slug>`), and "Browse all articles" → `/patient-education`.
 
+Articles written to match the homepage teaser card slugs:
+
+| Article | File | Slug |
+|---|---|---|
+| First six weeks after knee replacement (Recovery) | `patient-education/six-weeks-after-knee-replacement.html` | `/patient-education/six-weeks-after-knee-replacement` |
+| Anterior hip replacement: why patients walk sooner (Procedure Insights) | `patient-education/anterior-hip-faster-recovery.html` | `/patient-education/anterior-hip-faster-recovery` |
+| Five exercises to protect your rotator cuff at home (At-Home Care) | `patient-education/rotator-cuff-home-exercises.html` | `/patient-education/rotator-cuff-home-exercises` |
+
 ## Sections not yet built (pending code blocks)
 
 - `patient-journal.html` — homepage Patient Journal teaser (3 article cards)
