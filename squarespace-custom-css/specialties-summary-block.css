@@ -15,6 +15,33 @@
    selector with that block's id, e.g.  #block-yourid .summary-item { ... }
    ============================================================ */
 
+/* ---- Equal-height cards + uniform images ----
+   Also set a fixed "Aspect Ratio" in the block's Design tab (e.g. 3:2) for the
+   most reliable uniform thumbnails; the rules below enforce it via CSS too. */
+.sqs-block-summary-v2 .summary-item-list,
+.sqs-block-summary-v2 .summary-item-list-container {
+  align-items: stretch !important;   /* stop vertical centering of shorter cards */
+}
+.sqs-block-summary-v2 .summary-item {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.sqs-block-summary-v2 .summary-content {
+  flex: 1 1 auto !important;          /* text area fills, so card bottoms align */
+}
+/* uniform image height across all cards */
+.sqs-block-summary-v2 .summary-thumbnail-outer-container {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+.sqs-block-summary-v2 .summary-thumbnail { height: 100% !important; }
+.sqs-block-summary-v2 .summary-thumbnail img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
 /* ---- Card: custom border + ivory background ---- */
 .sqs-block-summary-v2 .summary-item {
   background: #f5efe3;
