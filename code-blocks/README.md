@@ -76,6 +76,7 @@ light crumb + summary, then the body + sidebar + CTA. Set the SEO Title per post
 | Rotator Cuff & Shoulder Injuries | `specialties/rotator-cuff-shoulder-injuries.html` | `/specialties/rotator-cuff-shoulder-injuries` |
 | Hand & Carpal Tunnel Surgery | `specialties/carpal-tunnel-surgery.html` | `/specialties/carpal-tunnel-surgery` |
 | Fracture Care | `specialties/fracture-care.html` | `/specialties/fracture-care` |
+| Wrist Arthritis | `specialties/wrist-arthritis.html` | `/specialties/wrist-arthritis` |
 
 ## Patient Education blog
 
