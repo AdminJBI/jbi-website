@@ -1,0 +1,795 @@
+<!--
+  JBI — Physician profile
+  PAGE: /team/pramod-srivastava
+  Paste this whole block into ONE Code Block on the page body.
+  SEO Title: Pramod Srivastava, MD | Orthopedic Surgeon in Bakersfield, CA
+  Hide the native page title (this block has its own <h1>).
+  TODO: add Dr. Pramod Srivastava's headshot URL in the hero <img src="">.
+-->
+<style>
+  .jbi-doc{
+    width:100vw;
+    position:relative;
+    left:50%;
+    right:50%;
+    margin-left:-50vw;
+    margin-right:-50vw;
+    font-family:'Archivo',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:#1a1f2a;
+    background:#fff;
+  }
+
+  .jbi-doc *{box-sizing:border-box;}
+  .jbi-doc a{text-decoration:none;}
+
+  .jbi-doc .inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 48px;
+  }
+
+  .jbi-doc-eyebrow{
+    font-size:13px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#c89a3a;
+    font-weight:800;
+    margin-bottom:14px;
+  }
+
+  .jbi-doc h1,
+  .jbi-doc h2,
+  .jbi-doc h3,
+  .jbi-doc p{
+    margin-top:0;
+  }
+
+  .jbi-doc-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    background:#c89a3a;
+    color:#081a30;
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:1.1px;
+    text-transform:uppercase;
+    padding:16px 26px;
+    border-radius:3px;
+    transition:all .25s ease;
+  }
+
+  .jbi-doc-btn:hover{
+    background:#a37a27;
+    transform:translateY(-2px);
+    box-shadow:0 12px 28px rgba(200,154,58,.28);
+  }
+
+  .jbi-doc-btn.ghost{
+    background:transparent;
+    color:#fff;
+    border:1.5px solid rgba(255,255,255,.34);
+  }
+
+  .jbi-doc-btn.ghost:hover{
+    background:#fff;
+    color:#0f2d4f;
+    box-shadow:none;
+  }
+
+  /* HERO */
+  .jbi-doc-hero{
+    background:
+      radial-gradient(circle at top right, rgba(200,154,58,.18), transparent 34%),
+      radial-gradient(circle at bottom left, rgba(46,90,135,.48), transparent 34%),
+      #0f2d4f;
+    padding:92px 0 86px;
+    color:#fff;
+    overflow:hidden;
+  }
+
+  .jbi-doc-hero-grid{
+    display:grid;
+    grid-template-columns:360px 1fr;
+    gap:58px;
+    align-items:center;
+  }
+
+  .jbi-doc-photo-wrap{
+    position:relative;
+  }
+
+  .jbi-doc-photo-wrap::before{
+    content:"";
+    position:absolute;
+    inset:22px -18px -18px 22px;
+    border:1px solid rgba(200,154,58,.55);
+    border-radius:24px;
+    z-index:0;
+  }
+
+  .jbi-doc-portrait{
+    position:relative;
+    z-index:1;
+    aspect-ratio:4/5;
+    border-radius:24px;
+    overflow:hidden;
+    background:linear-gradient(135deg,#d9cfbd,#eae2d2);
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow:0 28px 70px rgba(0,0,0,.26);
+  }
+
+  .jbi-doc-portrait img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .jbi-doc-kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:#f2d08a;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.12);
+    padding:9px 14px;
+    border-radius:100px;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+  }
+
+  .jbi-doc-hero h1{
+    font-size:58px;
+    line-height:1.02;
+    letter-spacing:-2px;
+    font-weight:850;
+    color:#fff;
+    margin-bottom:12px;
+  }
+
+  .jbi-doc-role{
+    font-size:20px;
+    color:#cdd6e2;
+    font-weight:600;
+    margin-bottom:22px;
+  }
+
+  .jbi-doc-lede{
+    font-size:20px;
+    line-height:1.58;
+    color:#e6edf5;
+    max-width:680px;
+    margin-bottom:28px;
+  }
+
+  .jbi-doc-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:28px;
+  }
+
+  .jbi-doc-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+  }
+
+  .jbi-doc-tags a{
+    display:inline-flex;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.16);
+    color:#fff;
+    padding:9px 14px;
+    border-radius:100px;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.8px;
+    text-transform:uppercase;
+    transition:all .2s ease;
+  }
+
+  .jbi-doc-tags a:hover{
+    background:#c89a3a;
+    color:#081a30;
+    border-color:#c89a3a;
+  }
+
+  /* QUICK FACTS */
+  .jbi-doc-facts{
+    background:#f5efe3;
+    padding:34px 0;
+  }
+
+  .jbi-doc-facts-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+  }
+
+  .jbi-doc-fact{
+    background:#fff;
+    border:1px solid rgba(15,45,79,.08);
+    border-radius:16px;
+    padding:22px 22px;
+    box-shadow:0 10px 28px rgba(15,45,79,.05);
+  }
+
+  .jbi-doc-fact .label{
+    display:block;
+    font-size:11px;
+    letter-spacing:1.7px;
+    text-transform:uppercase;
+    color:#a37a27;
+    font-weight:900;
+    margin-bottom:8px;
+  }
+
+  .jbi-doc-fact .value{
+    font-size:16px;
+    line-height:1.35;
+    color:#0f2d4f;
+    font-weight:800;
+  }
+
+  /* BODY */
+  .jbi-doc-main{
+    padding:82px 0 96px;
+  }
+
+  .jbi-doc-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 330px;
+    gap:58px;
+    align-items:start;
+  }
+
+  .jbi-doc-section{
+    margin-bottom:46px;
+  }
+
+  .jbi-doc-section h2{
+    font-size:34px;
+    line-height:1.1;
+    letter-spacing:-1px;
+    color:#0f2d4f;
+    font-weight:850;
+    margin-bottom:16px;
+  }
+
+  .jbi-doc-section h2 .accent{
+    color:#a37a27;
+    font-style:italic;
+    font-weight:500;
+  }
+
+  .jbi-doc-section p{
+    font-size:17px;
+    line-height:1.75;
+    color:#3a3f4a;
+    margin-bottom:18px;
+  }
+
+  .jbi-doc-section a{
+    color:#a37a27;
+    font-weight:800;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+
+  .jbi-doc-section a:hover{
+    color:#0f2d4f;
+  }
+
+  .jbi-doc-callout{
+    background:#f5efe3;
+    border-left:4px solid #c89a3a;
+    border-radius:14px;
+    padding:24px 26px;
+    margin:28px 0 0;
+  }
+
+  .jbi-doc-callout p{
+    color:#0f2d4f;
+    font-weight:650;
+    margin:0;
+  }
+
+  /* TRAINING */
+  .jbi-doc-train{
+    list-style:none;
+    padding:0;
+    margin:24px 0 0;
+  }
+
+  .jbi-doc-train li{
+    position:relative;
+    display:grid;
+    grid-template-columns:170px 1fr;
+    gap:22px;
+    padding:0 0 26px;
+    margin:0;
+  }
+
+  .jbi-doc-train li:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    left:169px;
+    top:28px;
+    bottom:0;
+    width:2px;
+    background:rgba(200,154,58,.32);
+  }
+
+  .jbi-doc-train .year{
+    color:#a37a27;
+    font-size:12px;
+    letter-spacing:1.7px;
+    text-transform:uppercase;
+    font-weight:900;
+    /* align label with the gold dot + card title (card top padding 20px, dot top 22px) */
+    padding-top:21px;
+  }
+
+  .jbi-doc-train .detail{
+    position:relative;
+    background:#fff;
+    border:1px solid rgba(15,45,79,.08);
+    border-radius:16px;
+    padding:20px 22px;
+    box-shadow:0 10px 28px rgba(15,45,79,.05);
+  }
+
+  .jbi-doc-train .detail::before{
+    content:"";
+    position:absolute;
+    left:-29px;
+    top:22px;
+    width:13px;
+    height:13px;
+    background:#c89a3a;
+    border-radius:50%;
+    box-shadow:0 0 0 5px #f5efe3;
+  }
+
+  .jbi-doc-train strong{
+    display:block;
+    color:#0f2d4f;
+    font-size:16px;
+    font-weight:850;
+    margin-bottom:4px;
+  }
+
+  .jbi-doc-train span{
+    display:block;
+    color:#596170;
+    font-size:15px;
+    line-height:1.55;
+  }
+
+  /* SIDEBAR */
+  .jbi-doc-sidebar{
+    position:sticky;
+    top:24px;
+  }
+
+  .jbi-doc-side-card{
+    background:#0f2d4f;
+    color:#fff;
+    border-radius:22px;
+    padding:28px;
+    box-shadow:0 24px 54px rgba(15,45,79,.18);
+    margin-bottom:22px;
+  }
+
+  .jbi-doc-side-card h3{
+    color:#fff;
+    font-size:23px;
+    line-height:1.15;
+    letter-spacing:-.5px;
+    font-weight:850;
+    margin-bottom:10px;
+  }
+
+  .jbi-doc-side-card p{
+    color:#cdd6e2;
+    font-size:15px;
+    line-height:1.6;
+    margin-bottom:20px;
+  }
+
+  .jbi-doc-side-card .jbi-doc-btn{
+    width:100%;
+  }
+
+  .jbi-doc-list-card{
+    background:#fff;
+    border:1px solid rgba(15,45,79,.09);
+    border-radius:22px;
+    padding:26px;
+    box-shadow:0 14px 36px rgba(15,45,79,.07);
+  }
+
+  .jbi-doc-list-card h3{
+    color:#0f2d4f;
+    font-size:20px;
+    font-weight:850;
+    letter-spacing:-.4px;
+    margin-bottom:16px;
+  }
+
+  .jbi-doc-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+
+  .jbi-doc-list li{
+    border-top:1px solid rgba(15,45,79,.08);
+    padding:13px 0;
+    color:#3a3f4a;
+    font-size:15px;
+    line-height:1.45;
+  }
+
+  .jbi-doc-list li:first-child{
+    border-top:0;
+    padding-top:0;
+  }
+
+  .jbi-doc-list a{
+    color:#0f2d4f;
+    font-weight:800;
+    text-decoration:none;
+  }
+
+  .jbi-doc-list a:hover{
+    color:#a37a27;
+  }
+
+  /* FINAL CTA */
+  .jbi-doc-bottom-cta{
+    background:
+      radial-gradient(circle at top right, rgba(200,154,58,.16), transparent 30%),
+      #081a30;
+    padding:76px 0;
+    text-align:center;
+  }
+
+  .jbi-doc-bottom-cta h2{
+    color:#fff;
+    font-size:42px;
+    line-height:1.08;
+    letter-spacing:-1.2px;
+    font-weight:850;
+    margin-bottom:14px;
+  }
+
+  .jbi-doc-bottom-cta h2 .accent{
+    color:#c89a3a;
+    font-style:italic;
+    font-weight:500;
+  }
+
+  .jbi-doc-bottom-cta p{
+    color:#cdd6e2;
+    font-size:18px;
+    line-height:1.6;
+    max-width:620px;
+    margin:0 auto 28px;
+  }
+
+  .jbi-doc-bottom-cta .jbi-doc-actions{
+    justify-content:center;
+    margin-bottom:0;
+  }
+
+  @media(max-width:980px){
+    .jbi-doc .inner{
+      padding:0 24px;
+    }
+
+    .jbi-doc-hero{
+      padding:72px 0 68px;
+    }
+
+    .jbi-doc-hero-grid{
+      grid-template-columns:1fr;
+      gap:36px;
+    }
+
+    .jbi-doc-photo-wrap{
+      max-width:320px;
+    }
+
+    .jbi-doc-hero h1{
+      font-size:42px;
+      letter-spacing:-1.2px;
+    }
+
+    .jbi-doc-lede{
+      font-size:18px;
+    }
+
+    .jbi-doc-facts-grid{
+      grid-template-columns:repeat(2,1fr);
+    }
+
+    .jbi-doc-layout{
+      grid-template-columns:1fr;
+      gap:42px;
+    }
+
+    .jbi-doc-sidebar{
+      position:static;
+    }
+
+    .jbi-doc-section h2{
+      font-size:29px;
+    }
+  }
+
+  @media(max-width:620px){
+    .jbi-doc-facts-grid{
+      grid-template-columns:1fr;
+    }
+
+    .jbi-doc-actions{
+      flex-direction:column;
+    }
+
+    .jbi-doc-btn{
+      width:100%;
+    }
+
+    .jbi-doc-train li{
+      grid-template-columns:1fr;
+      gap:10px;
+      padding-left:22px;
+    }
+
+    .jbi-doc-train .year{
+      padding-top:0;
+    }
+
+    .jbi-doc-train li:not(:last-child)::after{
+      left:4px;
+      top:34px;
+    }
+
+    .jbi-doc-train .detail::before{
+      left:-25px;
+    }
+
+    .jbi-doc-bottom-cta h2{
+      font-size:32px;
+    }
+  }
+/* hide empty placeholder portrait cleanly until a real photo URL is added */
+  .jbi-doc-portrait img[src=""]{opacity:0;}
+</style>
+<article class="jbi-doc">
+
+  <!-- HERO -->
+  <section class="jbi-doc-hero">
+    <div class="inner">
+      <div class="jbi-doc-hero-grid">
+
+        <div class="jbi-doc-photo-wrap">
+          <div class="jbi-doc-portrait">
+            <!-- TODO: add Dr. Pramod Srivastava's headshot URL in src (upload to Squarespace) -->
+            <img src="" alt="Dr. Pramod Srivastava, Chairman and Lead Orthopedic Surgeon at Joint and Bone Institute of California" />
+          </div>
+        </div>
+
+        <div class="jbi-doc-intro">
+          <div class="jbi-doc-kicker">Orthopedic Surgeon · Chairman &amp; Founder</div>
+
+          <h1>Pramod Srivastava, MD</h1>
+
+          <p class="jbi-doc-role">Founding Physician &amp; Chairman, Joint &amp; Bone Institute of California</p>
+
+          <p class="jbi-doc-lede">
+            Board-certified orthopedic surgeon, founding physician, and Chairman of Joint &amp; Bone Institute of California &mdash; with more than three decades of orthopedic care in the Central Valley.
+          </p>
+
+          <div class="jbi-doc-actions">
+            <a class="jbi-doc-btn" href="/request-appointment">Request an appointment →</a>
+            <a class="jbi-doc-btn ghost" href="tel:6615443352">Call 661.544.3352</a>
+          </div>
+
+          <div class="jbi-doc-tags">
+            <a href="/specialties/knee-replacement">Knee Replacement</a>
+            <a href="/specialties/rotator-cuff-shoulder-injuries">Rotator Cuff Repair</a>
+            <a href="/specialties/fracture-care">Trauma Care</a>
+            <a href="/specialties">Arthroscopic Surgery</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK FACTS -->
+  <section class="jbi-doc-facts">
+    <div class="inner">
+      <div class="jbi-doc-facts-grid">
+
+        <div class="jbi-doc-fact">
+          <span class="label">Specialty</span>
+          <span class="value">Orthopedic Surgery</span>
+        </div>
+
+        <div class="jbi-doc-fact">
+          <span class="label">Focus Areas</span>
+          <span class="value">Knee replacement, shoulder care, trauma, arthroscopy, and workers&rsquo; compensation</span>
+        </div>
+
+        <div class="jbi-doc-fact">
+          <span class="label">Years in Practice</span>
+          <span class="value">Practicing since 1992</span>
+        </div>
+
+        <div class="jbi-doc-fact">
+          <span class="label">Serving</span>
+          <span class="value">Bakersfield, Delano, Porterville, and the Central Valley</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="jbi-doc-main">
+    <div class="inner">
+      <div class="jbi-doc-layout">
+
+        <div class="jbi-doc-content">
+
+          <section class="jbi-doc-section">
+            <h2>More than three decades of <span class="accent">orthopedic care.</span></h2>
+            <p>Dr. Pramod Srivastava has spent more than 30 years caring for orthopedic patients in the Central Valley. His work has centered on helping people recover from injuries, manage joint pain, regain function, and return to the routines that matter most &mdash; whether that means walking without pain, getting back to work, caring for family, or staying active later in life.</p>
+            <p>He provides care for a wide range of orthopedic conditions, with particular experience in knee replacement, rotator cuff repair, arthroscopic surgery, workers&rsquo; compensation injuries, and orthopedic trauma. Over the course of his career, he has treated patients of many ages and backgrounds, including those recovering from fractures, work-related injuries, sports injuries, and long-term joint problems.</p>
+            <p>His approach is direct, thoughtful, and conservative when appropriate. Surgery is not the first step for every patient. Dr. Srivastava believes treatment should begin with a clear diagnosis, a careful conversation, and a plan that makes sense for the patient&rsquo;s condition, lifestyle, and goals.</p>
+            <div class="jbi-doc-callout">
+              <p>&ldquo;Good orthopedic care means restoring pain-free, optimal function of the limbs and joints.&rdquo;</p>
+            </div>
+          </section>
+
+          <section class="jbi-doc-section">
+            <h2>A founder&rsquo;s commitment to the <span class="accent">Central Valley.</span></h2>
+            <p>Dr. Srivastava has lived in Bakersfield since 1991 and began practicing orthopedic surgery in 1992. In 1997, he founded the practice that would become Joint &amp; Bone Institute of California, building it around a simple but important goal: to make dependable orthopedic care more accessible to patients throughout the Central Valley.</p>
+            <p>As Chairman and Lead Orthopedic Surgeon, he continues to help shape the standard of care across JBI. His vision is that every patient should be treated with respect, urgency, and careful attention &mdash; not just to relieve pain, but to help them return to a life that feels functional, independent, and full.</p>
+            <p>Today, Joint &amp; Bone Institute of California serves patients across three locations in Bakersfield, Delano, and Porterville, continuing the same mission that guided the practice from the beginning: provide skilled orthopedic care close to home.</p>
+
+            <ul class="jbi-doc-train">
+              <li>
+                <div class="year">1991</div>
+                <div class="detail">
+                  <strong>Made Bakersfield home</strong>
+                  <span>Settled in Bakersfield and the Central Valley community he still serves today</span>
+                </div>
+              </li>
+              <li>
+                <div class="year">1992</div>
+                <div class="detail">
+                  <strong>Began practicing orthopedic surgery</strong>
+                  <span>Started caring for orthopedic patients across the region</span>
+                </div>
+              </li>
+              <li>
+                <div class="year">1997</div>
+                <div class="detail">
+                  <strong>Founded the practice</strong>
+                  <span>Established what would become the Joint &amp; Bone Institute of California</span>
+                </div>
+              </li>
+              <li>
+                <div class="year">Today</div>
+                <div class="detail">
+                  <strong>Chairman &amp; Lead Orthopedic Surgeon</strong>
+                  <span>Guiding care across three Central Valley locations</span>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="jbi-doc-section">
+            <h2>Experienced care for injuries, joints, and <span class="accent">recovery.</span></h2>
+            <p>Dr. Srivastava&rsquo;s practice includes both surgical and non-surgical orthopedic care. He is especially known for his work with rotator cuff repairs, knee replacements, trauma care, workers&rsquo; compensation cases, and arthroscopic procedures.</p>
+            <p>For patients with shoulder injuries, knee arthritis, fractures, or work-related orthopedic problems, his goal is to explain the condition clearly and outline realistic treatment options. Whenever possible, he considers conservative care first. When surgery is needed, he helps patients understand the reason for the procedure, what recovery may involve, and how the care team will support them through the process.</p>
+            <p>Patients should leave his office feeling heard, informed, and confident about the next step.</p>
+          </section>
+
+          <section class="jbi-doc-section">
+            <h2>Leadership at <span class="accent">JBI.</span></h2>
+            <p>As Chairman and Lead Orthopedic Surgeon, Dr. Srivastava plays a central role in the clinical direction of Joint &amp; Bone Institute of California. His leadership is rooted in the belief that orthopedic care should be both highly skilled and deeply personal.</p>
+            <p>That means timely access, clear communication, careful follow-up, and treatment plans that focus on the whole patient &mdash; not just an X-ray or MRI. For Dr. Srivastava, the measure of success is not only a technically sound procedure, but a patient who can return to daily life with better comfort, mobility, and function.</p>
+          </section>
+
+          <section class="jbi-doc-section">
+            <h2>Connected to the community.</h2>
+            <p>Outside of medicine, Dr. Srivastava remains active in the Bakersfield community. He has participated in local events, including the Bakersfield Marathon, and has been involved in efforts to provide meals for people experiencing homelessness.</p>
+            <p>Away from the clinic and operating room, he enjoys ping pong, chess, and sports &mdash; and is especially a fan of cricket.</p>
+          </section>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="jbi-doc-sidebar">
+
+          <div class="jbi-doc-side-card">
+            <h3>Schedule with Dr. Srivastava</h3>
+            <p>New and returning patients are welcome across our Bakersfield, Delano, and Porterville offices.</p>
+            <a class="jbi-doc-btn" href="/request-appointment">Request appointment →</a>
+          </div>
+
+          <div class="jbi-doc-list-card">
+            <h3>Areas of Care</h3>
+            <ul class="jbi-doc-list">
+              <li><a href="/specialties/knee-replacement">Knee replacement</a></li>
+              <li><a href="/specialties/rotator-cuff-shoulder-injuries">Rotator cuff repair</a></li>
+              <li><a href="/specialties">Arthroscopic surgery</a></li>
+              <li><a href="/specialties/fracture-care">Orthopedic trauma &amp; fracture care</a></li>
+              <li><a href="/specialties">Workers&rsquo; compensation injuries</a></li>
+              <li><a href="/specialties">General orthopedic care</a></li>
+            </ul>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="jbi-doc-bottom-cta">
+    <div class="inner">
+      <h2>Experienced orthopedic care, <span class="accent">close to home.</span></h2>
+      <p>
+        Request an appointment with Dr. Pramod Srivastava at Joint &amp; Bone Institute of California.
+      </p>
+      <div class="jbi-doc-actions">
+        <a class="jbi-doc-btn" href="/request-appointment">Request an appointment →</a>
+        <a class="jbi-doc-btn ghost" href="tel:6615443352">Call 661.544.3352</a>
+      </div>
+    </div>
+  </section>
+
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": "Pramod Srivastava, MD",
+  "jobTitle": "Chairman & Lead Orthopedic Surgeon",
+  "medicalSpecialty": ["Orthopedic Surgery", "Knee Replacement", "Rotator Cuff Repair", "Orthopedic Trauma"],
+  "url": "/team/pramod-srivastava",
+  "worksFor": {
+    "@type": "MedicalOrganization",
+    "name": "Joint & Bone Institute of California",
+    "url": "/"
+  },
+  "knowsAbout": [
+    "Knee Replacement",
+    "Rotator Cuff Repair",
+    "Arthroscopic Surgery",
+    "Orthopedic Trauma",
+    "Workers' Compensation Injuries",
+    "General Orthopedics"
+  ],
+  "areaServed": [
+    {"@type": "City", "name": "Bakersfield, California"},
+    {"@type": "City", "name": "Delano, California"},
+    {"@type": "City", "name": "Porterville, California"},
+    {"@type": "AdministrativeArea", "name": "Kern County, California"},
+    {"@type": "AdministrativeArea", "name": "Tulare County, California"}
+  ]
+}
+</script>

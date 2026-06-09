@@ -12,6 +12,7 @@ Each `.html` file is a self-contained Squarespace **Code Block**. Drop the conte
 | `patient-education-home.html` | Homepage | Patient Education featured section (1 big + 2 small) |
 | `dr-karan-srivastava.html` | `/team/karan-srivastava` | Full page body (one Code Block) |
 | `kelly-guzman.html` | `/team/kelly-guzman` | Full page body (one Code Block) |
+| `dr-pramod-srivastava.html` | `/team/pramod-srivastava` | Full page body (one Code Block) |
 | `post-operative-care.html` | `/specialties/post-operative-care` | Blog post body (one Code Block) |
 | `insurance-accepted.html` | `/insurance-accepted` (Patient Resources folder) | Full page body (one Code Block) |
 
@@ -38,8 +39,7 @@ H1. Still set the SEO Title in Page Settings → SEO for the browser tab and Goo
 - `dr-karan-srivastava.html` — ✅ Live at `/team/karan-srivastava`
 - `kelly-guzman.html` — ✅ Built for `/team/kelly-guzman` (needs real headshot)
 
-Pending profiles (to build from the same `.jbi-doc` template):
-- `dr-pramod-srivastava.html` — Comprehensive Orthopedic Surgeon
+- `dr-pramod-srivastava.html` — ✅ Built for `/team/pramod-srivastava` (needs real headshot)
 
 ## Post-Operative Care (single blog post)
 
