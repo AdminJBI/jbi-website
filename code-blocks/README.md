@@ -37,7 +37,7 @@ title** (Page Settings → uncheck "Show page title" / "Header Display") to avoi
 H1. Still set the SEO Title in Page Settings → SEO for the browser tab and Google.
 
 - `dr-karan-srivastava.html` — ✅ Live at `/team/karan-srivastava`
-- `kelly-guzman.html` — ✅ Built for `/team/kelly-guzman` (needs real headshot)
+- `kelly-guzman.html` — ✅ Built for `/team/kelly-guzman` as Kelly Guzman, PA-C (needs real headshot)
 
 - `dr-pramod-srivastava.html` — ✅ Built for `/team/pramod-srivastava` (needs real headshot)
 

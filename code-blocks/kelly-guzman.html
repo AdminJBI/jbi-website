@@ -2,19 +2,10 @@
   JBI — Physician profile
   PAGE: /team/kelly-guzman
   Paste this whole block into ONE Code Block on the page body.
-  Recommended Squarespace page title: Kelly Guzman, PA
-
-  IMPORTANT: this Code Block contains its own <h1> inside the hero, so the
-  Squarespace native page title would create a duplicate H1 (bad for SEO).
-  In the page Settings, HIDE the native title:
-    - Page Settings → SEO → still set the SEO Title (browser tab + Google)
-    - In the page editor, click the title/banner area → uncheck "Show page title"
-      (label varies by template — some call it "Header Display")
-
-  TODO: replace the placeholder portrait <img src> with Kelly's real headshot
-  uploaded to Squarespace, then add a matching "image" field to the JSON-LD below.
+  SEO Title: Kelly Guzman, PA-C | Orthopedic Physician Assistant in Bakersfield & Delano
+  Hide the native page title (this block has its own <h1>).
+  TODO: add Kelly Guzman's headshot URL in the hero <img src="">.
 -->
-
 <style>
   .jbi-doc{
     width:100vw;
@@ -451,6 +442,16 @@
     padding-top:0;
   }
 
+  .jbi-doc-list a{
+    color:#0f2d4f;
+    font-weight:800;
+    text-decoration:none;
+  }
+
+  .jbi-doc-list a:hover{
+    color:#a37a27;
+  }
+
   /* FINAL CTA */
   .jbi-doc-bottom-cta{
     background:
@@ -569,8 +570,9 @@
       font-size:32px;
     }
   }
+/* hide empty placeholder portrait cleanly until a real photo URL is added */
+  .jbi-doc-portrait img[src=""]{opacity:0;}
 </style>
-
 <article class="jbi-doc">
 
   <!-- HERO -->
@@ -580,20 +582,20 @@
 
         <div class="jbi-doc-photo-wrap">
           <div class="jbi-doc-portrait">
-            <!-- TODO: replace src with Kelly Guzman's real headshot uploaded to Squarespace -->
-            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=900&q=85&auto=format&fit=crop" alt="Kelly Guzman, PA, orthopedic physician assistant at Joint and Bone Institute of California" />
+            <!-- TODO: add Kelly Guzman's headshot URL in src (upload to Squarespace) -->
+            <img src="" alt="Kelly Guzman, PA-C, orthopedic Physician Assistant at Joint and Bone Institute of California" />
           </div>
         </div>
 
         <div class="jbi-doc-intro">
           <div class="jbi-doc-kicker">Physician Assistant · Orthopedic Care</div>
 
-          <h1>Kelly Guzman, PA</h1>
+          <h1>Kelly Guzman, PA-C</h1>
 
           <p class="jbi-doc-role">Physician Assistant, Joint &amp; Bone Institute of California</p>
 
           <p class="jbi-doc-lede">
-            As an orthopedic physician assistant, Kelly evaluates and treats musculoskeletal conditions, performs procedures and injections, interprets diagnostic studies, and manages both nonoperative and postoperative patient care.
+            Orthopedic Physician Assistant supporting musculoskeletal care, procedures, injections, and postoperative recovery at Joint &amp; Bone Institute of California.
           </p>
 
           <div class="jbi-doc-actions">
@@ -603,9 +605,9 @@
 
           <div class="jbi-doc-tags">
             <a href="/specialties">Musculoskeletal Care</a>
-            <a href="/specialties">Injections &amp; Procedures</a>
-            <a href="/specialties">Nonoperative Care</a>
-            <a href="/specialties">Postoperative Care</a>
+            <a href="/specialties/post-operative-care">Injections &amp; Procedures</a>
+            <a href="/specialties/post-operative-care">Postoperative Care</a>
+            <a href="/patient-education">Patient Education</a>
           </div>
         </div>
 
@@ -624,18 +626,18 @@
         </div>
 
         <div class="jbi-doc-fact">
+          <span class="label">Focus Areas</span>
+          <span class="value">Musculoskeletal evaluation, injections, procedures, and postoperative care</span>
+        </div>
+
+        <div class="jbi-doc-fact">
           <span class="label">Languages</span>
           <span class="value">English &amp; Spanish</span>
         </div>
 
         <div class="jbi-doc-fact">
-          <span class="label">With JBI</span>
-          <span class="value">Since 2025</span>
-        </div>
-
-        <div class="jbi-doc-fact">
           <span class="label">Serving</span>
-          <span class="value">Bakersfield, Delano, and Porterville</span>
+          <span class="value">Bakersfield, Delano, and the Central Valley</span>
         </div>
 
       </div>
@@ -650,75 +652,31 @@
         <div class="jbi-doc-content">
 
           <section class="jbi-doc-section">
-            <h2>From urgent care to <span class="accent">orthopedics.</span></h2>
+            <h2>Supporting patients through every step of <span class="accent">orthopedic care.</span></h2>
+            <p>Kelly Guzman works closely with the physicians and care team at Joint &amp; Bone Institute of California to help patients understand their condition, treatment options, and next steps. As an orthopedic Physician Assistant, she plays an important role in evaluating musculoskeletal concerns, interpreting diagnostic studies, performing procedures and injections, and helping manage care before and after surgery.</p>
+            <p>For many patients, the first orthopedic visit can feel overwhelming. Kelly&rsquo;s role is to make that process clearer and more manageable. She helps patients talk through their symptoms, understand what their imaging or exam may show, and feel more prepared for the plan ahead &mdash; whether that involves conservative treatment, injections, therapy, additional testing, or postoperative follow-up.</p>
+            <p>Her work supports the broader JBI goal of providing timely, thoughtful orthopedic care close to home for patients in Bakersfield, Delano, and the Central Valley.</p>
+          </section>
 
-            <p>
-              Kelly Guzman began her career in primary care and urgent care. While working in urgent care, she met <a href="/team/karan-srivastava">Dr. Karan Srivastava</a> when he came in to lead a splinting workshop. After taking time off following the birth of her daughter, she was ready to return to work &mdash; and an opportunity in orthopedics came up. She joined the Joint &amp; Bone Institute of California in 2025.
-            </p>
-
-            <p>
-              What she enjoys most about orthopedics is helping patients get back to doing the things they love. Whether it&rsquo;s walking without pain, returning to work, or getting back to a sport, it&rsquo;s rewarding to see that improvement.
-            </p>
-
+          <section class="jbi-doc-section">
+            <h2>A practical, patient-centered <span class="accent">approach.</span></h2>
+            <p>Kelly&rsquo;s approach is built around clear communication and steady support. Orthopedic care often involves more than a single appointment. Patients may need help understanding an injury, preparing for a procedure, recovering after surgery, or deciding what treatment option best fits their day-to-day life.</p>
+            <p>In each of those moments, Kelly helps bridge the gap between diagnosis and action. She works with patients to answer questions, explain recommendations, and keep care moving forward in a way that feels organized and approachable.</p>
             <div class="jbi-doc-callout">
-              <p>
-                &ldquo;Patient care means listening first and making sure patients leave with a plan they understand and feel comfortable with.&rdquo;
-              </p>
+              <p>Her goal is for patients to leave their visit feeling informed, heard, and confident about the next step in their care.</p>
             </div>
           </section>
 
           <section class="jbi-doc-section">
-            <h2>Education &amp; <span class="accent">training.</span></h2>
-
-            <p>
-              Kelly earned a Master of Science in Physician Assistant Studies, building on an undergraduate foundation in the biological sciences. Before moving into orthopedics, she gained hands-on clinical experience in urgent care and primary care.
-            </p>
-
-            <ul class="jbi-doc-train">
-              <li>
-                <div class="year">Undergraduate</div>
-                <div class="detail">
-                  <strong>B.S. in Biological Sciences</strong>
-                  <span>Bachelor of Science foundation in the biological sciences</span>
-                </div>
-              </li>
-
-              <li>
-                <div class="year">Graduate</div>
-                <div class="detail">
-                  <strong>M.S. in Physician Assistant Studies</strong>
-                  <span>Master&rsquo;s training in clinical evaluation, diagnosis, and patient management</span>
-                </div>
-              </li>
-
-              <li>
-                <div class="year">Experience</div>
-                <div class="detail">
-                  <strong>Urgent Care &amp; Primary Care</strong>
-                  <span>Front-line clinical experience prior to specializing in orthopedics</span>
-                </div>
-              </li>
-            </ul>
+            <h2>Helping patients understand their <span class="accent">options.</span></h2>
+            <p>At Joint &amp; Bone Institute of California, Kelly assists with both nonoperative and postoperative orthopedic care. That may include evaluating joint pain, reviewing X-rays or other diagnostic studies, assisting with injections or in-office procedures, and following patients through recovery after surgery.</p>
+            <p>This kind of support matters because orthopedic problems can affect work, family responsibilities, independence, and quality of life. Kelly helps patients understand not only what is happening medically, but also how the care plan connects to their goals &mdash; whether that is reducing pain, improving function, returning to work, or getting back to normal activities.</p>
           </section>
 
           <section class="jbi-doc-section">
-            <h2>A patient-first <span class="accent">approach.</span></h2>
-
-            <p>
-              Kelly describes her approach as patient-first, reassuring, and responsive. She believes good care starts with listening &mdash; understanding what matters to each patient before building a plan together.
-            </p>
-
-            <p>
-              Her goal is for every patient to leave feeling heard, understood, and confident that they have a clear plan moving forward.
-            </p>
-          </section>
-
-          <section class="jbi-doc-section">
-            <h2>Outside the clinic.</h2>
-
-            <p>
-              Away from work, Kelly stays active &mdash; she runs, lifts, and teaches Lagree &mdash; and she loves to read. Most of all, she&rsquo;s enjoying motherhood.
-            </p>
+            <h2>Part of the JBI care team.</h2>
+            <p>Kelly joined Joint &amp; Bone Institute of California in July 2025. As part of the JBI team, she helps support orthopedic care across the practice&rsquo;s Bakersfield and Delano locations.</p>
+            <p>Her bilingual communication in English and Spanish helps make care more accessible for patients and families throughout the community. Whether she is helping with a new orthopedic evaluation, assisting with a procedure, or supporting postoperative follow-up, Kelly brings an organized and patient-focused presence to the care experience.</p>
           </section>
 
         </div>
@@ -728,21 +686,19 @@
 
           <div class="jbi-doc-side-card">
             <h3>Schedule with Kelly</h3>
-            <p>
-              New patients are welcome. Our team can help you find the right location and appointment time.
-            </p>
+            <p>New patients are welcome. Our team can help you find the right location and appointment time.</p>
             <a class="jbi-doc-btn" href="/request-appointment">Request appointment →</a>
           </div>
 
           <div class="jbi-doc-list-card">
             <h3>How Kelly Helps</h3>
             <ul class="jbi-doc-list">
-              <li>Evaluation and treatment of musculoskeletal conditions</li>
-              <li>Procedures and injections</li>
-              <li>Interpretation of diagnostic studies</li>
-              <li>Nonoperative (conservative) care</li>
-              <li>Postoperative care and follow-up</li>
-              <li>Patient communication and support</li>
+              <li>Musculoskeletal evaluation</li>
+              <li>Orthopedic treatment plans</li>
+              <li>Injections &amp; in-office procedures</li>
+              <li>Diagnostic study review</li>
+              <li>Nonoperative care</li>
+              <li>Postoperative follow-up</li>
             </ul>
           </div>
 
@@ -755,9 +711,9 @@
   <!-- FINAL CTA -->
   <section class="jbi-doc-bottom-cta">
     <div class="inner">
-      <h2>Ready to take the next step in <span class="accent">your care?</span></h2>
+      <h2>Orthopedic care that&rsquo;s <span class="accent">clear and supportive.</span></h2>
       <p>
-        Request an appointment with Kelly Guzman at Joint &amp; Bone Institute of California.
+        Request an appointment with Kelly Guzman, PA-C at Joint &amp; Bone Institute of California.
       </p>
       <div class="jbi-doc-actions">
         <a class="jbi-doc-btn" href="/request-appointment">Request an appointment →</a>
@@ -772,8 +728,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Kelly Guzman, PA",
-  "jobTitle": "Physician Assistant",
+  "name": "Kelly Guzman, PA-C",
+  "jobTitle": "Orthopedic Physician Assistant",
   "url": "/team/kelly-guzman",
   "knowsLanguage": ["English", "Spanish"],
   "worksFor": {
@@ -782,33 +738,17 @@
     "url": "/"
   },
   "knowsAbout": [
-    "Musculoskeletal Care",
+    "Musculoskeletal Evaluation",
     "Orthopedic Injections and Procedures",
-    "Diagnostic Study Interpretation",
+    "Diagnostic Study Review",
     "Nonoperative Orthopedic Care",
-    "Postoperative Care"
+    "Postoperative Care",
+    "Patient Education"
   ],
   "areaServed": [
-    {
-      "@type": "City",
-      "name": "Bakersfield, California"
-    },
-    {
-      "@type": "City",
-      "name": "Delano, California"
-    },
-    {
-      "@type": "City",
-      "name": "Porterville, California"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Kern County, California"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Tulare County, California"
-    }
+    {"@type": "City", "name": "Bakersfield, California"},
+    {"@type": "City", "name": "Delano, California"},
+    {"@type": "AdministrativeArea", "name": "Kern County, California"}
   ]
 }
 </script>
