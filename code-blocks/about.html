@@ -4,6 +4,10 @@
   Sections: Hero → About the Practice → Mission & Vision → What Guides Us → CTA.
   Drop your Stats + Our 3 Locations code blocks where marked.
   EDIT before publishing: founder line + the two campus-opening years in the timeline.
+
+  IMAGES: add your own photos (upload to Squarespace, paste the URL into each
+  img src). Hero photo slot is marked TODO below; it shows a branded placeholder
+  until you add a src.
 -->
 <style>
   .jbi-ab{
@@ -31,16 +35,24 @@
   .jbi-ab-actions{display:flex; gap:14px; flex-wrap:wrap;}
 
   /* ---- Hero (navy) ---- */
-  .jbi-ab-hero{background:#0f2d4f; padding:120px 0 96px; position:relative; overflow:hidden;}
+  .jbi-ab-hero{background:#0f2d4f; padding:110px 0 96px; position:relative; overflow:hidden;}
   .jbi-ab-hero::before{content:""; position:absolute; top:-160px; right:-140px; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle, rgba(200,154,58,0.16) 0%, transparent 70%);}
   .jbi-ab-hero::after{content:""; position:absolute; bottom:-200px; left:-120px; width:540px; height:540px; border-radius:50%; background:radial-gradient(circle, rgba(46,90,135,0.5) 0%, transparent 70%);}
-  .jbi-ab-hero .inner{position:relative; z-index:2; max-width:900px;}
-  .jbi-ab-hero h1{font-size:60px; font-weight:800; letter-spacing:-2px; line-height:1.03; color:#fff; margin:0 0 22px;}
+  .jbi-ab-hero .inner{position:relative; z-index:2;}
+  .jbi-ab-hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:58px; align-items:center;}
+  .jbi-ab-hero h1{font-size:56px; font-weight:800; letter-spacing:-2px; line-height:1.03; color:#fff; margin:0 0 22px;}
   .jbi-ab-hero h1 .accent{color:#c89a3a; font-style:italic; font-weight:500;}
-  .jbi-ab-hero p{font-size:20px; line-height:1.6; color:#cdd6e2; margin:0 0 30px; max-width:660px;}
+  .jbi-ab-hero p{font-size:20px; line-height:1.6; color:#cdd6e2; margin:0 0 30px; max-width:620px;}
   .jbi-ab-chips{display:flex; gap:12px; flex-wrap:wrap;}
   .jbi-ab-chip{display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:#fff; font-size:13px; font-weight:600; padding:10px 16px; border-radius: 100px;}
   .jbi-ab-chip .dot{width:7px; height:7px; border-radius:50%; background:#c89a3a;}
+  .jbi-ab-hero-photo{
+    position:relative; aspect-ratio:4/5; border-radius:22px; overflow:hidden;
+    background:linear-gradient(135deg, rgba(200,154,58,0.22), rgba(46,90,135,0.45));
+    border:1px solid rgba(255,255,255,0.16); box-shadow:0 30px 70px rgba(0,0,0,0.32);
+  }
+  .jbi-ab-hero-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .jbi-ab-hero-photo img[src=""]{opacity:0;}  /* hide empty placeholder cleanly */
 
   /* ---- About the Practice (ivory) ---- */
   .jbi-ab-story{background:#f5efe3; padding:100px 0;}
@@ -49,7 +61,7 @@
   .jbi-ab-prose p:last-child{margin-bottom:0;}
   .jbi-ab-prose .signoff{margin-top:22px; font-size:15px; color:#0f2d4f; font-weight:700;}
   .jbi-ab-prose .signoff span{display:block; font-size:13px; font-weight:500; color:#6a6558; margin-top:2px;}
-  .jbi-ab-timeline{background:#fff; border:1px solid rgba(15,45,79,0.08); border-radius:18px; padding:30px 34px; box-shadow:0 10px 30px rgba(15,45,79,0.05);}
+  .jbi-ab-timeline{background:#fff; border:1px solid rgba(15,45,79,0.08); border-radius:18px; padding:30px 34px; box-shadow:0 10px 30px rgba(15,45,79,0.05); margin-top:64px;}
   .jbi-ab-tl-head{font-size:12px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#a37a27; margin:0 0 14px; padding-bottom:14px; border-bottom:1px solid rgba(15,45,79,0.1);}
   .jbi-ab-tl{display:flex; gap:18px; padding:13px 0; border-top:1px solid rgba(15,45,79,0.07);}
   .jbi-ab-tl:first-of-type{border-top:0;}
@@ -90,12 +102,15 @@
 
   @media (max-width:1000px){
     .jbi-ab .inner{padding:0 24px;}
-    .jbi-ab-hero{padding:88px 0 66px;}
+    .jbi-ab-hero{padding:80px 0 66px;}
+    .jbi-ab-hero-grid{grid-template-columns:1fr; gap:40px;}
+    .jbi-ab-hero-photo{max-width:440px; aspect-ratio:16/11;}
     .jbi-ab-hero h1{font-size:40px; letter-spacing:-1.2px;}
     .jbi-ab-hero p{font-size:17px;}
     .jbi-ab-story,.jbi-ab-mv,.jbi-ab-values,.jbi-ab-cta{padding:64px 0;}
     .jbi-ab .sec-title,.jbi-ab-cta h2{font-size:30px; letter-spacing:-0.8px;}
     .jbi-ab-story-grid{grid-template-columns:1fr; gap:36px;}
+    .jbi-ab-timeline{margin-top:0;}
     .jbi-ab-mv-grid,.jbi-ab-val-grid{grid-template-columns:1fr; gap:18px;}
   }
 </style>
@@ -105,13 +120,21 @@
   <!-- HERO -->
   <section class="jbi-ab-hero">
     <div class="inner">
-      <div class="eyebrow">— About the Practice</div>
-      <h1>Orthopedic care, built around <span class="accent">you.</span></h1>
-      <p>Joint &amp; Bone Institute of California brings compassionate, education-first orthopedic care to patients across Kern and Tulare County — with fellowship-trained surgeons and three convenient campuses in Bakersfield, Delano, and Porterville.</p>
-      <div class="jbi-ab-chips">
-        <span class="jbi-ab-chip"><span class="dot"></span>Established 1997</span>
-        <span class="jbi-ab-chip"><span class="dot"></span>Fellowship-trained surgeons</span>
-        <span class="jbi-ab-chip"><span class="dot"></span>3 Central Valley campuses</span>
+      <div class="jbi-ab-hero-grid">
+        <div class="jbi-ab-hero-text">
+          <div class="eyebrow">— About the Practice</div>
+          <h1>Orthopedic care, built around <span class="accent">you.</span></h1>
+          <p>Joint &amp; Bone Institute of California brings compassionate, education-first orthopedic care to patients across Kern and Tulare County — with fellowship-trained surgeons and three convenient campuses in Bakersfield, Delano, and Porterville.</p>
+          <div class="jbi-ab-chips">
+            <span class="jbi-ab-chip"><span class="dot"></span>Established 1997</span>
+            <span class="jbi-ab-chip"><span class="dot"></span>Fellowship-trained surgeons</span>
+            <span class="jbi-ab-chip"><span class="dot"></span>3 Central Valley campuses</span>
+          </div>
+        </div>
+        <div class="jbi-ab-hero-photo">
+          <!-- TODO: add your hero photo URL in src (team, clinic, or a care moment) -->
+          <img src="" alt="The Joint & Bone Institute of California care team" />
+        </div>
       </div>
     </div>
   </section>
